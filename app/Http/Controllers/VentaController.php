@@ -60,13 +60,14 @@ class VentaController extends Controller
     }
     public function total_ventasPy()
     {
+        $now = Carbon::now();
         $ventas = Venta::all()->where('estado', 'Cerrada');
         $detalleventa = DB::table('detalleventas as dv')
         ->join('productos as p', 'dv.id_producto', '=', 'p.id')
         ->select('p.nameproducto', 'dv.precio', 'dv.cantidad')
         ->get();
-
-        $pdf  =  PDF::loadView('ventas.pdftotal', compact('ventas','detalleventa'));
+ 
+        $pdf  =  PDF::loadView('ventas.pdftotal', compact('ventas','detalleventa', 'now'));
         set_time_limit(300);
         return  $pdf->download('Reporte_de_Ventas.pdf');
     }
