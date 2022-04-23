@@ -106,6 +106,7 @@ class EmpresasController extends Controller
             'email' => ['unique:users,email'],
             'razonsocial' => ['unique:empresas,razonsocial'],
             'ruc' => ['unique:empresas,ruc'],
+            'logoempresa' => ['required'],
             'correoempresa' => ['unique:empresas,correoempresa']
             // 'ncuentabanco' => ['unique:empresas,ncuentabanco'],
             // 'ncuentabancocci' => ['unique:empresas,ncuentabancocci'],
@@ -113,6 +114,7 @@ class EmpresasController extends Controller
    
         ],
         [
+            'required' => 'El campo de imagen es requerido',
             'max' => 'El campo no puede tener mas de :max caracteres',
             'unique' => 'El campo :attribute ya está registrado.'
         ]);

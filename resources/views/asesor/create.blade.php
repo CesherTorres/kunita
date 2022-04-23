@@ -85,12 +85,12 @@
                         <div class="row">
                             <div class="col-12 col-md-4 col-lg-4 order-2 oder-md-1">
                                  <div class="form-group mb-1">               
-                                    <label for="name" class="form-label">Nombres y Apellidos(*))</label>
-                                    <input type="text" name="name" id="name" class="form-control form-control-sm" required onkeypress="return sololetrasespace(event)" onpaste="return false" maxLength="40">            
+                                    <label for="name" class="form-label">Nombres y Apellidos(*)</label>
+                                    <input type="text" name="name" id="name" class="form-control form-control-sm"  onkeypress="return sololetrasespace(event)" onpaste="return false" maxLength="40">            
                                 </div>
                                 <div class="form-group mb-1">               
                                     <label for="tipodocumento" class="form-label">Identificacion(*)</label>
-                                    <select class="form-select form-select-sm" name="tipodocumento" id="tipodocumento" required>
+                                    <select class="form-select form-select-sm" name="tipodocumento" id="tipodocumento" >
                                         <option value="" disabled="disabled" selected="selected" hidden="hidden"></option>
                                         <option value="Pasaporte">Pasaporte</option> 
                                         <option value="Visa">Visa</option>
@@ -102,11 +102,11 @@
                                 </div>
                                 <div class="form-group mb-1">               
                                     <label for="ndocumento" class="form-label">Nroº de Identificación(*)</label>
-                                    <input type="text" name="ndocumento" id="ndocumento" class="form-control form-control-sm" required onkeypress="return solonumeros(event)" onpaste="return false" maxLength="12">            
+                                    <input type="text" name="ndocumento" id="ndocumento" class="form-control form-control-sm"  onkeypress="return solonumeros(event)" onpaste="return false" maxLength="12">            
                                 </div>
                                 <div class="form-group mb-1">               
                                     <label for="ubigeo_id" class="form-label">Distrito/Provincia/Departamento(*)</label>
-                                    <select class="form-select form-select-sm js-example-basic-single" name="ubigeo_id" id="ubigeo_id" required>
+                                    <select class="form-select form-select-sm js-example-basic-single" name="ubigeo_id" id="ubigeo_id" >
                                         <option value="" disabled="disabled" selected="selected" hidden="hidden"></option>
                                         @foreach($ubigeo as $ub)
                                         <option value="{{$ub->id}}">{{$ub->distrito. ', '.$ub->provincia. ', '.$ub->departamento}}</option>
@@ -117,23 +117,23 @@
                             <div class="col-12 col-md-4 col-lg-4 order-3 order-md-2">
                                 <div class="form-group mb-1">               
                                     <label for="direccion" class="form-label">Dirección(*)</label>
-                                    <input type="text" name="direccion" id="direccion" class="form-control form-control-sm" required maxLength="40">            
+                                    <input type="text" name="direccion" id="direccion" class="form-control form-control-sm"  maxLength="40">            
                                 </div>
                                 <div class="form-group mb-1">               
                                     <label for="telefono" class="form-label">Telefono(*)</label>
-                                    <input type="text" name="telefono" id="telefono" class="form-control form-control-sm" required onkeypress="return solonumeros(event)" onpaste="return false" maxLength="9"> 
+                                    <input type="text" name="telefono" id="telefono" class="form-control form-control-sm"  onkeypress="return solonumeros(event)" onpaste="return false" maxLength="9"> 
                                 </div>
                                 <div class="form-group mb-1">               
                                     <label for="email" class="form-label">Email(*)</label>
-                                    <input type="email" name="email" id="email" class="form-control form-control-sm"  required maxLength="50">            
+                                    <input type="email" name="email" id="email" class="form-control form-control-sm"   maxLength="50">            
                                 </div>
                                 <div class="form-group mb-1">               
                                     <label for="password" class="form-label">Contraseña(*)</label>
-                                    <input type="password" name="password" id="password" class="form-control form-control-sm"  required onkeypress="return sololetrasynumeros(event)" onpaste="return false" maxLength="16"> 
+                                    <input type="password" name="password" id="password" class="form-control form-control-sm"   onkeypress="return sololetrasynumeros(event)" onpaste="return false" maxLength="16"> 
                                 </div>
                                 <div class="form-group mb-1">               
                                     <label for="confirmpassword" class="form-label">Confirmar Contraseña(*)</label>
-                                    <input type="password" name="confirmpassword" id="confirmpassword" class="form-control form-control-sm" required onkeypress="return sololetrasynumeros(event)" onpaste="return false" maxLength="16"> 
+                                    <input type="password" name="confirmpassword" id="confirmpassword" class="form-control form-control-sm"  onkeypress="return sololetrasynumeros(event)" onpaste="return false" maxLength="16"> 
                                 </div>
                                 <span id='message'></span>
                             </div>
@@ -142,7 +142,7 @@
                                     <label for="uploadImage1" class="font-weight-light mb-0">
                                         <img for="uploadImage1" id="uploadPreview1" style="min-height: 330px; max-height: 50px; min-width: 300px; max-width: 50px" src="/images/asesorup.png" />
                                     </label>
-                                    <input id="uploadImage1" class="form-control-file" type="file" name="fotouser" onchange="previewImage(1);" hidden required/>
+                                    <input id="uploadImage1" class="form-control-file" type="file" name="fotouser" onchange="previewImage(1);" hidden />
                                 </div>
                             </div>
                         </div>

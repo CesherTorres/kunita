@@ -51,7 +51,7 @@
         <div class="row">
             <div class="col-lg-9">
                 <h3 class="text-success fw-bold mb-0">Nueva Publicidad</h3>
-                <p class="lead text-muted">Registra una nueva publicidadr</p>
+                <p class="lead text-muted">Registra una nueva publicidad.</p>
             </div>
             <div class="col-lg-3 d-flex">
                 {{-- <button class="btn btn-primary w-100 align-self-center">Nueva Empresa</button> --}}

@@ -81,8 +81,9 @@ class AsesorController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'ndocumento' => ['unique:users,ndocumento'],
-            'email' => ['unique:users,email'],
+            'ndocumento' => ['required','unique:users,ndocumento'],
+            'email' => ['required','unique:users,email'],
+            'fotouser' => ['required']
    
         ],
         [

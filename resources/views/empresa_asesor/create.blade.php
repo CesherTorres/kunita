@@ -73,13 +73,13 @@
                                 <div class="row">
                                     <div class="form-group col-md-12 col-sm-12 mb-1">               
                                         <label for="name" class="form-label">Nombres y Apellidos(*)</label>
-                                        <input type="text" name="name" id="name" class="form-control form-control-sm" required onkeypress="return sololetrasespace(event)" onpaste="return false" maxLength="40">            
+                                        <input type="text" name="name" id="name" class="form-control form-control-sm"  onkeypress="return sololetrasespace(event)" onpaste="return false" maxLength="40">            
                                     </div>
                                 </div>
                                 
                                 <div class="form-group mb-1">               
                                     <label for="tipodocumento" class="form-label">Tipo Identificación(*)</label>
-                                    <select class="form-select form-select-sm" name="tipodocumento" id="tipodocumento" required>
+                                    <select class="form-select form-select-sm" name="tipodocumento" id="tipodocumento" >
                                         <option value="" disabled="disabled" selected="selected" hidden="hidden"> --Seleccione-- </option>
                                         <option value="DNI">DNI</option> 
                                         <option value="Pasaporte">Pasaporte</option>
@@ -90,30 +90,30 @@
 
                                 <div class="form-group mb-1">               
                                     <label for="ndocumento" class="form-label">Nro Identificación(*)</label>
-                                    <input type="text" name="ndocumento" id="ndocumento" class="form-control form-control-sm" required onkeypress="return solonumeros(event)" onpaste="return false" maxLength="12"> 
+                                    <input type="text" name="ndocumento" id="ndocumento" class="form-control form-control-sm"  onkeypress="return solonumeros(event)" onpaste="return false" maxLength="12"> 
                                 </div>
                                 
                                 <div class="form-group mb-1">               
                                     <label for="telefono" class="form-label">Telefono(*)</label>
-                                    <input type="text" name="telefono" id="telefono" class="form-control form-control-sm" required onkeypress="return solonumeros(event)" onpaste="return false" maxLength="9"> 
+                                    <input type="text" name="telefono" id="telefono" class="form-control form-control-sm"  onkeypress="return solonumeros(event)" onpaste="return false" maxLength="9"> 
                                 </div>
 
                                 <div class="form-group mb-1">               
                                     <label for="email" class="form-label">Email(*)</label>
-                                    <input type="email" name="email" id="email" class="form-control form-control-sm" required maxLength="50">           
+                                    <input type="email" name="email" id="email" class="form-control form-control-sm"  maxLength="50">           
                                 </div>
 
                                 <div class="form-group mb-1">
                                     <label for="password" class="form-label">Contraseña(*)</label>
                                     <div class="input-group">
-                                        <input type="password" name="password" id="password" class="form-control form-control-sm" required onkeypress="return sololetrasynumeros(event)" onpaste="return false" maxLength="16"/>
+                                        <input type="password" name="password" id="password" class="form-control form-control-sm"  onkeypress="return sololetrasynumeros(event)" onpaste="return false" maxLength="16"/>
                                         <span id="imgContrasena" data-activo=false class="input-group-text bi bi-eye-fill"></span>
                                     </div>
                                 </div>
                                 <div class="form-group mb-1">
                                     <label for="confirmpassword" class="form-label">Confirmar Contraseña(*)</label>
                                     <div class="input-group">
-                                        <input type="password" name="confirmpassword" id="confirmpassword" class="form-control form-control-sm" required onkeypress="return sololetrasynumeros(event)" onpaste="return false" maxLength="16">
+                                        <input type="password" name="confirmpassword" id="confirmpassword" class="form-control form-control-sm"  onkeypress="return sololetrasynumeros(event)" onpaste="return false" maxLength="16">
                                         <span id="imgContrasenas" data-activo=false class="input-group-text bi bi-eye-fill"></span>
                                     </div>
                                     <span id='message'></span>
@@ -128,29 +128,29 @@
                                 <div class="row">
                                     <div class="form-group col-md-6 col-sm-12 mb-1">               
                                         <label for="razonsocial" class="form-label">Razon Social(*)</label>
-                                        <input type="text" name="razonsocial" id="razonsocial" class="form-control form-control-sm" required onkeypress="return sololetrasespace(event)" onpaste="return false" maxLength="40">            
+                                        <input type="text" name="razonsocial" id="razonsocial" class="form-control form-control-sm"  onkeypress="return sololetrasespace(event)" onpaste="return false" maxLength="40">            
                                     </div>
                                     <div class="form-group col-md-6 col-sm-12 mb-1">               
                                         <label for="ruc" class="form-label">Nro. RUC(*)</label>
-                                        <input type="text" name="ruc" id="ruc" class="form-control form-control-sm"  required onkeypress="return solonumeros(event)" onpaste="return false" maxLength="11"> 
+                                        <input type="text" name="ruc" id="ruc" class="form-control form-control-sm"   onkeypress="return solonumeros(event)" onpaste="return false" maxLength="11"> 
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="form-group col-md-6 col-sm-12 mb-1">               
                                         <label for="correoempresa" class="form-label">Email Empresa(*)</label>
-                                        <input type="email" name="correoempresa" id="correoempresa" class="form-control form-control-sm" required maxLength="50">            
+                                        <input type="email" name="correoempresa" id="correoempresa" class="form-control form-control-sm"  maxLength="50">            
                                     </div>
                                     <div class="form-group col-md-6 col-sm-12 mb-1">               
                                         <label for="telefonoempresa" class="form-label">Telefono Empresa(*)</label>
-                                        <input type="text" name="telefonoempresa" id="telefonoempresa" class="form-control form-control-sm" required onkeypress="return solonumeros(event)" onpaste="return false" maxLength="9"> 
+                                        <input type="text" name="telefonoempresa" id="telefonoempresa" class="form-control form-control-sm"  onkeypress="return solonumeros(event)" onpaste="return false" maxLength="9"> 
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="form-group col-md-6 col-sm-12 mb-1">
                                         <label for="giro_id" class="form-label">Giro(*)</label>
-                                        <select class="form-select form-select-sm js-example-basic-single" name="giro_id" id="giro_id" required>
+                                        <select class="form-select form-select-sm js-example-basic-single" name="giro_id" id="giro_id" >
                                             <option value="" disabled="disabled" selected="selected" hidden="hidden">--Seleccione--</option>
                                             @foreach($giros as $giro) 
                                                 <option value="{{$giro->id}}">{{$giro->namegiros}}</option> 
@@ -160,18 +160,18 @@
                                     </div>
                                     <div class="form-group col-md-6 col-sm-12 mb-1">               
                                         <label for="marca" class="form-label">Marca(*)</label>
-                                        <input type="text" name="marca" id="marca" class="form-control form-control-sm"  required onkeypress="return sololetrasespace(event)" onpaste="return false" maxLength="40">           
+                                        <input type="text" name="marca" id="marca" class="form-control form-control-sm"   onkeypress="return sololetrasespace(event)" onpaste="return false" maxLength="40">           
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="form-group col-md-6 col-sm-12 mb-1">               
                                         <label for="direccion" class="form-label">Dirección(*)</label>
-                                        <input type="text" name="direccion" id="direccion" class="form-control form-control-sm" required max="190"> 
+                                        <input type="text" name="direccion" id="direccion" class="form-control form-control-sm"  max="190"> 
                                     </div>
                                     <div class="form-group col-md-6 col-sm-12 mb-1">   
                                         <label for="ubigeo_id" class="form-label">Distrito/Provincia/Departamento(*)</label>
-                                        <select class="form-select form-select-sm js-example-basic-single" name="ubigeo_id" id="ubigeo_id" required>
+                                        <select class="form-select form-select-sm js-example-basic-single" name="ubigeo_id" id="ubigeo_id" >
                                             <option value="" disabled="disabled" selected="selected" hidden="hidden"></option>
                                             @foreach($ubigeo as $ub)
                                                 <option value="{{$ub->id}}">{{$ub->distrito. ', '.$ub->provincia. ', '.$ub->departamento}}</option>
@@ -184,7 +184,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-6 col-sm-12 mb-1">               
                                         <label for="descripcion" class="form-label">Descripcion(*)</label>
-                                        <textarea class="form-control" name="descripcion" placeholder="Max. 190 caracteres" id="descripcion" rows="3" required onkeypress="return sololetrasespacepunto(event)" onpaste="return false" maxLength="190"></textarea>           
+                                        <textarea class="form-control" name="descripcion" placeholder="Max. 190 caracteres" id="descripcion" rows="3"  onkeypress="return sololetrasespacepunto(event)" onpaste="return false" maxLength="190"></textarea>           
                                     </div>
                                     <div class="form-group col-md-6 col-sm-12 mb-1">               
                                         <label for="logoempresa" class="form-label text-start">Logo(*)</label>
@@ -192,7 +192,7 @@
                                             <label for="uploadImage1" class="font-weight-light mb-0">
                                                 <img for="uploadImage1" id="uploadPreview1" width="auto" height="98px" src="/images/logo_update.png" />
                                             </label>
-                                            <input id="uploadImage1" class="form-control-file" type="file" name="logoempresa" onchange="previewImage(1);" hidden required/>
+                                            <input id="uploadImage1" class="form-control-file" type="file" name="logoempresa" onchange="previewImage(1);" hidden />
                                         </div>
                                     </div>
                                 </div> 
@@ -242,15 +242,15 @@
                                 <div class="row">
                                     <div class="form-group col-md-4 col-sm-12 mb-1">               
                                         <label for="enlacefacebook" class="form-label">Url Facebook(*) <i class="fab fa-facebook" style="color:blue"></i></label>
-                                        <input type="text" name="enlacefacebook" id="enlacefacebook" class="form-control form-control-sm"  required maxlength="190"> 
+                                        <input type="text" name="enlacefacebook" id="enlacefacebook" class="form-control form-control-sm"   maxlength="190"> 
                                     </div>
                                     <div class="form-group col-md-4 col-sm-12 mb-1">               
                                         <label for="enlacewhatsapp" class="form-label">Url WhatsApp(*) <i class="fab fa-whatsapp" style="color:green"></i></label>
-                                        <input type="text" name="enlacewhatsapp" id="enlacewhatsapp" class="form-control form-control-sm"  required maxlength="190"> 
+                                        <input type="text" name="enlacewhatsapp" id="enlacewhatsapp" class="form-control form-control-sm"   maxlength="190"> 
                                     </div>
                                     <div class="form-group col-md-4 col-sm-12 mb-1">               
                                         <label for="enlaceinstagram" class="form-label">Url Instagram(*) <i class="fab fa-instagram" style="color:#F04E52"></i></label>
-                                        <input type="text" name="enlaceinstagram" id="enlaceinstagram" class="form-control form-control-sm"  required maxlength="190"> 
+                                        <input type="text" name="enlaceinstagram" id="enlaceinstagram" class="form-control form-control-sm"   maxlength="190"> 
                                     </div>
                                 </div>
                                             

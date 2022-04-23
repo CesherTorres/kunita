@@ -52,6 +52,16 @@
             </div>
         </div>
         <p class="text-muted text-start">(*) - Campos obligatorios</p>
+        @if($message = Session::get('errors'))
+            <div class="alert alert-danger">
+                <ul>
+                <p>¡Algo salió mal!</p>
+                        @foreach($errors->all() as $error)
+                            <li>{{$error}}</li>
+                        @endforeach
+                </ul>
+            </div>
+        @endif
         <form method="post" name="new_purchase" id="new_purchase" action="/productos_asesor" enctype="multipart/form-data">
         @csrf
             <div class="card-group">
@@ -62,7 +72,7 @@
                         <div class="row">
                             <div class="form-group col-md-6 col-sm-12 mb-1">               
                                 <label for="empresa_id" class="form-label">Empresa(*)</label>
-                                <select class="form-select form-select-sm js-example-basic-single" name="empresa_id" id="empresa_id" required>
+                                <select class="form-select form-select-sm js-example-basic-single" name="empresa_id" id="empresa_id" >
                                     <option value="" disabled="disabled" selected="selected" hidden="hidden"></option>
                                     @foreach($companys as $company)
                                         <option value="{{$company->id}}">{{$company->razonsocial}}</option> 
@@ -72,13 +82,13 @@
                             </div>
                             <div class="form-group col-md-6 col-sm-12 mb-1">               
                                 <label for="marca" class="form-label">Marca(*)</label>
-                                <input type="text" name="marca" id="marca" class="form-control form-control-sm" required maxLength="40">            
+                                <input type="text" name="marca" id="marca" class="form-control form-control-sm"  maxLength="40">            
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6 col-sm-12 mb-1">               
                                 <label for="nameproducto" class="form-label">Nombre del Producto(*)</label>
-                                <input type="text" name="nameproducto" id="nameproducto" class="form-control form-control-sm"  required maxLength="80">            
+                                <input type="text" name="nameproducto" id="nameproducto" class="form-control form-control-sm"   maxLength="80">            
                             </div>
                             <div class="form-group col-md-6 col-sm-12 mb-1">               
                                 <label for="modelo" class="form-label">Modelo</label>
@@ -100,14 +110,14 @@
                                     <div class="col col-md-6 col-sm-12">   
                                         <div class="form-group col-md-12 col-sm-12 mb-1">               
                                             <label for="preciosugerido" class="form-label">Precio(*)</label>
-                                            <input type="text" name="preciosugerido" id="preciosugerido" class="form-control form-control-sm"  required onkeypress="return solonumerospunto(event)" onpaste="return false" maxLength="6">            
+                                            <input type="text" name="preciosugerido" id="preciosugerido" class="form-control form-control-sm"   onkeypress="return solonumerospunto(event)" onpaste="return false" maxLength="6">            
                                         </div>
                                     </div>
                                 </div>  
                             </div>
                             <div class="form-group col-md-6 col-sm-12 mb-1">               
                                 <label for="subcategoria_id" class="form-label">Categoria(*)</label>
-                                <select class="form-select form-select-sm js-example-basic-single" name="subcategoria_id" id="subcategoria_id" required>
+                                <select class="form-select form-select-sm js-example-basic-single" name="subcategoria_id" id="subcategoria_id" >
                                     <option value="" disabled="disabled" selected="selected" hidden="hidden"></option>
                                     @foreach($subcategorias as $subcategoria) 
                                         <option value="{{$subcategoria->id}}">{{$subcategoria->categoria->namecategoria. '/'.$subcategoria->namesubcategoria}}</option> 
@@ -162,7 +172,7 @@
                                         <div class="form-group col-md-6 col-lg-6 col-sm-12 mb-1">  
                                             <div class="form-group col-md-12 col-sm-12 mb-1">               
                                                 <label for="stock" class="form-label">Stock(*)</label>
-                                                <input type="text" name="stock" id="stock" class="form-control form-control-sm"  required onkeypress="return solonumeros(event)" onpaste="return false" maxLength="4">            
+                                                <input type="text" name="stock" id="stock" class="form-control form-control-sm"   onkeypress="return solonumeros(event)" onpaste="return false" maxLength="4">            
                                             </div>
                                         </div>
                                     </div>        
@@ -175,7 +185,7 @@
                                         <label for="uploadImage1" class="font-weight-light mb-0 align-middle text-center">
                                             <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/images/image_update.png">
                                         </label>
-                                        <input id="uploadImage1" class="form-control-file" type="file" name="img-uno" onchange="previewImageizquierda(1);" hidden required/>
+                                        <input id="uploadImage1" class="form-control-file" type="file" name="img-uno" onchange="previewImageizquierda(1);" hidden />
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-12">
@@ -183,7 +193,7 @@
                                         <label for="uploadImage2" class="font-weight-light mb-0 align-middle text-center">
                                             <img for="uploadImage2" id="uploadPreview2" alt="Logo" width="170" height="200" src="/images/image_update.png">
                                         </label>
-                                        <input id="uploadImage2" class="form-control-file" type="file" name="img-dos" onchange="previewImagefrente(2);" hidden required/>
+                                        <input id="uploadImage2" class="form-control-file" type="file" name="img-dos" onchange="previewImagefrente(2);" hidden />
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-12">
@@ -191,7 +201,7 @@
                                         <label for="uploadImage3" class="font-weight-light mb-0 align-middle text-center">
                                             <img for="uploadImage3" id="uploadPreview3" alt="Logo" width="170" height="200" src="/images/image_update.png">
                                         </label>
-                                        <input id="uploadImage3" class="form-control-file" type="file" name="img-tres" onchange="previewImagederecha(3);" hidden required/>
+                                        <input id="uploadImage3" class="form-control-file" type="file" name="img-tres" onchange="previewImagederecha(3);" hidden />
                                     </div>
                                 </div>
                             </div>
@@ -208,7 +218,7 @@
                                         <label for="uploadImage4" class="font-weight-light mb-0 align-middle text-center">
                                             <img for="uploadImage4" id="uploadPreview4" alt="Logo" width="200" height="168"  src="/images/image_update.png">
                                         </label>
-                                        <input id="uploadImage4" class="form-control-file" type="file" name="img-principal" onchange="previewImageespecial(4);" hidden required/>
+                                        <input id="uploadImage4" class="form-control-file" type="file" name="img-principal" onchange="previewImageespecial(4);" hidden />
                                     </div>
                             </div>
                         </div> 
