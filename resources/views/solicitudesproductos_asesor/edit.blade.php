@@ -38,8 +38,8 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h3 class="text-success fw-bold mb-0"><i class="bi bi-shop me-2"></i> Producto: {{$producto->nameproducto}}</h3>
-                <p class="lead text-muted">Revise la información del producto</p>
+                <h3 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-shop me-2"></i> Producto: {{$producto->nameproducto}}</h3>
+                <p class="text-muted">Revise la información del producto</p>
             </div>
             <div class="col-lg-3 d-flex">
                 {{-- <button class="btn btn-primary w-100 align-self-center">Descargar</button> --}}

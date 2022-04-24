@@ -54,8 +54,8 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h1 class="text-success fw-bold mb-0"><i class="bi bi-bookmarks me-2"></i> Subcategoria</h1>
-                <p class="lead text-muted">Lista de subcategorías</p>
+                <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-bookmarks me-2"></i> Subcategoria</h1>
+                <p class="text-muted">Lista de subcategorías</p>
             </div>
             <div class="col-lg-3 d-flex">
                 {{-- <button class="btn btn-primary w-100 align-self-center">Nueva Empresa</button> --}}
@@ -68,7 +68,6 @@
                 </div> --}}
             </div>
         </div>
-        <p class="text-muted text-start">(*) - Campos obligatorios</p>
         @if($message = Session::get('errors'))
             <div class="alert alert-danger">
                 <ul>
@@ -79,14 +78,27 @@
                 </ul>
             </div>
         @endif
-        <div class="card">
+
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-lg-12 col-md-12  col-sm-12 mb-2">
+                <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
+                    <a href="{{ url('/excel/subcategoria-export') }}"><button type="button" class="btn btn-light">EXCEL</button></a>
+                    <a href="{{ url('/subcategoriapdf') }}" target="blank"><button type="button" class="btn btn-light">PDF</button></a>
+                    <a href="{{ url('/subcategoriapdfI') }}" target="blank"><button type="button" class="btn btn-light">Imprimir</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <h4 class="pb-2 pb-md-5">Nueva Sub-categoría</h4>
+                        <h6 class="text-uppercase fw-bold text-center">Nueva Subcategoría</h6>
+                        <span class="text-danger">* <small class="text-muted py-0 my-0 text-start"> - Campos obligatorios</small></span>
                         <form class="form-group" method="POST" action="/subcategoriaCreate">      
                             @csrf
-                            <div class="form-group">
+                            <div class="form-group py-1">
                                 <label for="departamento" class="form-label">Categoria(*)</label>
                                 <select class="form-select form-select js-example-basic-single" name="subcategoria" id="subcategoria" required>
                                     <option value="" disabled="disabled" selected="selected" hidden="hidden"></option>
@@ -95,29 +107,18 @@
                                         @endforeach
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group py-1">
                                 <label for="">Nombre de Subcategoria(*)</label>
                                 <input type="text" name="namesub" class="form-control" required onkeypress="return sololetrasespace(event)" onpaste="return false" maxlength="40">
                             </div>
                             <br>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Guardar</button>   
+                            <div class="text-center pt-4">
+                                <button type="submit" class="btn btn-primary w-100">Guardar</button>   
                             </div>
                         </form>
                         <br>
                     </div>
                     <div class="col-md-8">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12  col-sm-12">
-                                <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
-                                    <a href="{{ url('/excel/subcategoria-export') }}"><button type="button" class="btn btn-light">EXCEL</button></a>
-                                    <a href="{{ url('/subcategoriapdf') }}" target="blank"><button type="button" class="btn btn-light">PDF</button></a>
-                                    <a href="{{ url('/subcategoriapdfI') }}" target="blank"><button type="button" class="btn btn-light">Imprimir</button></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--modal-->
-                        <br>
                         <table id="tcompany" class="table table-hover table-sm" cellspacing="0" style="width:100%">
                             <thead class="bg-light">
                                 <tr>

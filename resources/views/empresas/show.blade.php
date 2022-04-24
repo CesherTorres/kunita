@@ -50,204 +50,201 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h3 class="text-success fw-bold mb-0"><i class="bi bi-building me-2"></i> Empresa: {{$user->propietario->empresas->razonsocial}}</h3>
-                <p class="lead text-muted">Se muestran el detalle de la empresa</p>
+                <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-building me-2"></i> Empresas</h1>
+                <p class="text-muted">Se muestran el detalle de la empresa</p>
             </div>
             <div class="col-lg-3 d-flex">
                 <a href='/pdf_porempresas/{{$user->id}}' class="btn btn-primary w-100 align-self-center" target="blank">Descargar</a>
             </div>
         </div>
-        <div class="card card-primary card-outline">
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                <div class="row">
-                        <img width="auto" height="400px" src="/public/logos/{{$user->propietario->empresas->logoempresa}}" />
-                        <div class="card-body">
-                            <div class="col-md-12 col-sm-12">
-                                <div class="text-start">
-                                    <p class="fw-bold lead border-bottom border-primary">Datos del propietario</p>
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-12">
-                                            <p class="fw-normal">Nombres y Apellidos: </p>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->name}}</p>
-                                        </div>
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Identificación: </p>
-                                        </div>
-                                        <div class="col-md-3 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->tipodocumento.': '.$user->ndocumento}}</p>
-                                        </div>
+                    <img width="auto" height="400px" src="/public/logos/{{$user->propietario->empresas->logoempresa}}" />
+                    <div class="card-body">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="text-start">
+                                <p class="fw-bold lead border-bottom border-primary">Datos del propietario</p>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="fw-normal">Nombres y Apellidos: </p>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-12">
-                                            <p class="fw-normal">Correo: </p>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->email}}</p>
-                                        </div>
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Telefono: </p>
-                                        </div>
-                                        <div class="col-md-3 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->telefono}}</p>
-                                        </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->name}}</p>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-12">
-                                            <p class="fw-normal">Estado: </p>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->estadouser}}</p>
-                                        </div>
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Identificación: </p>
                                     </div>
-                                    <p class="fw-bold lead border-bottom border-primary">Datos de la empresa</p>
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Razon social: </p>
-                                        </div>
-                                        <div class="col-md-5 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->razonsocial}}</p>
-                                        </div>
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Nro RUC: </p>
-                                        </div>
-                                        <div class="col-md-3 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->ruc}}</p>
-                                        </div>
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->tipodocumento.': '.$user->ndocumento}}</p>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Marca: </p>
-                                        </div>
-                                        <div class="col-md-5 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->marca}}</p>
-                                        </div>
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Giro: </p>
-                                        </div>
-                                        <div class="col-md-3 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->giro->namegiros}}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Correo Empresa: </p>
-                                        </div>
-                                        <div class="col-md-5 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->correoempresa}}</p>
-                                        </div>
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Tel. Empresa: </p>
-                                        </div>
-                                        <div class="col-md-3 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->telefonoempresa}}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-12">
-                                            <p class="fw-normal">Distrito/Provincia/Departamento: </p>
-                                        </div>
-                                        
-                                            <div class="col-md-8 col-sm-12">
-                                                <p class="fw-light border-bottom">{{$user->propietario->empresas->ubigeo->distrito.'/'.$user->propietario->empresas->ubigeo->provincia.'/'.$user->propietario->empresas->ubigeo->departamento}}</p>
-                                            </div>                                  
-                                        
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Direccion: </p>
-                                        </div>
-                                        <div class="col-md-5 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->direccion}}</p>
-                                        </div>
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Cuenta bancaria: </p>
-                                        </div>
-                                        <div class="col-md-3 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->cuentabanco}}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-12">
-                                            <p class="fw-normal">Nro cuenta: </p>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->ncuentabanco}}</p>
-                                        </div>
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Nro CCI: </p>
-                                        </div>
-                                        <div class="col-md-3 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->ncuentabancocci}}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-12">
-                                            <p class="fw-normal">Billetera digital: </p>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->billeteradigital}}</p>
-                                        </div>
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Numero: </p>
-                                        </div>
-                                        <div class="col-md-3 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->numerobilletera}}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Url Facebook: </p>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->enlacefacebook}}</p>
-                                        </div>
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Url Whatsapp: </p>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->enlaceinstagram}}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Url Instagram: </p>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->enlacewhatsapp}}</p>
-                                        </div>
-                                        <div class="col-md-2 col-sm-12">
-                                            <p class="fw-normal">Asesor: </p>
-                                        </div>
-                                        <div class="col-md-4 col-sm-12">
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->user->name}}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12">
-                                            <p class="fw-normal">Descripcion: </p>
-                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->descripcion}}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-12 mt-3">
-                                            <div class="text-end">
-                                                <button type="button" class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal{{$user->id}}">
-                                                    Actualizar contraseña
-                                                </button>
-                                            </div>
-                                            @include('empresas.editpaswword')
-
-                                        </div>
-                                    </div>  
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="fw-normal">Correo: </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->email}}</p>
+                                    </div>
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Telefono: </p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->telefono}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="fw-normal">Estado: </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->estadouser}}</p>
+                                    </div>
+                                </div>
+                                <p class="fw-bold lead border-bottom border-primary">Datos de la empresa</p>
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Razon social: </p>
+                                    </div>
+                                    <div class="col-md-5 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->razonsocial}}</p>
+                                    </div>
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Nro RUC: </p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->ruc}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Marca: </p>
+                                    </div>
+                                    <div class="col-md-5 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->marca}}</p>
+                                    </div>
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Giro: </p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->giro->namegiros}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Correo Empresa: </p>
+                                    </div>
+                                    <div class="col-md-5 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->correoempresa}}</p>
+                                    </div>
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Tel. Empresa: </p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->telefonoempresa}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-12">
+                                        <p class="fw-normal">Distrito/Provincia/Departamento: </p>
+                                    </div>
+                                    
+                                        <div class="col-md-8 col-sm-12">
+                                            <p class="fw-light border-bottom">{{$user->propietario->empresas->ubigeo->distrito.'/'.$user->propietario->empresas->ubigeo->provincia.'/'.$user->propietario->empresas->ubigeo->departamento}}</p>
+                                        </div>                                  
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Direccion: </p>
+                                    </div>
+                                    <div class="col-md-5 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->direccion}}</p>
+                                    </div>
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Cuenta bancaria: </p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->cuentabanco}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="fw-normal">Nro cuenta: </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->ncuentabanco}}</p>
+                                    </div>
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Nro CCI: </p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->ncuentabancocci}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="fw-normal">Billetera digital: </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->billeteradigital}}</p>
+                                    </div>
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Numero: </p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->numerobilletera}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Url Facebook: </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->enlacefacebook}}</p>
+                                    </div>
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Url Whatsapp: </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->enlaceinstagram}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Url Instagram: </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->enlacewhatsapp}}</p>
+                                    </div>
+                                    <div class="col-md-2 col-sm-12">
+                                        <p class="fw-normal">Asesor: </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->user->name}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <p class="fw-normal">Descripcion: </p>
+                                        <p class="fw-light border-bottom">{{$user->propietario->empresas->descripcion}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-12 mt-3">
+                                        <div class="text-end">
+                                            <button type="button" class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal{{$user->id}}">
+                                                Actualizar contraseña
+                                            </button>
+                                        </div>
+                                        @include('empresas.editpaswword')
+
+                                    </div>
+                                </div>  
                             </div>
                         </div>
-                    
-
+                    </div>
                </div>
-
             </div>
         </div>
     </div>

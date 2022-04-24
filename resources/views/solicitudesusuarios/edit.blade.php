@@ -41,14 +41,14 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h3 class="text-success fw-bold mb-0"><i class="bi bi-building me-2"></i> Solicitud de empresa: {{$user->propietario->empresas->razonsocial}}</h3>
-                <p class="lead text-muted">Revise la informacion de la empresa</p>
+                <h3 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-building me-2"></i> Solicitud de empresa: {{$user->propietario->empresas->razonsocial}}</h3>
+                <p class="text-muted">Revise la informacion de la empresa</p>
             </div>
             <div class="col-lg-3 d-flex">
                 {{-- <button class="btn btn-primary w-100 align-self-center">Descargar</button> --}}
             </div>
         </div>
-        <div class="card card-primary card-outline">
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                <div class="row">
                     <div class="col-md-3 col-sm-12 text-center">

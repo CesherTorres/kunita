@@ -7,6 +7,7 @@ use App\Models\Categoria;
 use App\Models\Subcategoria;
 use  PDF;
 use App\Exports\SubcategoriaEmpreExport;
+use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 class SubcategoriasAsesorController extends Controller
 {
@@ -32,15 +33,17 @@ class SubcategoriasAsesorController extends Controller
     }
     public function total_categoriasSA()
     {
+        $now = Carbon::now();
         $subcategoria = Subcategoria::all();        
-        $pdf  =  PDF::loadView('subcategoria.pdfTotal', compact('subcategoria'));
+        $pdf  =  PDF::loadView('subcategoria.pdfTotal', compact('subcategoria', 'now'));
         set_time_limit(300);
         return  $pdf->download('itsolutionstuff.pdf');
     }
     public function total_categoriasSAI()
     {
+        $now = Carbon::now();
         $subcategoria = Subcategoria::all();        
-        $pdf  =  PDF::loadView('subcategoria.pdfTotal', compact('subcategoria'));
+        $pdf  =  PDF::loadView('subcategoria.pdfTotal', compact('subcategoria', 'now'));
         set_time_limit(300);
         return  $pdf->stream('itsolutionstuff.pdf');
     }

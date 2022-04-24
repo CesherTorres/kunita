@@ -53,21 +53,10 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-8">
-                <h1 class="text-success fw-bold mb-0"><i class="bi bi-bookmarks me-2"></i> Categorías</h1>
-                <p class="lead text-muted">Lista de categorías</p>
-            </div>
-            <div class="col-lg-4 d-flex">
-                {{-- <button class="btn btn-primary w-100 align-self-center">Nueva Empresa</button> --}}
-                {{-- <div class="btn-group w-100 align-self-center btn-sm pt-0" data-toggle="buttons">
-                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
-                    <label class="btn btn-outline-secondary" for="success-outlined"><i class="bi bi-grid-3x2"></i></label>
-
-                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="danger-outlined"><i class="bi bi-image"></i></label>
-                </div> --}}
+                <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-bookmarks me-2"></i> Categorías</h1>
+                <p class="text-muted">Lista de categorías</p>
             </div>
         </div>
-        <p class="text-muted text-start">(*) - Campos obligatorios</p>
         @if($message = Session::get('errors'))
             <div class="alert alert-danger">
                 <ul>
@@ -78,24 +67,25 @@
                 </ul>
             </div>
         @endif
-        <div class="card">
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <h4 class="pb-2 pb-md-5">Nueva categoría</h4>
+                        <h6 class="text-uppercase fw-bold text-center">Nueva categoría</h6>
+                        <span class="text-danger">(*) <small class="text-muted py-0 my-0 text-start"> - Campos obligatorios</small></span>
                         <form class="form-group" method="POST" action="/categoriass">      
                             @csrf
-                            <div class="form-group">
+                            <div class="form-group py-1">
                                 <label for="">Nombre de Categoria(*)</label>
                                 <input type="text" name="namecategoria" class="form-control" required onkeypress="return sololetrasespace(event)" onpaste="return false" maxLength="40">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group py-1">
                                 <label for="">Descripcion(*)</label>
                                 <input type="text" name="descripcion" class="form-control" required onkeypress="return sololetrasespace(event)" onpaste="return false" maxLength="100">
                             </div>
                             <br>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Guardar</button>   
+                            <div class="text-center pt-4">
+                                <button type="submit" class="btn btn-primary w-100">Guardar</button>   
                             </div>
                         </form>
                         <br>

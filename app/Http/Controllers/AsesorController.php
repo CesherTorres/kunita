@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use  PDF;
 use App\Exports\AsesorExport;
+use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 
 class AsesorController extends Controller
@@ -43,24 +44,27 @@ class AsesorController extends Controller
     }
     public function total_asesores()
     {
+        $now = Carbon::now();
         $asesores = User::with(['ubigeo'])->where('tipousuario_id', '=', '2')->get();
-        $pdf  =  PDF::loadView('asesor.pdfasesor', compact('asesores'));
+        $pdf  =  PDF::loadView('asesor.pdfasesor', compact('asesores', 'now'));
         set_time_limit(300);
         return  $pdf->download('itsolutionstuff.pdf');
     }
     public function total_asesoresI()
     {
+        $now = Carbon::now();
         $asesores = User::with(['ubigeo'])->where('tipousuario_id', '=', '2')->get();
-        $pdf  =  PDF::loadView('asesor.pdfasesor', compact('asesores'));
+        $pdf  =  PDF::loadView('asesor.pdfasesor', compact('asesores', 'now'));
         set_time_limit(300);
         return  $pdf->stream('itsolutionstuff.pdf');
     }
     public function reporteI($id)
     {
-        $asesores = User::with(['ubigeo'])->where('tipousuario_id', '=', $id)->get();
-        $pdf  =  PDF::loadView('asesor.pdfasesor', compact('asesores'));
+        $now = Carbon::now();
+        $asesor = User::find($id);
+        $pdf  =  PDF::loadView('asesor.pdfid', compact('asesor', 'now'));
         set_time_limit(300);
-        return  $pdf->stream('itsolutionstuff.pdf');
+        return  $pdf->setPaper('a8')->stream('itsolutionstuff.pdf');
     }
 
     public function create()

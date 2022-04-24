@@ -6,6 +6,7 @@ use App\Models\Subcategoria;
 use Illuminate\Support\Facades\DB;
 use  PDF;
 use App\Exports\SubcategoriaExport;
+use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 
 use Illuminate\Http\Request;
@@ -34,16 +35,18 @@ class SubcategoriaController extends Controller
     }
     public function total_categorias()
     {
+        $now = Carbon::now();
         $subcategoria = Subcategoria::all();        
-        $pdf  =  PDF::loadView('subcategoria.pdfTotal', compact('subcategoria'));
+        $pdf  =  PDF::loadView('subcategoria.pdfTotal', compact('subcategoria', 'now'));
         set_time_limit(300);
         return  $pdf->download('itsolutionstuff.pdf');
     }
 
     public function total_categoriasI()
     {
+        $now = Carbon::now();
         $subcategoria = Subcategoria::all();        
-        $pdf  =  PDF::loadView('subcategoria.pdfTotal', compact('subcategoria'));
+        $pdf  =  PDF::loadView('subcategoria.pdfTotal', compact('subcategoria', 'now'));
         set_time_limit(300);
         return  $pdf->stream('itsolutionstuff.pdf');
     }

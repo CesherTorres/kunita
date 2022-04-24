@@ -51,8 +51,8 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h3 class="text-success fw-bold mb-0"><i class="bi bi-shop me-2"></i> Asesor: {{$asesor->name}}</h3>
-                <p class="lead text-muted">Se muestran los todos los datos del asesor</p>
+                <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-shop me-2"></i> Asesores</h1>
+                <p class="text-muted">Se muestran los todos los datos del asesor</p>
             </div>
             <div class="col-lg-3 d-flex">
                 {{-- <button class="btn btn-primary w-100 align-self-center">Nueva Empresa</button> --}}
@@ -69,8 +69,8 @@
             </div>
         </div>
         <div class="">
-            <div class="card">
-                <div class="card-header bg-ligth text-dark fw-normal">Datos del Asesor</div>
+            <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
+                
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12 col-md-4 col-lg-4 order-2 oder-md-1">

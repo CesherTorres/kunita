@@ -62,7 +62,7 @@ class User extends Authenticatable
     }
 
     public function ubigeo(){
-        return $this->belongsTo(Ubigeo::class);
+        return $this->belongsTo(Ubigeo::class, 'ubigeo_id');
     }
 
     public function propietario()

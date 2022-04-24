@@ -50,8 +50,8 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h3 class="text-success fw-bold mb-0">Nueva Publicidad</h3>
-                <p class="lead text-muted">Registra una nueva publicidad.</p>
+                <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-newspaper me-2"></i> Publicidad</h1>
+                <p class="text-muted">Registra una nueva publicidad.</p>
             </div>
             <div class="col-lg-3 d-flex">
                 {{-- <button class="btn btn-primary w-100 align-self-center">Nueva Empresa</button> --}}
@@ -68,7 +68,7 @@
         <p class="text-muted text-start">(*) - Campos obligatorios</p>
         <form method="post" name="new_purchase" id="new_purchase" action="/publicidad" enctype="multipart/form-data">
             @csrf  
-            <div class="card card-primary card-outline">
+            <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
                 <div class="card-body">  
                     
                     <div class="row">

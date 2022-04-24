@@ -40,8 +40,8 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h1 class="text-success fw-bold mb-0"><i class="bi bi-arrow-down-square me-2"></i> Solicitudes - Productos</h1>
-                <p class="lead text-muted">Revisar los productos para aprobar o rechazar</p>
+                <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-arrow-down-square me-2"></i> Solicitudes - Productos</h1>
+                <p class="text-muted">Revisar los productos para aprobar o rechazar</p>
             </div>
             <div class="col-lg-3 d-flex">
                 {{-- <button class="btn btn-primary w-100 align-self-center">Nueva Empresa</button> --}}
@@ -56,14 +56,6 @@
         </div>
         <div class="card card-primary card-outline">
             <div class="card-body">
-                <div class="btn-group float-md-end  border rounded" role="group" aria-label="Basic example">
-                    {{-- <button type="button" class="btn btn-light">EXCEL</button>
-                    <button type="button" class="btn btn-light">PDF</button>
-                    <button type="button" class="btn btn-light">Imprimir</button> --}}
-                </div>
-                <br>
-                {{-- table --}}
-                <br>
                 <table id="tcompany" class="table table-hover table-sm" cellspacing="0" style="width:100%">
                     <thead class="bg-light">
                         <tr>

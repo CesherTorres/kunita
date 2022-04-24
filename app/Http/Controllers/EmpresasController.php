@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Hash;
 use  PDF;
 //use Barryvdh\DomPDF\Facade as PDF;
 use App\Exports\UsersExport;
+use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 
 class EmpresasController extends Controller
@@ -41,8 +42,9 @@ class EmpresasController extends Controller
     }
     public function total_empresas()
     {
-        $companys= Empresa::all();
-        $pdf  =  PDF::loadView('empresas.pdf_empresa', compact('companys'));
+        $now = Carbon::now();
+        $companys= Empresa::all(); 
+        $pdf  =  PDF::loadView('empresas.pdf_empresa', compact('companys', 'now'));
         $pdf->getDomPDF()->setHttpContext(
             stream_context_create([
                 'ssl' => [
@@ -53,19 +55,21 @@ class EmpresasController extends Controller
             ])
         );
         set_time_limit(300);
-        return  $pdf->download('total_empresas.pdf');
+        return  $pdf->setPaper('a4', 'landscape')->download('total_empresas.pdf');
     }
     public function total_empresasI()
     {
+        $now = Carbon::now();
         $companys= Empresa::all();
-        $pdf  =  PDF::loadView('empresas.pdf_empresa', compact('companys'));
+        $pdf  =  PDF::loadView('empresas.pdf_empresa', compact('companys', 'now'));
         set_time_limit(300);
-        return  $pdf->stream('itsolutionstuff.pdf');
+        return  $pdf->setPaper('a4', 'landscape')->stream('itsolutionstuff.pdf');
     }
     public function por_empresas($id)
     {
+        $now = Carbon::now();
         $company = User::find($id);
-        $pdf  =  PDF::loadView('empresas.pdfid', compact('company'));
+        $pdf  =  PDF::loadView('empresas.pdfid', compact('company', 'now'));
         set_time_limit(300);
         return  $pdf->download('itsolutionstuff.pdf');
     }

@@ -52,11 +52,16 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h1 class="text-success fw-bold mb-0"><i class="bi bi-shop me-2"></i> Productos</h1>
-                <p class="lead text-muted">Lista de productos registrados</p>
+                <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-shop me-2"></i> Productos</h1>
+                <p class="text-muted">Lista de productos registrados</p>
             </div>
             <div class="col-lg-3 d-flex">
-                {{-- <button class="btn btn-primary w-100 align-self-center">Nueva Empresa</button> --}}
+                <a href="{{ url('/productos/create') }}" class="btn btn-primary w-100 align-self-center text-white"><i class="bi bi-plus-circle-fill me-2"></i> Nuevo Producto</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-12 mb-2">
                 <div class="btn-group w-100 align-self-center btn-sm pt-0" data-toggle="buttons">
                     <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
                     <label class="btn btn-outline-secondary" for="success-outlined"><i class="bi bi-grid-3x2"></i></label>
@@ -65,25 +70,17 @@
                     <label class="btn btn-outline-secondary" for="danger-outlined"><a href="{{ url('/listaP') }}"><i class="bi bi-image"></i></label></a>
                 </div>
             </div>
-        </div>
-        <div class="card card-primary card-outline">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-2 col-md-2 col-sm-12 mb-2">
-                        <a href="{{ url('/productos/create') }}" class="btn btn-warning text-white"> Nuevo Producto</a>
-                    </div>
-                    <div class="col-lg-10 col-md-4  col-sm-12">
-                        <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
-                            <a href="{{ url('/excel/producto-export') }}"><button type="button" class="btn btn-light">EXCEL</button></a>
-                            <a href="{{ url('/productospdf') }}"><button type="button" class="btn btn-light">PDF</button></a>
-                            <a href="{{ url('/pdf_productoImprimir') }}" target="blank"><button type="button" class="btn btn-light">Imprimir</button></a>
-                        </div>
-                    </div>
+            <div class="col-lg-10 col-md-4  col-sm-12">
+                <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
+                    <a href="{{ url('/excel/producto-export') }}" target="blank"><button type="button" class="btn btn-light">EXCEL</button></a>
+                    <a href="{{ url('/productospdf') }}" target="blank"><button type="button" class="btn btn-light">PDF</button></a>
+                    <a href="{{ url('/pdf_productoImprimir') }}" target="blank"><button type="button" class="btn btn-light">Imprimir</button></a>
                 </div>
+            </div>
+        </div>
 
-                {{-- table --}}
-                <br>
-               
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
+            <div class="card-body">
                 <table id="tproductos" class="table table-hover table-sm" cellspacing="0" style="width:100%">
                     
                     <thead class="bg-light">

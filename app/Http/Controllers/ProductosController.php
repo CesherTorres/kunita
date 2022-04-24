@@ -36,24 +36,27 @@ class ProductosController extends Controller
     }
     public function por_productos($id)
     {
+        $now = Carbon::now();
         $producto = Producto::find($id);
-        $pdf  =  PDF::loadView('productos.pdfid', compact('producto'));
+        $pdf  =  PDF::loadView('productos.pdfid', compact('producto', 'now'));
         set_time_limit(300);
         return  $pdf->download('itsolutionstuff.pdf');
     }
     public function total_productos()
     {
+        $now = Carbon::now();
         $productos = Producto::all();
-        $pdf  =  PDF::loadView('productos.pdftotal', compact('productos'));
+        $pdf  =  PDF::loadView('productos.pdftotal', compact('productos', 'now'));
         set_time_limit(300);
-        return  $pdf->download('itsolutionstuff.pdf');
+        return  $pdf->setPaper('a4', 'landscape')->download('itsolutionstuff.pdf');
     }
     public function total_productosI()
     {
+        $now = Carbon::now();
         $productos = Producto::all();
-        $pdf  =  PDF::loadView('productos.pdftotal', compact('productos'));
+        $pdf  =  PDF::loadView('productos.pdftotal', compact('productos', 'now'));
         set_time_limit(300);
-        return  $pdf->stream('itsolutionstuff.pdf');
+        return  $pdf->setPaper('a4', 'landscape')->stream('itsolutionstuff.pdf');
     }
     /**
      * Show the form for creating a new resource.

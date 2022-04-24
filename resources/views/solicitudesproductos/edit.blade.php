@@ -40,14 +40,14 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h3 class="text-success fw-bold mb-0"><i class="bi bi-shop me-2"></i> Producto: {{$producto->nameproducto}}</h3>
-                <p class="lead text-muted">Revise la información del producto</p>
+                <h3 class="text-success fw-bold mb-0 h2 text-uppercase"><i class="bi bi-shop me-2"></i> Producto: {{$producto->nameproducto}}</h3>
+                <p class="text-muted">Revise la información del producto</p>
             </div>
             <div class="col-lg-3 d-flex">
                 {{-- <button class="btn btn-primary w-100 align-self-center">Descargar</button> --}}
             </div>
         </div>
-        <div class="card card-primary card-outline">
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                   <div class="row">
                             <div class="form-group col-md-6 col-sm-12 mb-1">               

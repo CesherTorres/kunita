@@ -54,39 +54,29 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h1 class="text-success fw-bold mb-0"><i class="bi bi-building me-2"></i> Empresas</h1>
-                <p class="lead text-muted">Listado de Empresa Registradas</p>
+                <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-building me-2"></i> Empresas</h1>
+                <p class="text-muted">Listado de Empresa Registradas</p>
             </div>
             <div class="col-lg-3 d-flex">
-                {{-- <button class="btn btn-primary w-100 align-self-center">Nueva Empresa</button> 
-                <div class="btn-group w-100 align-self-center btn-sm pt-0" data-toggle="buttons">
-                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
-                    <label class="btn btn-outline-secondary" for="success-outlined"><i class="bi bi-grid-3x2"></i></label>
-
-                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="danger-outlined"><i class="bi bi-image"></i></label>
-                </div>
-                --}}
-                
+                <a href="{{ url('/empresas/create') }}" class="btn btn-primary w-100 align-self-center text-white"><i class="bi bi-plus-circle-fill me-2"></i> Nueva Empresa</a>
             </div>
         </div>
-        <div class="card card-primary card-outline">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
-                        <a href="{{ url('/empresas/create') }}" class="btn btn-warning text-white"> Nueva Empresa</a>
-                    </div>
-                    <div class="col-lg-6 col-md-6  col-sm-12">
-                        <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
-                            <a href="{{ url('/excel/empresa-export') }}"><button type="button" class="btn btn-light">EXCEL</button></a>
-                            <a href="{{ url('/pdf_empresas') }}" target="blank"><button type="button" class="btn btn-light">PDF</button></a>
-                            <a href="{{ url('/pdf_empresasImprimir') }}" target="blank"><button type="button" class="btn btn-light">Imprimir</button></a>
-                        </div>
-                    </div>
-                </div>
 
-                {{-- table --}}
-                <br>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
+                
+            </div>
+            <div class="col-lg-6 col-md-6  col-sm-12 mb-2">
+                <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
+                    <a href="{{ url('/excel/empresa-export') }}"><button type="button" class="btn btn-light">EXCEL</button></a>
+                    <a href="{{ url('/pdf_empresas') }}" target="blank"><button type="button" class="btn btn-light">PDF</button></a>
+                    <a href="{{ url('/pdf_empresasImprimir') }}" target="blank"><button type="button" class="btn btn-light">Imprimir</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
+            <div class="card-body">
                 <table id="tcompany" class="table table-hover table-sm" cellspacing="0" style="width:100%">
                     <thead class="bg-light">
                         <tr>

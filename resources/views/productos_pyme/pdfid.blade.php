@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Kaita | Reporte Almacen PDF</title>
+    <title>Kunaq | Reporte Producto PDF</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ public_path('/css/templategeneral.css') }}" type="text/css">
     {{-- <link rel="stylesheet" href="{{ public_path('/css/main.css') }}" type="text/css"> --}}
@@ -71,10 +71,10 @@
         <div class="container">
             <div class="clearfix">
                 <div class="float-start">
-                    <span class="text-uppercase pb-2 fs-6 fw-bold align-middle"><img src="{{ public_path('images/kunaq-v.png') }}" class="p-3 shadow bg-white" style="height:85px" alt="..."> Kunaq - Generando valor</span>
+                    <span class="text-uppercase fs-6 fw-bold align-middle"><img src="{{ public_path('images/LOGO.png') }}" class="p-3 shadow bg-white" style="height:31.3px" alt="..."> Kunaq - Generando valor</span>
                 </div>
                 <div class="float-end">
-                    <span class="text-uppercase fs-6 float-end fw-bold pt-4">{{$now->format('Y-m-d')}}</span>
+                    <span class="text-uppercase fs-6 float-end align-middle fw-bold pt-3">{{$now->format('Y-m-d')}}</span>
                 </div>
                
                 
