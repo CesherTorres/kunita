@@ -48,6 +48,10 @@
         right: 0cm;
         height: 2cm;
     }
+
+    .text-primary{
+        color: #0069AA !important;
+    }
     .bg-primary{
         background-color: #0069AA !important;
     }
@@ -67,12 +71,12 @@
         <div class="container">
             <div class="clearfix">
                 <div class="float-start">
-                    <span class="text-uppercase pb-2 fs-6 fw-bold align-middle"><img src="{{ public_path('images/kunaq-v.png') }}" class="p-3 shadow bg-white" style="height:85px" alt="..."> Kunaq - Generando valor</span>
+                    <span class="text-uppercase fs-6 fw-bold align-middle"><img src="{{ public_path('images/LOGO.png') }}" class="p-3 shadow bg-white" style="height:31.3px" alt="..."> Kunaq - Generando valor</span>
                 </div>
                 <div class="float-end">
-                    <span class="text-uppercase fs-6 float-end fw-bold pt-4">{{$now->format('Y-m-d')}}</span>
+                    <span class="text-uppercase fs-6 float-end align-middle fw-bold pt-3">{{$now->format('Y-m-d')}}</span>
                 </div>
-               
+            
                 
             </div>
         </div>
@@ -90,7 +94,7 @@
                 <span class="fw-light fst-italic d-block" style="font-size: 10px">{{ Auth::user()->propietario->empresas->telefonoempresa }}</span>
             </td>
             <td style="width: 35%">
-                <img src="{{ public_path("logos/".Auth::user()->propietario->empresas->logoempresa) }}" class=" card-img" style="height:85px" alt="...">
+                <img src="{{ public_path("logos/".Auth::user()->propietario->empresas->logoempresa) }}" class=" card-img" style="width:auto; height:85px" alt="...">
             </td>
             
         </tr>

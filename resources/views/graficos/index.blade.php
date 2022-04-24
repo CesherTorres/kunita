@@ -41,8 +41,8 @@
         <div class="container-fluid pt-3">
             <div class="row">
                 <div class="col-lg-9">
-                    <h1 class="text-success fw-bold mb-0"><i class="bi bi-symmetry-vertical me-2"></i> Graficos</h1>
-                    <p class="lead text-muted">Revisa la ultima información</p>
+                    <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-symmetry-vertical me-2"></i> Graficos</h1>
+                    <p class="text-muted">Revisa la ultima información</p>
                 </div>
                 <div class="col-lg-3 d-flex">
                     <button class="btn btn-primary w-100 align-self-center" id="downloadPdf">Descargar Reporte</button>

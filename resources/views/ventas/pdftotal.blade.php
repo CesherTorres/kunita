@@ -48,6 +48,11 @@
         right: 0cm;
         height: 2cm;
     }
+
+    .text-primary{
+        color: #0069AA !important;
+    }
+    
     .bg-primary{
         background-color: #0069AA !important;
     }
@@ -90,7 +95,7 @@
                 <span class="fw-light fst-italic d-block" style="font-size: 10px">{{ Auth::user()->propietario->empresas->telefonoempresa }}</span>
             </td>
             <td style="width: 35%">
-                <img src="{{ public_path("logos/".Auth::user()->propietario->empresas->logoempresa) }}" class=" card-img" style="height:85px" alt="...">
+                <img src="{{ public_path("logos/".Auth::user()->propietario->empresas->logoempresa) }}" class=" card-img" style="width: auto; height:85px" alt="...">
             </td>
             
         </tr>

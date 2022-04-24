@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col-lg-9">
                 <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-shop me-2"></i> Asesores</h1>
-                <p class="text-muted">Lorem ipsum dolor sit amet consectetur</p>
+                <p class="text-muted">Se muestra la lista de asesores registrados</p>
             </div>
             <div class="col-lg-3 d-flex">
                 <a href="{{ url('/Asesor/create') }}" class="btn btn-primary w-100 align-self-center text-white"><i class="bi bi-plus-circle-fill me-2"></i> Nuevo Asesor</a>
