@@ -108,6 +108,26 @@ class ProductosPymeController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'nameproducto' => ['required'],
+            'preciosugerido' => ['required'],
+            'stock' => ['required'],
+            'imguno' => ['required'],
+            'imgdos' => ['required'],
+            'imgtres' => ['required'],
+            'imgprincipal' => ['required'],
+            'empresa_id' => ['required'],
+            'subcategoria_id' => ['required']
+            // 'ncuentabanco' => ['unique:empresas,ncuentabanco'],
+            // 'ncuentabancocci' => ['unique:empresas,ncuentabancocci'],
+            // 'numerobilletera' => ['unique:empresas,numerobilletera']
+   
+        ],
+        [
+            'max' => 'El campo no puede tener mas de :max caracteres',
+            'unique' => 'El campo :attribute ya está registrado.'
+        ]);
+        
         if($request->hasFile('img-uno')){
             $file = $request->file('img-uno');
             $imguno = time().$file->getClientOriginalName();
@@ -223,7 +243,7 @@ class ProductosPymeController extends Controller
         $producto->update(['preciosugerido'=>$request->input('preciosugerido'),
                 'estado'=>'Pendiente',
                 'oferta'=>$request['oferta'],
-                'estado_oferta' =>$request['estado_oferta']?1:0,
+                'estado_oferta' =>1,
                 'nuevaoferta'=>(($request->input('preciosugerido'))-(($request->input('preciosugerido'))*(($request->input('oferta'))/100))),
                
             ]);        
@@ -239,11 +259,16 @@ class ProductosPymeController extends Controller
         //          'fecha_vencimiento'=>$request[input('fecha_vencimiento')]]);
         //          $oferta->save();
                 
-                $oferta = DB::table('productos')->where('id', $id);
-                $oferta->update(['oferta'=>$request['oferta'],
-                'fecha_vencimiento'=>$request['fecha_vencimiento'],
-                'estado'=>'Pendiente'
-                ]); 
+        $producto = Producto::find($id);
+        $producto->fill($request->except('img-uno', 'img-dos', 'img-tres', 'img-principal'));
+        $producto->update(['preciosugerido'=>$request->input('preciosugerido'),
+        'estado'=>'Pendiente',
+        'oferta'=>$request['oferta'],
+        'estado_oferta' =>1,
+        'nuevaoferta'=>(($request->input('preciosugerido'))-(($request->input('preciosugerido'))*(($request->input('oferta'))/100))),
+        
+        ]);        
+        $producto->save();
                 //$oferta->save();   
                 return redirect()->route('productos_pyme.index')->with('update', 'ok');     
             // $alfa= $request->all();

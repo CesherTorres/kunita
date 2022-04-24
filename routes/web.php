@@ -217,7 +217,7 @@ Route::resource('categorias_asesor', 'App\Http\Controllers\CategoriasAsesorContr
 Route::resource('subcategorias_asesor', 'App\Http\Controllers\SubcategoriasAsesorController');
 Route::get('/subcategoriapdf', 'App\Http\Controllers\SubcategoriasAsesorController@total_categoriasSA');
 Route::get('/subcategoriapdfI', 'App\Http\Controllers\SubcategoriasAsesorController@total_categoriasSAI');
-route::get('/excel/subcategoria-export', 'App\Http\Controllers\SubcategoriasAsesorController@exportSA');
+route::get('/excel/subcategoria-export(asesor', 'App\Http\Controllers\SubcategoriasAsesorController@exportSA');
 Route::resource('solicitudesproductos_asesor', 'App\Http\Controllers\SolicitudesProductosAsesorController');
 Route::resource('solicitudesusuarios_asesor', 'App\Http\Controllers\SolicitudesUsuariosAsesorController');
 // Fin asesores

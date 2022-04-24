@@ -138,12 +138,25 @@
                                                     @method('PUT')
                                                     @csrf
                                                     
-                                                    <div class="form-group mb-1">               
-                                                        <label for="" class="form-label">Oferta de</label>
-                                                        <div class="input-group input-group-sm mb-3">
-                                                            <input id="oferta" name="oferta" type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
-                                                            <span class="input-group-text" id="basic-addon1">%</span>
-                                                        </div>           
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group mb-1">               
+                                                                <label for="" class="form-label">Oferta de</label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <input id="oferta" name="oferta" type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
+                                                                    <span class="input-group-text" id="basic-addon1">%</span>
+                                                                </div>           
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group mb-1">               
+                                                                <label for="" class="form-label">Precio Sugerido</label>
+                                                                <div class="input-group input-group-sm mb-3">
+                                                                    <span class="input-group-text" id="basic-addon1">S/</span>
+                                                                    <input id="preciosugerido" name="preciosugerido" value="{{$producto->preciosugerido}}" type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
+                                                                </div>           
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="form-group mb-1">               
                                                         <label for="" class="form-label">Fecha vencimiento</label>

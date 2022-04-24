@@ -92,57 +92,75 @@
                 <div class="row justify-content-center" align="center">
                     @foreach($producto as $productos)
                     <div class="col col-sm col-md-6 col-lg-4">
-                        
-                            <div id="cards">
-                                <div class="image">
-                                <img src="/public/images_product/{{$productos->imgprincipal}}" style="background: #FFFEC8;min-width: auto; min-height: 300px;"/>
+                        <div id="cards">
+                            <div class="image">
+                            <img src="/public/images_product/{{$productos->imgprincipal}}" style="background: #FFFEC8;min-width: auto; min-height: 300px;"/>
+                            </div>
+                            <div class="details">
+                                <div class="center">
+                                    <h1>{{$productos->nameproducto}}<br><span>Marca: {{$productos->marca}}</span></h1>
+                                    <p>PRECIO: S/{{$productos->preciosugerido}}</p>
+                                    <ul>
+                                    <form method="POST" action="{{ route('productos.destroy',$productos->id) }}" class="form-delete">
+                                        @csrf
+                                        @method('DELETE')
+                                        <li><a href="/productos/{{$productos->id}}/edit"><i class="bi bi-pencil-square"></i></a></li>
+                                        <li><button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i></button></li>
+                                        <li><button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#oferta"><i class="bi bi-percent"></i></button></li>
+                                    </form>
+                                    </ul>
                                 </div>
-                                <div class="details">
-                                    <div class="center">
-                                        <h1>{{$productos->nameproducto}}<br><span>Marca: {{$productos->marca}}</span></h1>
-                                        <p>PRECIO: S/{{$productos->preciosugerido}}</p>
-                                        <ul>
-                                        <form method="POST" action="{{ route('productos.destroy',$productos->id) }}" class="form-delete">
-                                            @csrf
-                                            @method('DELETE')
-                                            <li><a href="/productos/{{$productos->id}}/edit"><i class="bi bi-pencil-square"></i></a></li>
-                                            <li><button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i></button></li>
-                                            <li><button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#oferta"><i class="bi bi-percent"></i></button></li>
-                                        </form>
-                                        </ul>
-                                    </div>
+                            </div>
+                        </div><br> 
+                    </div>
+                    <div class="modal fade" id="oferta" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Establecer Oferta</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                            </div><br> 
+                                <div class="modal-body">
+                                    <form method="post" action="/productos/oferta/{{$productos->id}}" enctype="multipart/form-data">
+                                        @method('PUT')
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group mb-1">               
+                                                    <label for="" class="form-label">Oferta de</label>
+                                                    <div class="input-group input-group-sm mb-3">
+                                                        <input id="oferta" name="oferta" type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
+                                                        <span class="input-group-text" id="basic-addon1">%</span>
+                                                    </div>           
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group mb-1">               
+                                                    <label for="" class="form-label">Precio Sugerido</label>
+                                                    <div class="input-group input-group-sm mb-3">
+                                                        <span class="input-group-text" id="basic-addon1">S/</span>
+                                                        <input id="preciosugerido" name="preciosugerido" value="{{$productos->preciosugerido}}" type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
+                                                    </div>           
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-1">               
+                                            <label for="" class="form-label">Fecha vencimiento</label>
+                                            <input name="fecha_vencimiento" id="fecha_vencimiento" type="date" class="form-control form-control-sm"  aria-label="Username" aria-describedby="basic-addon1" required>                                         
+                                        </div>
+                                        
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Guardar</button>   
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss='modal'>Cancelar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     @endforeach
                 </div>
                 <br>
-                <div class="modal fade" id="oferta" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Establecer Oferta</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group mb-1">               
-                                <label for="" class="form-label">Oferta de</label>
-                                <div class="input-group input-group-sm mb-3">
-                                    <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
-                                    <span class="input-group-text" id="basic-addon1">%</span>
-                                </div>           
-                            </div>
-                            <div class="form-group mb-1">               
-                                <label for="" class="form-label">Fecha vencimiento</label>
-                                <input type="date" class="form-control form-control-sm"  aria-label="Username" aria-describedby="basic-addon1">                                         
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
                 {{-- end table --}}
             </div>
         </div>
