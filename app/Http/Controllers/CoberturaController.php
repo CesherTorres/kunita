@@ -38,7 +38,7 @@ class CoberturaController extends Controller
     }
     public function pdf_TotalCo()
     {
-        $coberturas = Cobertura::all()->where('empresa_id', Auth::user()->id);
+        $coberturas = Cobertura::all()->where('empresa_id', Auth::user()->propietario->empresas->id);
         
             $pdf  =  PDF::loadView('cobertura.pdftotalCo', compact('coberturas'));
             set_time_limit(300);
@@ -46,7 +46,7 @@ class CoberturaController extends Controller
     }
     public function pdf_TotalCoIm()
     {
-        $coberturas = Cobertura::all()->where('empresa_id', Auth::user()->id);
+        $coberturas = Cobertura::all()->where('empresa_id', Auth::user()->propietario->empresas->id);
         
             $pdf  =  PDF::loadView('cobertura.pdftotalCo', compact('coberturas'));
             set_time_limit(300);

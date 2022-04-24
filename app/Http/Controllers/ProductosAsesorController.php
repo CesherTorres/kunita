@@ -264,10 +264,15 @@ class ProductosAsesorController extends Controller
         //          'fecha_vencimiento'=>$request[input('fecha_vencimiento')]]);
         //          $oferta->save();
                 
-                $oferta = DB::table('productos')->where('id', $id);
-                $oferta->update(['oferta'=>$request['oferta'],
-                'fecha_vencimiento'=>$request['fecha_vencimiento']
-                ]); 
+            $producto = Producto::find($id);
+                $producto->fill($request->except('img-uno', 'img-dos', 'img-tres', 'img-principal'));
+                $producto->update(['preciosugerido'=>$request->input('preciosugerido'),
+                'oferta'=>$request['oferta'],
+                'estado_oferta' =>1,
+                'nuevaoferta'=>(($request->input('preciosugerido'))-(($request->input('preciosugerido'))*(($request->input('oferta'))/100))),
+            
+            ]);        
+            $producto->save();
                 //$oferta->save();   
                 return redirect()->route('productos_asesor.index')->with('update', 'ok');     
             // $alfa= $request->all();

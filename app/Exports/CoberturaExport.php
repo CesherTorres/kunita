@@ -13,7 +13,7 @@ class CoberturaExport implements FromView
     */
     public function view(): View
     {
-        $coberturas = Cobertura::all()->where('empresa_id', Auth::user()->id);
+        $coberturas = Cobertura::all()->where('empresa_id', Auth::user()->propietario->empresas->id);
         return view('Excell.PorMype.exportcobertura', compact('coberturas'));
 
     }

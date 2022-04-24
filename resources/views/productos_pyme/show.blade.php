@@ -166,7 +166,7 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-12 mb-1" style="background: #FFFEC8; border-radius:10px;">
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="oferta-label">
+                                    <input class="form-check-input" disabled type="checkbox" {{$producto->estado_oferta==1?'checked':''}} value="1" name="estado_oferta" id="oferta-label">
                                     <label class="form-check-label" for="ofertalabel">Oferta</label>
                                 </div>
                                 <div class="form-group col-md-12 col-sm-12 mb-1">               

@@ -46,7 +46,7 @@ class AsesorController extends Controller
         $asesores = User::with(['ubigeo'])->where('tipousuario_id', '=', '2')->get();
         $pdf  =  PDF::loadView('asesor.pdfasesor', compact('asesores'));
         set_time_limit(300);
-        return  $pdf->donwload('itsolutionstuff.pdf');
+        return  $pdf->download('itsolutionstuff.pdf');
     }
     public function total_asesoresI()
     {
