@@ -48,33 +48,30 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h1 class="text-success fw-bold mb-0"><i class="bi bi-truck me-2"></i> Cobertura</h1>
-                <p class="lead text-muted">Lista de coberturas</p>
+                <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-truck me-2"></i> Cobertura</h1>
+                <p class="text-muted">Lista de coberturas</p>
             </div>
-            
         </div>
-        <div class="card card-primary card-outline">
-            <div class="card-body">
-                <div class="row">
-                    <!-- <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
-                         <a href="{{ url('/cobertura/create') }}" class="btn btn-warning text-white"></a>  
-                        <button type="button" class="btn btn-warning text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">Nueva Cobertura</button>
-                    </div>
-                    @include('cobertura.create')-->
-                    <div class="col-lg-12 col-md-6  col-sm-12">
-                        <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
-                            <a href="{{ url('coberturaExcell') }}"><button type="button" class="btn btn-light">EXCEL</button></a>
-                            <a href="{{ url('coberturapdfT') }}"><button type="button" class="btn btn-light">PDF</button></a>
-                            <a href="{{ url('coberturapdfI') }}" target="blank"><button type="button" class="btn btn-light">Imprimir</button></a>
-                        </div>
-                    </div>
-                </div>
 
+        <div class="row mb-2">
+            <div class="col-12 col-lg-6">
+
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
+                    <a href="{{ url('coberturaExcell') }}" target="blank"><button type="button" class="btn btn-light">EXCEL</button></a>
+                    <a href="{{ url('coberturapdfT') }}" target="blank"><button type="button" class="btn btn-light">PDF</button></a>
+                    <a href="{{ url('coberturapdfI') }}" target="blank"><button type="button" class="btn btn-light">Imprimir</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
+            <div class="card-body">
                 {{-- table --}}
-                <br>
+
                 <div class="row"> 
                     <div class="col-12 col-md-4">
-                        <h4 class="pb-2 pb-md-5">Nueva cobertura</h4>
+                        <h6 class="text-uppercase fw-bold text-center">Nueva cobertura</h6>
                         <form method="post" name="new_purchase" id="new_purchase" action="/cobertura" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3">               
@@ -86,24 +83,23 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="row ">
-                                <div class=" form-group col-md-6 col-sm-12 mb-3">
-                                    <label for="precioenvio" class="form-label">Costo de Envío(*)</label>
-                                    <div class="input-group input-group-sm mb-3">
-                                        <span class="input-group-text" id="inputGroup-sizing-sm">S/.</span>
-                                        <input type="text" class="form-control" name="precioenvio" required onkeypress="return solonumeros(event)" onpaste="return false" maxLength="2">
-                                    </div>
+                            
+                            <div class=" form-group mb-3">
+                                <label for="precioenvio" class="form-label">Costo de Envío(*)</label>
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">S/.</span>
+                                    <input type="text" class="form-control" name="precioenvio" required onkeypress="return solonumeros(event)" onpaste="return false" maxLength="2">
                                 </div>
-                                <div class="form-group col-md-6 col-sm-12 mb-3">
-                                    <label for="diasestimados" class="form-label">Días Estimados(*)</label>
-                                    <div class="input-group input-group-sm">
-                                        <input type="text" class="form-control" name="diasestimados" required onkeypress="return solonumeros(event)" onpaste="return false" maxLength="2">
-                                        <span class="input-group-text">Días</span>
-                                    </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="diasestimados" class="form-label">Días Estimados(*)</label>
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" name="diasestimados" required onkeypress="return solonumeros(event)" onpaste="return false" maxLength="2">
+                                    <span class="input-group-text">Días</span>
                                 </div>
-                            </div> 
-                            <div align="center" class="mb-5 mb-md-0">
-                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                            <div class="text-center pt-4">
+                                <button type="submit" class="btn btn-primary w-100">Guardar</button>
                             </div>
                         </form>
                     </div>

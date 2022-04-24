@@ -38,12 +38,13 @@ class Producto extends Model
     {
         return 'slug';
     }
+
     public function empresa(){
         return $this->belongsTo(Empresa::class, 'empresa_id');
     }
 
     public function subcategoria(){
-        return $this->belongsTo(Subcategoria::class);
+        return $this->belongsTo(Subcategoria::class,'subcategoria_id');
     }
     static function get_active_productos(){
         return self::where('estado','Activo');

@@ -45,44 +45,36 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h1 class="text-success fw-bold mb-0"><i class="bi bi-building me-2"></i> Productos</h1>
-                <p class="lead text-muted">Lista de productos registrados</p>
+                <h1 class="text-success h2 fw-bold mb-0 text-uppercase"><i class="bi bi-shop me-2"></i> Productos</h1>
+                <p class="text-muted">Lista de productos registrados</p>
             </div>
             <div class="col-lg-3 d-flex">
-                {{-- <button class="btn btn-primary w-100 align-self-center">Nueva Empresa</button> --}}
-                {{-- <div class="btn-group w-100 align-self-center btn-sm pt-0" data-toggle="buttons">
-                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
-                    <label class="btn btn-outline-secondary" for="success-outlined"><i class="bi bi-grid-3x2"></i></label>
-
-                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="danger-outlined"><i class="bi bi-image"></i></label>
-                </div> --}}
+                <a href="{{ url('/productos_pyme/create') }}" class="btn btn-primary w-100 align-self-center"><i class="bi bi-plus-circle-fill me-2"></i> Nuevo Producto</a>
             </div>
         </div>
-        <div class="card card-primary card-outline h-100">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
-                        <a href="{{ url('/productos_pyme/create') }}" class="btn btn-warning text-white"> Nuevo Producto</a>
-                    </div>
-                    <div class="col-lg-6 col-md-6  col-sm-12">
-                        <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
-                            <a href="{{ url('/excel/Pproducto-exportPy') }}"><button type="button" class="btn btn-light">EXCEL</button></a>
-                            <a href="{{ url('/productospdfPy') }}"><button type="button" class="btn btn-light">PDF</button></a>
-                            <a href="{{ url('/productospdfPyI') }}" target="_blank"><button type="button" class="btn btn-light">Imprimir</button></a>
-                        </div>
-                    </div>
-                </div>
 
-                {{-- table --}}
-                <br>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
+                
+            </div>
+            <div class="col-lg-6 col-md-6  col-sm-12 mb-2">
+                <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
+                    <a href="{{ url('/excel/Pproducto-exportPy') }}" target="_blank"><button type="button" class="btn btn-light">EXCEL</button></a>
+                    <a href="{{ url('/productospdfPy') }}" target="_blank"><button type="button" class="btn btn-light">PDF</button></a>
+                    <a href="{{ url('/productospdfPyI') }}" target="_blank"><button type="button" class="btn btn-light">Imprimir</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
+            <div class="card-body">
                 <table id="tproductos" class="table table-hover table-sm" cellspacing="0" style="width:100%">
                     <thead class="bg-light">
                         <tr>
                             <th class="h6">Producto</th>
                             <th class="h6">Marca</th>
-                            {{-- <th class="h6">Categoria</th> --}}
-                            {{-- <th class="h6">Sub-Categoria</th> --}}
+                            <th class="h6">Categoria</th>
+                            <th class="h6">Sub-Categoria</th>
                             <th class="h6">Precio</th>
                             <th class="h6">Stock</th>
                             <th class="h6">Estado</th>
@@ -93,13 +85,13 @@
                         <tbody>
                             @foreach($productos as $producto)
                                 <tr>
-                                    <td class="font-weight-light">{{$producto->nameproducto}}</td>
-                                    <td class="font-weight-light">{{$producto->marca}}</td>
-                                    {{-- <td class="font-weight-light">{{$producto->subcategoria->categoria->namecategoria}}</td> --}}
-                                    {{-- <td class="font-weight-light">{{$producto->subcategoria->namesubcategoria}}</td> --}}
-                                    <td class="font-weight-light">{{$producto->preciosugerido}}</td>
-                                    <td class="font-weight-light">{{$producto->stock}}</td>
-                                    <td class="font-weight-light">{{$producto->estado}}</td>
+                                    <td class="font-weight-light align-middle">{{$producto->nameproducto}}</td>
+                                    <td class="font-weight-light align-middle">{{$producto->marca}}</td>
+                                    <td class="font-weight-light align-middle">{{$producto->namecategoria}}</td>
+                                    <td class="font-weight-light align-middle">{{$producto->namesubcategoria}}</td>
+                                    <td class="font-weight-light align-middle">{{$producto->preciosugerido}}</td>
+                                    <td class="font-weight-light align-middle">{{$producto->stock}}</td>
+                                    <td class="font-weight-light align-middle">{{$producto->estado}}</td>
                                     <td>                                        
                                         <div class="text-center">
                                         <form method="POST" action="{{ route('productos_pyme.destroy',$producto->id) }}" class="form-delete">

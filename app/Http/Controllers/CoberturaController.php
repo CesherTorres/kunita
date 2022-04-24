@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use  PDF;
 use App\Exports\CoberturaExport;
+use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 class CoberturaController extends Controller
 {
@@ -38,17 +39,19 @@ class CoberturaController extends Controller
     }
     public function pdf_TotalCo()
     {
+        $now = Carbon::now();
         $coberturas = Cobertura::all()->where('empresa_id', Auth::user()->propietario->empresas->id);
         
-            $pdf  =  PDF::loadView('cobertura.pdftotalCo', compact('coberturas'));
+            $pdf  =  PDF::loadView('cobertura.pdftotalCo', compact('coberturas', 'now'));
             set_time_limit(300);
             return  $pdf->download('itsolutionstuff.pdf');
     }
     public function pdf_TotalCoIm()
     {
+        $now = Carbon::now();
         $coberturas = Cobertura::all()->where('empresa_id', Auth::user()->propietario->empresas->id);
         
-            $pdf  =  PDF::loadView('cobertura.pdftotalCo', compact('coberturas'));
+            $pdf  =  PDF::loadView('cobertura.pdftotalCo', compact('coberturas', 'now'));
             set_time_limit(300);
             return  $pdf->stream('itsolutionstuff.pdf');
     }

@@ -45,11 +45,11 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h3 class="text-success fw-bold mb-0"><i class="bi bi-cash-coin me-2"></i>Detalles de la Venta - {{$venta->id}}</h3>
-                <p class="lead text-muted">Detalle de la venta</p>
+                <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-cash-coin me-2"></i>Venta - {{$venta->id}}</h1>
+                <p class="text-muted">Se muestra el detalle de la venta</p>
             </div>
         </div>
-        <div class="card card-primary card-outline">
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
     
                     <div class="row">

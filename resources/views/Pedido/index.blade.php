@@ -45,19 +45,15 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h1 class="text-success fw-bold mb-0"><i class="bi bi-box-seam me-2"></i> Pedidos</h1>
-                <p class="lead text-muted">Lista de pedidos de la tienda</p>
+                <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-box-seam me-2"></i> Pedidos</h1>
+                <p class="text-muted">Lista de pedidos de la tienda</p>
             </div>
         </div>
-        <div class="card card-primary card-outline mb-5">
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                 <div class="row justify-content-end">
                     <div class="col-lg-6 col-md-6  col-sm-12">
-                    {{-- <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-light">CSV</button>
-                            <button type="button" class="btn btn-light">PDF</button>
-                            <button type="button" class="btn btn-light">Imprimir</button>
-                        </div>--}}
+                    
                     </div>
                 </div>
 

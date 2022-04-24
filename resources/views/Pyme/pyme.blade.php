@@ -42,10 +42,10 @@
 @section('content')
 <section class="py-3">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row pt-3">
             <div class="col-lg-9 mt-3 mt-md-0">
-                <h1 class="text-success fw-bold mb-0">Bienvenido Usuario {{Auth::user()->tipousuario->name_tipo_usuario}}</h1>
-                <p class="lead text-muted">Revisa las ultimas novedades</p>
+                <h1 class="text-success h2 fw-bold mb-0 text-uppercase">Bienvenido Usuario {{Auth::user()->tipousuario->name_tipo_usuario}}</h1>
+                <p class="text-muted">Revisa las ultimas novedades</p>
             </div>
             <div class="col-lg-3 d-flex">
                 {{-- <button class="btn btn-primary w-100 align-self-center">Descargar Reporte</button> --}}

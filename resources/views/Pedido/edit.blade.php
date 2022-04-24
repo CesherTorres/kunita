@@ -45,11 +45,11 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h3 class="text-success fw-bold mb-0"><i class="bi bi-cash-coin me-2"></i>Detalles del pedido - {{$pedido->id}}</h3>
-                <p class="lead text-muted">Se muestra el detalle del Pedido</p>
+                <h1 class="text-success text-uppercase h2 fw-bold mb-0"><i class="bi bi-cash-coin me-2"></i>pedido - {{$pedido->id}}</h1>
+                <p class="text-muted">Se muestra el detalle del Pedido</p>
             </div>
         </div>
-        <div class="card card-primary card-outline">
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                 
                     <div class="row">
@@ -202,7 +202,7 @@
             @method('put')
             <input type="hidden" name="estado" value="Cerrada">
             <input type="hidden" name="total" value="{{$pedido->total+$pedido->cobertura->precioenvio}}">
-            <div class="container form-group text-end pt-3 pb-5">
+            <div class="container form-group text-end pb-5">
                 <a class="btn btn-outline-secondary btn-lg" href="{{ url('/pedidos') }}" role="button">Cancelar</a>
                 <button type="submit" class="btn btn-primary btn-lg">Cerrar venta</button>
             </div>

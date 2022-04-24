@@ -45,21 +45,14 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h1 class="text-success fw-bold mb-0"><i class="bi bi-building me-2"></i> Perfil</h1>
-                <p class="lead text-muted">Se muestras los datos de la empresa</p>
+                <h1 class="text-success h2 fw-bold mb-0 text-uppercase"><i class="bi bi-building me-2"></i> Perfil</h1>
+                <p class="text-muted">Se muestras los datos de la empresa</p>
             </div>
             <div class="col-lg-3 d-flex">
-                {{-- <button class="btn btn-primary w-100 align-self-center">Nueva Empresa</button> --}}
-                {{-- <div class="btn-group w-100 align-self-center btn-sm pt-0" data-toggle="buttons">
-                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
-                    <label class="btn btn-outline-secondary" for="success-outlined"><i class="bi bi-grid-3x2"></i></label>
-
-                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
-                    <label class="btn btn-outline-secondary" for="danger-outlined"><i class="bi bi-image"></i></label>
-                </div> --}}
+                
             </div>
         </div>
-        <div class="card card-primary card-outline">
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                <div class="row">
                     <div class="col-md-12 col-sm-12 text-center mb-2">
@@ -68,7 +61,7 @@
                     <div class="card-body">
                         <div class="col-md-12 col-sm-12">
                             <div class="text-start">
-                                <p class="fw-bold lead border-bottom border-primary">Datos del propietario</p>
+                                <p class="fw-bold text-uppercase">Datos del propietario</p>
                                 <div class="row">
                                     <div class="col-md-3 col-sm-12">
                                         <p class="fw-normal">Nombres y Apellidos: </p>
@@ -105,7 +98,7 @@
                                         <p class="fw-light border-bottom">{{$user->estadouser}}</p>
                                     </div>
                                 </div>
-                                <p class="fw-bold lead border-bottom border-primary">Datos de la empresa</p>
+                                <p class="fw-bold text-uppercase">Datos de la empresa</p>
                                 <div class="row">
                                     <div class="col-md-2 col-sm-12">
                                         <p class="fw-normal">Razon social: </p>
