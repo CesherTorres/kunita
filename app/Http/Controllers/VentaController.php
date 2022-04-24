@@ -73,24 +73,26 @@ class VentaController extends Controller
     }
     public function total_ventaAI()
     {
+        $now = Carbon::now();
         $ventas = Venta::all()->where('estado', 'Cerrada');
         $detalleventa = DB::table('detalleventas as dv')
         ->join('productos as p', 'dv.id_producto', '=', 'p.id')
         ->select('p.nameproducto', 'dv.precio', 'dv.cantidad')
         ->get();
-        $pdf  =  PDF::loadView('ventas.pdftotal', compact('ventas','detalleventa'));
+        $pdf  =  PDF::loadView('ventas.pdftotal', compact('ventas','detalleventa', 'now'));
         set_time_limit(300);
         return  $pdf->stream('Reporte_de_Ventas.pdf');
     }
     public function por_ventaPy($id)
     {
+        $now = Carbon::now();
         $venta = Venta::find($id);
         $detalleventa = DB::table('detalleventas as dv')
         ->join('productos as p', 'dv.id_producto', '=', 'p.id')
         ->select('p.nameproducto', 'dv.precio', 'dv.cantidad')
         ->where('dv.id_venta', '=', $id)->get();
 
-        $pdf  =  PDF::loadView('ventas.pdfid', compact('venta','detalleventa'));
+        $pdf  =  PDF::loadView('ventas.pdfid', compact('venta','detalleventa', 'now'));
         set_time_limit(300);
         return  $pdf->stream('Venta_por_Empresa.pdf');
     }

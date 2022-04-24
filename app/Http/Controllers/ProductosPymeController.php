@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use  PDF;
 use App\Exports\MypeExport;
+use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 class ProductosPymeController extends Controller
 {
@@ -45,13 +46,15 @@ class ProductosPymeController extends Controller
     }
     public function total_productosPyid($id)
     {
+        $now = Carbon::now();
         $producto = Producto::find($id);
-        $pdf  =  PDF::loadView('productos_pyme.pdfid', compact('producto'));
+        $pdf  =  PDF::loadView('productos_pyme.pdfid', compact('producto', 'now'));
         set_time_limit(300);
         return  $pdf->download('Producto_Empresas.pdf');
     }
     public function total_productosPY()
     {
+        $now = Carbon::now();
         $productos = DB::table('users as u')
         ->join('propietarios as pro', 'pro.usuario_id','=','u.id')
         ->join('empresas as emp', 'emp.propietario_id', '=', 'pro.id')
@@ -60,14 +63,14 @@ class ProductosPymeController extends Controller
         ->join('categorias as ct', 'sub.categoria_id', '=', 'ct.id')
         ->select('prod.id', 'emp.razonsocial', 'prod.nameproducto', 'prod.marca', 'prod.stock', 'prod.preciosugerido', 'prod.estado','prod.modelo','prod.genero','prod.alto','prod.ancho','prod.profundidad','prod.peso','prod.temperatura','prod.oferta','prod.preciosugerido','prod.fecha_vencimiento','prod.stock','prod.descripcion','prod.imguno','prod.imgdos','prod.imgtres','prod.imgprincipal','ct.namecategoria','sub.namesubcategoria')
         ->where('emp.id', '=', Auth::user()->propietario->empresas->id)
-        ->where('prod.estado', '=', 'Activo')
         ->get();
-        $pdf  =  PDF::loadView('productos_pyme.pdftotal', compact('productos'));
+        $pdf  =  PDF::loadView('productos_pyme.pdftotal', compact('productos', 'now'));
         set_time_limit(300);
         return  $pdf->download('Producto_Empresas.pdf');
     }
     public function total_productosPYI()
     {
+        $now = Carbon::now();
         $productos = DB::table('users as u')
         ->join('propietarios as pro', 'pro.usuario_id','=','u.id')
         ->join('empresas as emp', 'emp.propietario_id', '=', 'pro.id')
@@ -79,7 +82,7 @@ class ProductosPymeController extends Controller
         ->where('prod.estado', '=', 'Activo')
         ->get();
 
-        $pdf  =  PDF::loadView('productos_pyme.pdftotal', compact('productos'));
+        $pdf  =  PDF::loadView('productos_pyme.pdftotal', compact('productos', 'now'));
         set_time_limit(300);
         return  $pdf->stream('total_producto.pdf');
     }

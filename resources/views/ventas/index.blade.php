@@ -48,7 +48,7 @@
                 <h1 class="text-success fw-bold mb-0"><i class="bi bi-cash-coin me-2"></i> Ventas</h1>
                 <p class="lead text-muted">Lista de ventas</p>
             </div>
-        </div>
+        </div> 
         <div class="card card-primary card-outline">
             <div class="card-body">
                 <div class="row">
@@ -57,8 +57,8 @@
                     </div>
                     <div class="col-lg-6 col-md-6  col-sm-12">
                         <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
-                            <a href="{{ url('/excel/Venta-exportVS') }}"><button type="button" class="btn btn-light">EXCEL</button></a>
-                            <a href="{{ url('/TotalVentapdf') }}"><button type="button" class="btn btn-light">PDF</button></a>
+                            <a href="{{ url('/excel/Venta-exportVS') }}" target="_bank"><button type="button" class="btn btn-light">EXCEL</button></a>
+                            <a href="{{ url('/TotalVentapdf') }}" target="_bank"><button type="button" class="btn btn-light">PDF</button></a>
                             <a href="{{ url('/TotalVentapdfI') }}" target="blank"><button type="button" class="btn btn-light">Imprimir</button></a>
                         </div>
                     </div>
