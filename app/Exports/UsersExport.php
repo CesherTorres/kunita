@@ -15,6 +15,8 @@ use Maatwebsite\Excel\Concerns\WithDrawings;
 use Maatwebsite\Excel\Concerns\WithTitle;
 use Maatwebsite\Excel\Events\AfterSheet;
 use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class UsersExport implements FromView, WithStyles, WithDrawings, WithColumnWidths, WithCustomStartCell, WithTitle
 {
@@ -23,8 +25,8 @@ class UsersExport implements FromView, WithStyles, WithDrawings, WithColumnWidth
     */
     public function view(): View
     {
-        $companys= Empresa::all();
-        return view('Excell.exportempresa', compact('companys'));
+            $companys= Empresa::all();
+            return view('Excell.exportempresa', compact('companys'));
     }
     public function title(): string
     {
@@ -65,7 +67,7 @@ class UsersExport implements FromView, WithStyles, WithDrawings, WithColumnWidth
     public function columnWidths(): array
     {
         return [
-            'A' => 5, 'B' => 25, 'C' => 15, 'D' => 18, 'E' => 15, 'F' => 10, 'G' => 23, 'H' => 20, 'I' => 18, 'J' => 18, 'K' => 25, 'L' => 15, 'M' => 25, 'N' => 15, 'O' => 15, 'P' => 15, 'Q' => 18, 'R' => 18, 'S' => 20, 'T' => 20, 'U' => 20, 'V' => 25, 'W' => 25
+            'A' => 5, 'B' => 25, 'C' => 15, 'D' => 18, 'E' => 15, 'F' => 10, 'G' => 23, 'H' => 20, 'I' => 18, 'J' => 18, 'K' => 25, 'L' => 15, 'M' => 25, 'N' => 15, 'O' => 15, 'P' => 15, 'Q' => 18, 'R' => 18, 'S' => 20, 'T' => 20, 'U' => 20, 'V' => 25, 'W' => 27
         ];
     }
     public function startCell(): string

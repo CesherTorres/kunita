@@ -27,7 +27,7 @@ class SubcategoriaExport implements FromView, WithStyles, WithColumnWidths, With
     }
     public function title(): string
     {
-    	return 'Asesores';
+    	return 'Subcategorias';
     }
     public function styles(Worksheet $sheet)
     {

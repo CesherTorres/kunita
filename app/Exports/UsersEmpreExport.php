@@ -13,16 +13,27 @@ use Maatwebsite\Excel\Concerns\WithDrawings;
 use Maatwebsite\Excel\Concerns\WithTitle;
 use Maatwebsite\Excel\Events\AfterSheet;
 use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
-class UsersExport implements FromView, WithStyles, WithDrawings, WithColumnWidths, WithCustomStartCell, WithTitle
+class UsersEmpreExport implements FromView, WithStyles, WithDrawings, WithColumnWidths, WithCustomStartCell, WithTitle
 {
     /**
     * @return \Illuminate\Support\Collection
     */
     public function view(): View
     {
-        $companys= Empresa::all();
-        return view('Excell.exportempresa', compact('companys'));
+        $companys = DB::table('users as u')
+        ->join('propietarios as prop', 'u.id', '=', 'prop.usuario_id')
+        ->join('empresas as emp', 'emp.propietario_id', '=', 'prop.id')
+        ->join('giros as g', 'g.id', '=', 'emp.giro_id')
+        ->select('emp.*')
+        ->where('u.tipousuario_id', '3')
+        ->where('u.estadouser', '!=', 'Pendiente')
+        ->where('emp.usuario_id', Auth::user()->id)
+        ->get();
+
+        return view('Excell.PorAsesor.exportempresa', compact('companys'));
     }
     public function title(): string
     {
@@ -32,11 +43,11 @@ class UsersExport implements FromView, WithStyles, WithDrawings, WithColumnWidth
     {
         return [
             // Style the first row as bold text.
-            'A1:G7'    => [
+            'A1:w7'    => [
                 'borders' => [
                     'outline' => [
                         'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THICK,
-                        'color' => ['argb' => '53C943'],
+                        'color' => ['argb' => '0069AA'],
                     ],
                 ],
                 'alignment' => [
@@ -46,7 +57,7 @@ class UsersExport implements FromView, WithStyles, WithDrawings, WithColumnWidth
             'D6:E6' => [
                 'underline'       =>  true,
             ],
-            'A8:G8'    => [
+            'A8:w8'    => [
                 'borders' => [
                     'outline' => [
                         'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THICK,
@@ -63,7 +74,7 @@ class UsersExport implements FromView, WithStyles, WithDrawings, WithColumnWidth
     public function columnWidths(): array
     {
         return [
-            'A' => 3, 'B' => 10, 'C' => 13, 'D' => 45, 'E' => 15, 'F' => 25, 'G' => 25
+            'A' => 5, 'B' => 25, 'C' => 15, 'D' => 18, 'E' => 15, 'F' => 10, 'G' => 23, 'H' => 20, 'I' => 18, 'J' => 18, 'K' => 25, 'L' => 15, 'M' => 25, 'N' => 15, 'O' => 15, 'P' => 15, 'Q' => 18, 'R' => 18, 'S' => 20, 'T' => 20, 'U' => 20, 'V' => 25, 'W' => 27
         ];
     }
     public function startCell(): string
@@ -75,10 +86,10 @@ class UsersExport implements FromView, WithStyles, WithDrawings, WithColumnWidth
         $drawing = new Drawing();
         $drawing->setName('Logo');
         $drawing->setDescription('This is my logo');
-        $drawing->setPath(public_path('/images/logo-kunaq.png'));
+        $drawing->setPath(public_path('images/kunaq-white.png'));
         $drawing->setHeight(120);
-        $drawing->setOffsetX(-30);
-        $drawing->setOffsetY(-10);
+        $drawing->setOffsetX(-10);
+        $drawing->setOffsetY(-5);
         $drawing->setCoordinates('B2');
 
         return $drawing;

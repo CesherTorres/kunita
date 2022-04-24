@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use  PDF;
-use App\Exports\UsersExport;
+use App\Exports\UsersEmpreExport;
 use Maatwebsite\Excel\Facades\Excel;
 class EmpresaAsesorController extends Controller
 {
@@ -51,7 +51,7 @@ class EmpresaAsesorController extends Controller
      */
     public function exportAs() 
     {
-        return Excel::download(new UsersExport, 'Total_Empresas.xlsx');
+        return Excel::download(new UsersEmpreExport, 'Total_Empresas.xlsx');
     }
     public function total_empresasPy()
     {

@@ -97,7 +97,7 @@
                         <div class="row">
                             <div class="col-lg-12 col-md-12  col-sm-12">
                                 <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
-                                    <a href="{{ url('/excel/subcategoria-export') }}"><button type="button" class="btn btn-light">CSV</button></a>
+                                    <a href="{{ url('/excel/subcategoria-export/asesor') }}"><button type="button" class="btn btn-light">EXCEL</button></a>
                                     <a href="{{ url('subcategoriapdf') }}"><button type="button" class="btn btn-light">PDF</button></a>
                                     <a href="{{ url('subcategoriapdfI') }}" target="blank"><button type="button" class="btn btn-light">Imprimir</button></a>
                                 </div>
