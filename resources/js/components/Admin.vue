@@ -1,26 +1,28 @@
 <template>
-     <div class="row my-3">
-                <div class="col-lg-6 col-md-12 colsm-12 pb-4">
-                    <div class="card">
-                        <div class="card-header bg-white">
-                            <h6 class="fw-bold text-warning">Productos más vendidos</h6>
-                        </div>
-                        <div class="card-body">
-                            <canvas id="masvendidos"></canvas>
-                        </div>
+    <div class="container">
+        <div class="row my-3">
+            <div class="col-lg-6 col-md-12 colsm-12 pb-4">
+                <div class="card">
+                    <div class="card-header bg-white">
+                        <h6 class="fw-bold text-warning">Productos más vendidos</h6>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-12 colsm-12">
-                    <div class="card">
-                        <div class="card-header bg-white">
-                            <h6 class="fw-bold text-secondary">Empresas Activas</h6>
-                        </div>
-                        <div class="card-body">
-                            <canvas id="empresas"></canvas>
-                        </div>
+                    <div class="card-body">
+                        <canvas id="masvendidos"></canvas>
                     </div>
                 </div>
             </div>
+            <div class="col-lg-6 col-md-12 colsm-12">
+                <div class="card">
+                    <div class="card-header bg-white">
+                        <h6 class="fw-bold text-secondary">Empresas Activas</h6>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="empresas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -33,7 +35,6 @@
                varNameProducto: [],
                varTotalVenta: [],
                varMesProducto:[],
-
                varEmpresa:  null,
                charEmpresa: null,
                empresa:[],
@@ -141,6 +142,7 @@
         mounted(){
             this.getProducto();
             this.getEmpresa();
+            this.getAsesor();
         }
     }
 </script>

@@ -117,33 +117,7 @@
             </div>
         </div>
     </section>
-        <div class="container">
-            <div class="row my-4">
-                <div class="text-start col-12 col-md-12 col-lg-3 mb-2">
-                    <div class="d-inline-flex">
-                        <label class="me-2 mt-1">Asesor</label>
-                        <select class="form-select form-select-sm select2" id="asesor" name="asesor" aria-label=".form-select-sm example">
-                            <option selected hidden>Selecciona un Asesor</option>
-                                @foreach($asesores as $asesor)
-                                <option value="{{$asesor->id}}">{{$asesor->name}}</option>
-                                @endforeach
-                        </select>                    
-                    </div>
-                </div>
-                <div class="text-start col-12 col-md-12 col-lg-3 mb-2">
-                    <div class="d-inline-flex">
-                        <label class="me-2 mt-1">Fecha de Inicio</label>
-                        <input type="date" id="max" name="end-date" class="w-50 form-control form-control-sm end-date" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}">
-                    </div>
-                </div>
-                <div class="text-end col-12 col-md-12 col-lg-3 mb-2">
-                    <div class="d-inline-flex">
-                        <label class="me-2 mt-1">Fecha de Fin</label>
-                        <input type="date" id="max" name="end-date" class="w-50 form-control form-control-sm end-date" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}">
-                    </div>
-                </div>
-            </div>
-        </div>
+
     <section>
         <div class="container" id="reportPage">
             <admin></admin>
