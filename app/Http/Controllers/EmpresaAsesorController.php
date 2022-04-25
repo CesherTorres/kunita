@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use  PDF;
 use App\Exports\UsersEmpreExport;
+use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 class EmpresaAsesorController extends Controller
 {
@@ -55,22 +56,25 @@ class EmpresaAsesorController extends Controller
     }
     public function total_empresasPy()
     {
+        $now = Carbon::now();
         $companys= Empresa::all()->where('usuario_id', Auth::user()->id);
-        $pdf  =  PDF::loadView('empresa_asesor.pdf_empresa', compact('companys'));
+        $pdf  =  PDF::loadView('empresa_asesor.pdf_empresa', compact('companys', 'now'));
         set_time_limit(300);
-        return  $pdf->download('itsolutionstuff.pdf');
+        return  $pdf->setPaper('a4', 'landscape')->download('itsolutionstuff.pdf');
     }
     public function total_empresasAI()
     {
+        $now = Carbon::now();
         $companys= Empresa::all()->where('usuario_id', Auth::user()->id);
-        $pdf  =  PDF::loadView('empresa_asesor.pdf_empresa', compact('companys'));
+        $pdf  =  PDF::loadView('empresa_asesor.pdf_empresa', compact('companys', 'now'));
         set_time_limit(300);
-        return  $pdf->stream('itsolutionstuff.pdf');
+        return  $pdf->setPaper('a4', 'landscape')->stream('itsolutionstuff.pdf');
     }
     public function por_empresasPy($id)
     {
+        $now = Carbon::now();
         $company = User::find($id);
-        $pdf  =  PDF::loadView('empresa_asesor.pdfid', compact('company'));
+        $pdf  =  PDF::loadView('empresa_asesor.pdfid', compact('company', 'now'));
         set_time_limit(300);
         return  $pdf->stream('itsolutionstuff.pdf');
     }

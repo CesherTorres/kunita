@@ -95,7 +95,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <h6 class="text-uppercase fw-bold text-center">Nueva Subcategoría</h6>
-                        <span class="text-danger">* <small class="text-muted py-0 my-0 text-start"> - Campos obligatorios</small></span>
+                        <span class="text-danger">(*) <small class="text-muted py-0 my-0 text-start"> - Campos obligatorios</small></span>
                         <form class="form-group" method="POST" action="/subcategoriaCreate">      
                             @csrf
                             <div class="form-group py-1">

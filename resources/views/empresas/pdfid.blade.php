@@ -171,6 +171,17 @@
                 </tr>
             </tbody>
         </table>
+
+        <p class="mb-0 text-start small fw-bold text-primary text-uppercase mt-3 mb-2" style="font-size: 10px">ASESOR</p>
+        <table class="w-100">
+            <tbody class="" style="font-size: 12px">
+                <tr class="">
+                    <td style="width: 100%" class="">
+                        <span class="fw-normal">{{$company->propietario->empresas->user->name}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 {{-- 

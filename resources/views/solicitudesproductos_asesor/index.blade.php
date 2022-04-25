@@ -54,7 +54,7 @@
                 </div> --}}
             </div>
         </div>
-        <div class="card card-primary card-outline">
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                 <table id="tcompany" class="table table-hover table-sm" cellspacing="0" style="width:100%">
                     <thead class="bg-light">

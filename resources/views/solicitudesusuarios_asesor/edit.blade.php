@@ -46,7 +46,7 @@
                 {{-- <button class="btn btn-primary w-100 align-self-center">Descargar</button> --}}
             </div>
         </div>
-        <div class="card card-primary card-outline">
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                <div class="row">
                     <div class="col-md-3 col-sm-12 text-center">

@@ -42,45 +42,53 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h1 class="text-success fw-bold mb-0"><i class="bi bi-shop me-2"></i> Productos</h1>
-                <p class="lead text-muted">LISTADO DE TUS PRODUCTOS</p>
+                <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-shop me-2"></i> Productos</h1>
+                <p class="text-muted">Lista de productos registrados</p>
             </div>
             <div class="col-lg-3 d-flex">
-                {{-- <button class="btn btn-primary w-100 align-self-center">Nuevo Producto</button> --}}
+                <a href="{{ url('/productos_asesor/create') }}" class="btn btn-primary w-100 align-self-center text-white"><i class="bi bi-plus-circle-fill me-2"></i> Nuevo Producto</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-12 mb-2">
                 <div class="btn-group w-100 align-self-center btn-sm pt-0" data-toggle="buttons">
-                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off">
+                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
                     <label class="btn btn-outline-secondary" for="success-outlined"><a href="{{ url('/productos_asesor') }}"><i class="bi bi-grid-3x2"></i></label></a>
 
-                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off" checked>
-                    <label class="btn btn-outline-secondary" for="danger-outlined"><a href="{{ url('/listaP') }}"><i class="bi bi-image"></i></label></a>
+                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="danger-outlined"><a href="{{ url('/listaPA') }}"><i class="bi bi-image"></i></a></label>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-10  col-sm-12 mb-2">
+                <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
+                    <a href="{{ url('/excel/producto-exportA') }}" target="_blank"><button type="button" class="btn btn-light">EXCEL</button></a>
+                    <a href="{{ url('productospdfA') }}" target="_blank"><button type="button" class="btn btn-light">PDF</button></a>
+                    <a href="{{ url('/productospdfI') }}" target="_blank"><button type="button" class="btn btn-light">Imprimir</button></a>
                 </div>
             </div>
         </div>
-        <div class="card card-primary card-outline">
+
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 mb-2">
-                        <a href="{{ url('/productos_asesor/create') }}" class="btn btn-warning text-white"> Nuevo Producto</a>
-                    </div>
-                    <div class="col-xl-6 col-lg-5 col-md-6 col-sm-4 mb-2">
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" id="site-search" name="buscarpor" aria-label="Search" placeholder="Buscar">
-                            <button type="submit" class="btn btn-success text-white">BUSCAR</button>
+                    <div class="col-12 col-md-6 py-auto">
+                        <form class="">
+                            <div class="input-group input-group-sm">
+                                <input class="form-control border-0 rounded-0 border-bottom" type="search" id="site-search" name="buscarpor" aria-label="Search" placeholder="Buscar">
+                                <button class="btn rounded-0 border-bottom" type="submit" id="button-addon2">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
                         </form>
                     </div>
-                    <div class="col-xl-4 col-lg-5 col-md-4 col-sm-6" style='text-align:right'>
-                        <!-- <ul class="pagination">
-                            <li><a href="#">&laquo;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                        </ul> -->
-                        {{$producto->links()}}
+                    <div class="col-12 col-md-6">
+                        <div class="float-end">
+                            {{$producto->links()}}
+                        </div>
                     </div>
                 </div>
+                
 
                 {{-- table --}}
                 <br>

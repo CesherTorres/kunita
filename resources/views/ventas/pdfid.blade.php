@@ -24,30 +24,72 @@
       font-weight: 300;
       src: local('Cairo'), local('Cairo'), url(https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700&display=swap) format('truetype');
     }
+
+    @page {
+        margin: 0cm 0cm;
+    }
     body{
         font-family: Cairo, sans-serif !important;
-        
+        margin-top: 1.5cm;
+        margin-left: 1.5cm;
+        margin-right: 1.5cm;
+        margin-bottom: 1.5cm;
+    }
+
+    header {
+        font-family: Cairo, sans-serif !important;
+        position: fixed;
+        top: 0cm;
+        left: 0cm;
+        right: 0cm;
+        height: 1.5cm;
+        background-color: #0069AA;
+        color: white;
+    }
+
+    footer {
+        font-family: Cairo, sans-serif !important;
+        position: fixed; 
+        bottom: 0.2cm; 
+        left: 0cm; 
+        right: 0cm;
+        height: 2cm;
     }
 
     .text-primary{
         color: #0069AA !important;
     }
-
+    
     .bg-primary{
         background-color: #0069AA !important;
+    }
+
+    .bg-secondary{
+        background-color: #999999 !important;
     }
 
     .border-primary{
         border-color: #0069AA !important;
     }
-    #cabecera{
-        text-align: center;
-    }
 
 
 </style>
 <body>
-    <table class="w-100 text-center">
+
+    <header>
+        <div class="container">
+            <div class="clearfix">
+                <div class="float-start">
+                    <span class="text-uppercase fs-6 fw-bold align-middle"><img src="{{ public_path('images/LOGO.png') }}" class="p-3 shadow bg-white" style="height:31.3px" alt="..."> Kunaq - Generando valor</span>
+                </div>
+                
+               
+                
+            </div>
+        </div>
+    </header>
+
+    <table class="w-100 text-center mt-3">
         <tr>
             @php 
                 $empresa = \App\Models\Empresa::find($venta->empresa_id);
@@ -69,7 +111,11 @@
         </tr>
     </table>
     <br>
-    <p class="text-dark mb-0 text-start small text-uppercase" style="font-size: 10px">Datos del cliente:</p>
+    <div class="clearfix">
+        <span class="text-dark mb-0 text-start small text-uppercase" style="font-size: 10px">Datos del cliente:
+        </span>
+        <span class="float-end fw-bold text-uppercase" style="font-size: 11px">Fecha: <span>{{$venta->fecha_hora}}</span></span>
+    </div>
     <table class="w-100 border mb-3" style="font-size: 11px">
         <tr>
             <td style="width: 48%; width: 30%; padding: 10px 10px 10px 10px;">
@@ -164,7 +210,7 @@
                 @endphp
             @endforeach
             <tr>
-                <td class=" align-top border-start" style="height: 200px"></td>
+                <td class=" align-top border-start" style="height: 100px"></td>
                 <td class=" align-top border-start"></td>
                 <td class=" align-top border-start"></td>
                 <td class=" align-top border-start"></td>
@@ -208,6 +254,8 @@
                 </td>
             </tr>
         </tbody>
-    </table>    
+    </table> 
+    
+
 </body>
 </html>

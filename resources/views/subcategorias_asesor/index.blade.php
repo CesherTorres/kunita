@@ -54,7 +54,6 @@
                 </div> --}}
             </div>
         </div>
-        <p class="text-muted text-start">(*) - Campos obligatorios</p>
         @if($message = Session::get('errors'))
             <div class="alert alert-danger">
                 <ul>
@@ -65,14 +64,15 @@
                 </ul>
             </div>
         @endif
-        <div class="card">
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <h4 class="pb-2 pb-md-5">Nueva Sub-categoría</h4>
+                        <h6 class="text-uppercase fw-bold text-center">Nueva Subcategoría</h6>
+                        <span class="text-danger">* <small class="text-muted py-0 my-0 text-start"> - Campos obligatorios</small></span>
                         <form class="form-group" method="POST" action="/subcategorias_asesor">      
                             @csrf
-                            <div class="form-group">
+                            <div class="form-group py-1">
                                 <label for="categoria_id" class="form-label">Categoria(*)</label>
                                 <select class="form-select form-select js-example-basic-single" name="categoria_id" id="categoria_id" required>
                                     <option value="" disabled="disabled" selected="selected" hidden="hidden"></option>
@@ -81,14 +81,14 @@
                                         @endforeach
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group py-1">
                                 <label for="namesubcategoria">Nombre de Subcategoria(*)</label>
                                 <input type="text" name="namesubcategoria" class="form-control" required onkeypress="return sololetrasespace(event)" onpaste="return false" maxlength="40">
                             </div>
                             <br>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Guardar</button>   
-                                <button class="btn btn-danger" data-dismiss='modal'>Cancelar</button>
+                            <div class="text-center pt-4">
+                                <button type="submit" class="btn btn-primary w-100 align-self-center">Guardar</button>   
+                               
                             </div>
                         </form>
                         <br>
@@ -97,8 +97,8 @@
                         <div class="row">
                             <div class="col-lg-12 col-md-12  col-sm-12">
                                 <div class="btn-group float-md-end  border rounded shadow-sm" role="group" aria-label="Basic example">
-                                    <a href="{{ url('/excel/subcategoria-export/asesor') }}"><button type="button" class="btn btn-light">EXCEL</button></a>
-                                    <a href="{{ url('subcategoriapdf') }}"><button type="button" class="btn btn-light">PDF</button></a>
+                                    <a href="{{ url('/excel/subcategoria-export/asesor') }}" target="blank"><button type="button" class="btn btn-light">EXCEL</button></a>
+                                    <a href="{{ url('subcategoriapdf') }}" target="blank"><button type="button" class="btn btn-light">PDF</button></a>
                                     <a href="{{ url('subcategoriapdfI') }}" target="blank"><button type="button" class="btn btn-light">Imprimir</button></a>
                                 </div>
                             </div>

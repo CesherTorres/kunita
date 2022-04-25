@@ -36,14 +36,14 @@
     <div class="container-fluid pt-3">
         <div class="row">
             <div class="col-lg-9">
-                <h3 class="text-success fw-bold mb-0"><i class="bi bi-building me-2"></i> Empresa: {{$user->propietario->empresas->razonsocial}}</h3>
-                <p class="lead text-muted">Se muestran los detalles de la empresa</p>
+                <h1 class="text-success fw-bold mb-0 text-uppercase h2"><i class="bi bi-building me-2"></i> Empresas</h1>
+                <p class="text-muted">Se muestran los detalles de la empresa</p>
             </div>
             <div class="col-lg-3 d-flex">
                 <a href='/AsesorpdfporEmpresa/{{$user->id}}' class="btn btn-primary w-100 align-self-center" target="blank">Descargar</a>
             </div>
         </div>
-        <div class="card card-primary card-outline">
+        <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                <div class="row">
                     <img width="auto" height="400px" src="/public/logos/{{$user->propietario->empresas->logoempresa}}" />

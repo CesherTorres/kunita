@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use  PDF;
 use App\Exports\ProductoEmpreExport;
+use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 class ProductosAsesorController extends Controller
 {
@@ -44,14 +45,16 @@ class ProductosAsesorController extends Controller
     }
     public function por_productosA($id)
     {
+        $now = Carbon::now();
         $producto = Producto::find($id);
         
-        $pdf  =  PDF::loadView('productos_asesor.pdfid', compact('producto'));
+        $pdf  =  PDF::loadView('productos_asesor.pdfid', compact('producto', 'now'));
         set_time_limit(300);
         return  $pdf->download('itsolutionstuff.pdf');
     }
     public function total_productosA()
     {
+        $now = Carbon::now();
         $productos = DB::table('users as u')
         ->join('empresas as emp', 'emp.usuario_id', '=', 'u.id')
         ->join('productos as prod', 'prod.empresa_id', '=', 'emp.id')
@@ -61,12 +64,13 @@ class ProductosAsesorController extends Controller
         ->where('u.id', '=', Auth::user()->id)
         ->where('prod.estado', '=', 'Activo')
         ->get();
-        $pdf  =  PDF::loadView('productos_asesor.pdftotal', compact('productos'));
+        $pdf  =  PDF::loadView('productos_asesor.pdftotal', compact('productos', 'now'));
         set_time_limit(300);
-        return  $pdf->download('total_producto.pdf');
+        return  $pdf->setPaper('a4', 'landscape')->download('total_producto.pdf');
     }
     public function total_productosI()
     { 
+        $now = Carbon::now();
         $productos = DB::table('users as u')
         ->join('empresas as emp', 'emp.usuario_id', '=', 'u.id')
         ->join('productos as prod', 'prod.empresa_id', '=', 'emp.id')
@@ -77,9 +81,9 @@ class ProductosAsesorController extends Controller
         ->where('prod.estado', '=', 'Activo')
         ->get();
 
-        $pdf  =  PDF::loadView('productos_asesor.pdftotal', compact('productos'));
+        $pdf  =  PDF::loadView('productos_asesor.pdftotal', compact('productos', 'now'));
         set_time_limit(300);
-        return  $pdf->stream('total_producto.pdf');
+        return  $pdf->setPaper('a4', 'landscape')->stream('total_producto.pdf');
     }
 
     public function listitaA(Request $request){
