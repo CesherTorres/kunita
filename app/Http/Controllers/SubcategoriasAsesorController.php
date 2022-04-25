@@ -9,6 +9,7 @@ use  PDF;
 use App\Exports\SubcategoriaEmpreExport;
 use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Str;
 class SubcategoriasAsesorController extends Controller
 {
     public function __construct()
@@ -68,6 +69,7 @@ class SubcategoriasAsesorController extends Controller
         $subcategoria = new Subcategoria();
         $subcategoria->categoria_id = $request->input('categoria_id');
         $subcategoria->namesubcategoria = $request->input('namesubcategoria');
+        $subcategoria->slug = Str::slug($request->input('namesubcategoria'));
         $subcategoria->save();
 
         return redirect()->route('subcategorias_asesor.index')->with('addsubcategoria', 'ok');

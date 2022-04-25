@@ -8,7 +8,7 @@ use  PDF;
 use App\Exports\SubcategoriaExport;
 use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
-
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class SubcategoriaController extends Controller
@@ -80,6 +80,7 @@ class SubcategoriaController extends Controller
         $subcategoria = new Subcategoria();
         $subcategoria->categoria_id = $request->input('subcategoria');
         $subcategoria->namesubcategoria = $request->input('namesub');
+        $subcategoria->slug = Str::slug($request->input('namesub'));
         $subcategoria->save();
 
         return redirect()->route('index.subcategory');

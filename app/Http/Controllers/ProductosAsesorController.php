@@ -15,6 +15,7 @@ use  PDF;
 use App\Exports\ProductoEmpreExport;
 use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Str;
 class ProductosAsesorController extends Controller
 {
     public function __construct()
@@ -120,25 +121,7 @@ class ProductosAsesorController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'nameproducto' => ['required'],
-            'preciosugerido' => ['required'],
-            'stock' => ['required'],
-            'imguno' => ['required'],
-            'imgdos' => ['required'],
-            'imgtres' => ['required'],
-            'imgprincipal' => ['required'],
-            'empresa_id' => ['required'],
-            'subcategoria_id' => ['required']
-            // 'ncuentabanco' => ['unique:empresas,ncuentabanco'],
-            // 'ncuentabancocci' => ['unique:empresas,ncuentabancocci'],
-            // 'numerobilletera' => ['unique:empresas,numerobilletera']
-   
-        ],
-        [
-            'max' => 'El campo no puede tener mas de :max caracteres',
-            'unique' => 'El campo :attribute ya está registrado.'
-        ]);
+        
         if($request->hasFile('img-uno')){
             $file = $request->file('img-uno');
             $imguno = time().$file->getClientOriginalName();
@@ -162,6 +145,7 @@ class ProductosAsesorController extends Controller
 
         $producto = new Producto();
         $producto->nameproducto = $request->input('nameproducto');
+        $producto->slug = Str::slug($request->input('nameproducto'));
         $producto->marca = $request->input('marca');
         $producto->modelo = $request->input('modelo');
         $producto->genero = $request->input('genero');

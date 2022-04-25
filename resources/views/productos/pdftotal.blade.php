@@ -82,7 +82,7 @@
         </div>
     </header>
 
-    <div class="text-center mt-5">
+    <div class="text-center mt-3">
         
         <span class="text-uppercase pt-2 text-center text-primary small fw-bold d-block">Reporte Total de productos</span>
         <br>

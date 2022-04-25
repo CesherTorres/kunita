@@ -18,13 +18,13 @@ Gilberto Alexander De La Cruz Saravia
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.css">
     <link rel="icon" href="/images/logo-kunaq.png">
     <link rel="stylesheet" href="/sass/custom_store.css">
-    <link rel="stylesheet" href="/css/main_store.css">
+    <link rel="stylesheet" href="/../css/main_store.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     @stack('styles')
     @yield('css')
     <link rel="stylesheet" href="/css/flexslider.css">
 </head>
-<body>
+<body oncontextmenu= "return false">
   <div class="">
     @yield('content')
 </div>

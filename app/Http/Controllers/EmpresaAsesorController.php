@@ -16,6 +16,7 @@ use  PDF;
 use App\Exports\UsersEmpreExport;
 use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Str;
 class EmpresaAsesorController extends Controller
 {
     public function __construct()
@@ -138,6 +139,7 @@ class EmpresaAsesorController extends Controller
 
         $company = new Empresa();
         $company->razonsocial = $request->input('razonsocial');
+        $company->slug = Str::slug($request->input('razonsocial'));
         $company->ruc = $request->input('ruc');
         $company->marca = $request->input('marca');
         $company->descripcion = $request->input('descripcion');

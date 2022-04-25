@@ -10,7 +10,10 @@ class Subcategoria extends Model
 {
     protected $fillable=['categoria_id','namesubcategoria'];
     use HasFactory;
-
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     public function categoria()
     {
         return $this->belongsTo('App\Models\Categoria');

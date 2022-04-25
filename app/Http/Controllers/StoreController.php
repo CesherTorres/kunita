@@ -54,10 +54,10 @@ class StoreController extends Controller
         $subcategorias = Subcategoria::all();
         $productos = DB::table('empresas as emp')
             ->join('productos as pro', 'pro.empresa_id','=','emp.id')
-            ->select('emp.logoempresa','emp.marca','emp.enlacefacebook','emp.enlaceinstagram','emp.enlacewhatsapp','emp.direccion','pro.id','pro.slug')
-            
+            ->select('emp.logoempresa','emp.marca','emp.enlacefacebook','emp.enlaceinstagram','emp.enlacewhatsapp','emp.direccion','pro.id','emp.slug')
+            ->where('emp.estadoemp', 'Activo')
             ->get()->unique('marca');
-        $companys= Empresa::all()->where('estadoemp', '=', 'Activo');
+        $companys= Empresa::where('estadoemp', 'Activo');
         // $producto = Producto::all()->unique('empresa_id');
         return view('empresas.storeempresas', compact('companys', 'categorias', 'subcategorias','productos'));
     }
@@ -72,6 +72,7 @@ class StoreController extends Controller
             $data[]=[
                 'producto'=>$producto,
                 'producto_id'=>$producto->id,
+                'slug'=>$producto->slug,
                 'nameproducto'=>$producto->nameproducto,
                 'oferta'=>$producto->oferta,
                 'preciosugerido'=>$producto->preciosugerido,
@@ -109,6 +110,7 @@ class StoreController extends Controller
             $data[]=[
                 'producto'=>$producto,
                 'producto_id'=>$producto->id,
+                'slug'=>$producto->slug,
                 'nameproducto'=>$producto->nameproducto,
                 'oferta'=>$producto->oferta,
                 'preciosugerido'=>$producto->preciosugerido,
@@ -146,6 +148,7 @@ class StoreController extends Controller
             $data[]=[
                 'producto'=>$producto,
                 'producto_id'=>$producto->id,
+                'slug'=>$producto->slug,
                 'nameproducto'=>$producto->nameproducto,
                 'oferta'=>$producto->oferta,
                 'preciosugerido'=>$producto->preciosugerido,
@@ -187,6 +190,7 @@ class StoreController extends Controller
                 'producto_id'=>$producto->id,
                 'nameproducto'=>$producto->nameproducto,
                 'oferta'=>$producto->oferta,
+                'slug'=>$producto->slug,
                 'preciosugerido'=>$producto->preciosugerido,
                 'imgprincipal'=>$producto->imgprincipal,
                 'nuevaoferta' =>$producto->nuevaoferta,
@@ -226,6 +230,7 @@ class StoreController extends Controller
                 'producto_id'=>$producto->id,
                 'nameproducto'=>$producto->nameproducto,
                 'oferta'=>$producto->oferta,
+                'slug'=>$producto->slug,
                 'preciosugerido'=>$producto->preciosugerido,
                 'imgprincipal'=>$producto->imgprincipal,
                 'nuevaoferta' =>$producto->nuevaoferta,
@@ -265,6 +270,7 @@ class StoreController extends Controller
                 'producto_id'=>$producto->id,
                 'nameproducto'=>$producto->nameproducto,
                 'oferta'=>$producto->oferta,
+                'slug'=>$producto->slug,
                 'preciosugerido'=>$producto->preciosugerido,
                 'imgprincipal'=>$producto->imgprincipal,
                 'nuevaoferta' =>$producto->nuevaoferta,
@@ -302,6 +308,7 @@ class StoreController extends Controller
                 'producto_id'=>$producto->id,
                 'nameproducto'=>$producto->nameproducto,
                 'oferta'=>$producto->oferta,
+                'slug'=>$producto->slug,
                 'preciosugerido'=>$producto->preciosugerido,
                 'imgprincipal'=>$producto->imgprincipal,
                 'nuevaoferta' =>$producto->nuevaoferta,
@@ -453,9 +460,9 @@ class StoreController extends Controller
         return view('cliente.productos.index');
     }
 
-    public function showSub(Request $request, $id)
+    public function showSub(Request $request, Subcategoria $slug)
     {
-        $subcategorias = Subcategoria::find($id);
+        $subcategorias = Subcategoria::find($slug->id);
         $empresas = DB::table('empresas as emp')
         ->join('productos as prod', 'prod.empresa_id', '=', 'emp.id')
         ->select('emp.id','emp.razonsocial')
@@ -498,6 +505,71 @@ class StoreController extends Controller
         $productos = Producto::where('subcategoria_id','=',$subcategorias->id)->where('estado', 'Activo')->latest('id')->paginate(12);
 
         return view('store.producStore', compact('productos','subcategorias','empresas', 'categorias', 'marcas', 'modelos', 'precios', 'generos', 'ofertas'));
+    }
+    public function EmpresasProducto(Empresa $slug)
+    {
+        $categorias = Categoria::all();
+        $producti= Empresa::find($slug->id);
+        //$producti= Producto::find($producto->empresa_id);
+        // $productito = DB::table('categorias as cat')
+        // ->join('subcategorias as sub','cat.id','=','sub.categoria_id')
+        // ->join('productos as pro','pro.subcategoria_id','=','sub.id')
+        // ->join('empresas as emp','emp.id','=','pro.empresa_id')
+        // ->join('coberturas as cob','cob.empresa_id','=','emp.id')
+        // ->select('pro.imgprincipal','pro.descripcion','pro.oferta','pro.preciosugerido','pro.nameproducto','pro.marca','pro.id','pro.nuevaoferta','emp.razonsocial','pro.empresa_id','emp.correoempresa','emp.telefonoempresa','pro.imguno','pro.imgdos','pro.imgtres','pro.modelo','pro.genero','cat.namecategoria','sub.namesubcategoria','pro.ancho','pro.profundidad','pro.peso','pro.alto','cob.precioenvio','cob.diasestimados','cob.ubigeocobertura_id')->where('pro.estado','Activo')->where('pro.empresa_id',$producto->empresa_id)->orderByDesc('pro.id')->get();
+
+        $empresas = DB::table('empresas as emp')
+        ->join('productos as prod', 'prod.empresa_id', '=', 'emp.id')
+        ->join('subcategorias as sc', 'sc.id', '=', 'prod.subcategoria_id')
+        ->select('emp.id','emp.razonsocial')
+        ->where('emp.id','=',$producti->id)
+        ->where('prod.estado','Activo')
+        ->distinct()
+        ->get();
+
+        $categoriasss = DB::table('empresas as emp')
+        ->join('productos as prod', 'prod.empresa_id', '=', 'emp.id')
+        ->join('subcategorias as sc', 'sc.id', '=', 'prod.subcategoria_id')
+        ->select('sc.id','sc.namesubcategoria')
+        ->distinct()
+        ->where('emp.id','=',$producti->id)
+        ->where('prod.estado','Activo')
+        ->get();
+
+        $marcas = DB::table('empresas as emp')
+        ->join('productos as prod', 'prod.empresa_id', '=', 'emp.id')
+        ->select('prod.id','prod.marca')
+        ->distinct()
+        ->where('emp.id','=',$producti->id)
+        ->where('prod.estado','Activo')
+        ->get()->unique(['marca']);
+
+        $modelos = DB::table('productos as p')
+        ->join('empresas as emp','p.empresa_id','=','emp.id')
+        ->select('p.id','p.modelo')
+        ->distinct()
+        ->where('emp.id','=',$producti->id)
+        ->where('p.estado','Activo')
+        ->get()->unique(['modelo']);;
+
+        $precios = DB::table('productos as p')
+        ->join('empresas as emp','p.empresa_id','=','emp.id')
+        ->select('p.id','p.nuevaoferta')
+        ->distinct()
+        ->where('emp.id','=',$producti->id)
+        ->where('p.estado','Activo')
+        ->get()->unique(['nuevaoferta']);;
+        
+
+        $ofertas = DB::table('productos as p')
+        ->select('p.oferta','p.id')
+        ->distinct()
+        ->where('empresa_id','=',$producti->id)
+        ->where('p.estado','Activo')
+        ->get()->unique(['oferta']);;
+
+        $productos = Producto::all();
+        return view('store.productosAsociados', compact('categoriasss','categorias','empresas','marcas','modelos','precios','ofertas','producti','productos'));
     }
     public function EmpresasAll(Producto $slug)
     {
@@ -576,6 +648,7 @@ class StoreController extends Controller
             $data[]=[
                 'producto_id'=>$producto->id,
                 'nameproducto'=>$producto->nameproducto,
+                'slug'=>$producto->slug,
                 'oferta'=>$producto->oferta,
                 'preciosugerido'=>$producto->preciosugerido,
                 'imgprincipal'=>$producto->imgprincipal,
@@ -604,6 +677,7 @@ class StoreController extends Controller
                 'producto_id'=>$producto->id,
                 'nameproducto'=>$producto->nameproducto,
                 'oferta'=>$producto->oferta,
+                'slug'=>$producto->slug,
                 'preciosugerido'=>$producto->preciosugerido,
                 'imgprincipal'=>$producto->imgprincipal,
                 'nuevaoferta' =>$producto->nuevaoferta,
@@ -641,6 +715,7 @@ class StoreController extends Controller
                 'producto_id'=>$producto->id,
                 'nameproducto'=>$producto->nameproducto,
                 'oferta'=>$producto->oferta,
+                'slug'=>$producto->slug,
                 'preciosugerido'=>$producto->preciosugerido,
                 'imgprincipal'=>$producto->imgprincipal,
                 'nuevaoferta' =>$producto->nuevaoferta,
@@ -678,6 +753,7 @@ class StoreController extends Controller
                 'producto_id'=>$producto->id,
                 'nameproducto'=>$producto->nameproducto,
                 'oferta'=>$producto->oferta,
+                'slug'=>$producto->slug,
                 'preciosugerido'=>$producto->preciosugerido,
                 'imgprincipal'=>$producto->imgprincipal,
                 'nuevaoferta' =>$producto->nuevaoferta,
@@ -714,6 +790,7 @@ class StoreController extends Controller
                 'producto_id'=>$producto->id,
                 'nameproducto'=>$producto->nameproducto,
                 'oferta'=>$producto->oferta,
+                'slug'=>$producto->slug,
                 'preciosugerido'=>$producto->preciosugerido,
                 'imgprincipal'=>$producto->imgprincipal,
                 'nuevaoferta' =>$producto->nuevaoferta,
@@ -750,6 +827,7 @@ class StoreController extends Controller
                 'producto_id'=>$producto->id,
                 'nameproducto'=>$producto->nameproducto,
                 'oferta'=>$producto->oferta,
+                'slug'=>$producto->slug,
                 'preciosugerido'=>$producto->preciosugerido,
                 'imgprincipal'=>$producto->imgprincipal,
                 'nuevaoferta' =>$producto->nuevaoferta,
@@ -786,6 +864,7 @@ class StoreController extends Controller
                 'producto_id'=>$producto->id,
                 'nameproducto'=>$producto->nameproducto,
                 'oferta'=>$producto->oferta,
+                'slug'=>$producto->slug,
                 'preciosugerido'=>$producto->preciosugerido,
                 'imgprincipal'=>$producto->imgprincipal,
                 'nuevaoferta' =>$producto->nuevaoferta,

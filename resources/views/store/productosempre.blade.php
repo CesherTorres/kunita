@@ -25,7 +25,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <img src="/images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
+            <img src="/public//images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form action="{{ route('buscar')}}" class="d-flex mt-3 mt-lg-0 col-12 col-md-12 col-lg-6" autocomplete="off">
                     <div class="input-group">

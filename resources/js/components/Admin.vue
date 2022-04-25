@@ -142,7 +142,6 @@
         mounted(){
             this.getProducto();
             this.getEmpresa();
-            this.getAsesor();
         }
     }
 </script>

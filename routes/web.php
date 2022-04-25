@@ -132,10 +132,11 @@ Route::get('/logueando', 'App\Http\Controllers\AdministradorController@logueo');
 Route::resource('store', 'App\Http\Controllers\StoreController');
 Route::get('shop_product', 'App\Http\Controllers\StoreController@shop_pro');
 Route::get('empresas-asociadas', 'App\Http\Controllers\StoreController@storeempresas');
-Route::get('sub/{subcategorias}', 'App\Http\Controllers\StoreController@showSub')->name('sub.show');
+Route::get('sub/{slug}', 'App\Http\Controllers\StoreController@showSub')->name('sub.show');
 Route::get('/sub/empresa/{id}', 'App\Http\Controllers\StoreController@showSubempresa');
 Route::get('sub/showSubempresadiv/{id}','App\Http\Controllers\StoreController@showSubempresadiv')->name('sub.showSubempresadiv');
-Route::get('/Empresas_Kunaq/{slug}', 'App\Http\Controllers\StoreController@EmpresasAll')->name('empre.producto');
+Route::get('/Empresas_producto/{slug}', 'App\Http\Controllers\StoreController@EmpresasAll')->name('empre.producto');
+Route::get('/Empresas_Kunaq/{slug}', 'App\Http\Controllers\StoreController@EmpresasProducto')->name('empre.Asociadas');
 
 //añadido
 Route::post('/empre/jempre', 'App\Http\Controllers\StoreController@jalandoproduct');

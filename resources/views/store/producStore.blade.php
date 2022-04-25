@@ -11,7 +11,7 @@
 <header class="pb-4">
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
         <div class="container">
-            <img src="/images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
+            <img src="/public//images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -472,7 +472,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='<div class="btn-group mt-3" role="group" aria-label="Basic example">';
     //todo+='<button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#infoproducto'+arreglo[x].producto_id+'"type="button">Información</button>';
     //todo+='<button class="btn btn-primary" type="submit"><i class="bi bi-cart-plus-fill"></i></button>';
-    todo+='<a class="btn btn-primary" href="{{url('/empreProd')}}/'+arreglo[x].producto_id+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
+    todo+='<a class="btn btn-primary" href="{{url('/Empresas_Kunaq')}}/'+arreglo[x].slug+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
     todo+='</div>';
     //todo+='</form>';
     todo+='</div>';    
@@ -554,7 +554,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='<div class="btn-group mt-3" role="group" aria-label="Basic example">';
     //todo+='<button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#infoproducto'+arreglo[x].producto_id+'"type="button">Información</button>';
     //todo+='<button class="btn btn-primary" type="submit"><i class="bi bi-cart-plus-fill"></i></button>';
-    todo+='<a class="btn btn-primary" href="{{url('/empreProd')}}/'+arreglo[x].producto_id+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
+    todo+='<a class="btn btn-primary" href="{{url('/Empresas_Kunaq')}}/'+arreglo[x].slug+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
     todo+='</div>';
     //todo+='</form>';
     todo+='</div>';    
@@ -638,7 +638,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='<div class="btn-group mt-3" role="group" aria-label="Basic example">';
     //todo+='<button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#infoproducto'+arreglo[x].producto_id+'"type="button">Información</button>';
     //todo+='<button class="btn btn-primary" type="submit"><i class="bi bi-cart-plus-fill"></i></button>';
-    todo+='<a class="btn btn-primary" href="{{url('/empreProd')}}/'+arreglo[x].producto_id+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
+    todo+='<a class="btn btn-primary" href="{{url('/Empresas_Kunaq')}}/'+arreglo[x].slug+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
     todo+='</div>';
     //todo+='</form>';
     todo+='</div>';    
@@ -722,7 +722,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='<div class="btn-group mt-3" role="group" aria-label="Basic example">';
     //todo+='<button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#infoproducto'+arreglo[x].producto_id+'"type="button">Información</button>';
     //todo+='<button class="btn btn-primary" type="submit"><i class="bi bi-cart-plus-fill"></i></button>';
-    todo+='<a class="btn btn-primary" href="{{url('/empreProd')}}/'+arreglo[x].producto_id+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
+    todo+='<a class="btn btn-primary" href="{{url('/Empresas_Kunaq')}}/'+arreglo[x].slug+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
     todo+='</div>';
     //todo+='</form>';
     todo+='</div>';    
@@ -806,7 +806,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='<div class="btn-group mt-3" role="group" aria-label="Basic example">';
     //todo+='<button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#infoproducto'+arreglo[x].producto_id+'"type="button">Información</button>';
     //todo+='<button class="btn btn-primary" type="submit"><i class="bi bi-cart-plus-fill"></i></button>';
-    todo+='<a class="btn btn-primary" href="{{url('/empreProd')}}/'+arreglo[x].producto_id+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
+    todo+='<a class="btn btn-primary" href="{{url('/Empresas_Kunaq')}}/'+arreglo[x].slug+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
     todo+='</div>';
     //todo+='</form>';
     todo+='</div>';    
@@ -890,7 +890,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='<div class="btn-group mt-3" role="group" aria-label="Basic example">';
     //todo+='<button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#infoproducto'+arreglo[x].producto_id+'"type="button">Información</button>';
     //todo+='<button class="btn btn-primary" type="submit"><i class="bi bi-cart-plus-fill"></i></button>';
-    todo+='<a class="btn btn-primary" href="{{url('/empreProd')}}/'+arreglo[x].producto_id+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
+    todo+='<a class="btn btn-primary" href="{{url('/Empresas_Kunaq')}}/'+arreglo[x].slug+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
     todo+='</div>';
     //todo+='</form>';
     todo+='</div>';    
@@ -975,7 +975,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='<div class="btn-group mt-3" role="group" aria-label="Basic example">';
     //todo+='<button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#infoproducto'+arreglo[x].producto_id+'"type="button">Información</button>';
     //todo+='<button class="btn btn-primary" type="submit"><i class="bi bi-cart-plus-fill"></i></button>';
-    todo+='<a class="btn btn-primary" href="{{url('/empreProd')}}/'+arreglo[x].producto_id+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
+    todo+='<a class="btn btn-primary" href="{{url('/Empresas_Kunaq')}}/'+arreglo[x].slug+'">Ir a la tienda <i class="bi bi-shop"></i></a>';
     todo+='</div>';
     //todo+='</form>';
     todo+='</div>';    

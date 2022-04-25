@@ -16,6 +16,7 @@ class Producto extends Model
             'modelo',
             'genero',
             'alto',
+            'slug',
             'ancho',
             'profundidad',
             'peso',

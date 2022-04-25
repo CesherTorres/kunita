@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kunaq-Mype | @yield('title')</title>
     <link rel="icon" href="/images/logo-kunaq.png">
-    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/footer.css">
     <link rel="stylesheet" href="/sass/custom.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     @yield('css')
 </head>
-<body class="">
+<body class="" oncontextmenu= "return false">
     <div class="d-flex">          
         @yield('aside')
         <div class="w-100">
@@ -56,22 +56,24 @@
             <!-- footer -->
             <footer class="">
         <div class="container__footer" align="center">
-                <div class="col-12 col-md-4">
-                    <div class="box__fotter">
-                        <h4 class="text-primary fw-bold lead"><i class="fas fa-phone-volume fa-1x me-2"></i>Contacto:</h4>
-                        <p class="fw-bolder lead">987798345/987723645</p>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <div class="box__fotter">
+                            <h4 class="text-primary fw-bold lead"><i class="fas fa-phone-volume fa-1x me-2"></i>Contacto:</h4>
+                            <p class="fw-bolder lead">968370868/945949674</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="box__fotter">
-                        <h4 class="text-primary fw-bold lead"><i class="fas fa-envelope-open-text me-2"></i>Email:</h4>
-                        <p class="fw-bolder lead">Miempresa@gmail.com</p>
-                    </div> 
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="box__fotter">
-                        <h4 class="text-primary fw-bold lead"><i class="fas fa-map-marker-alt me-2"></i>Direccion:</h4>
-                        <p class="fw-bolder lead">Lima/san isidro 324</p>
+                    <div class="col-12 col-md-4">
+                        <div class="box__fotter">
+                            <h4 class="text-primary fw-bold lead"><i class="fas fa-envelope-open-text me-2"></i>Email:</h4>
+                            <p class="fw-bolder lead">marcos@cuanticagroup.com</p>
+                        </div> 
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="box__fotter">
+                            <h4 class="text-primary fw-bold lead"><i class="fas fa-map-marker-alt me-2"></i>Direccion:</h4>
+                            <p class="fw-bolder lead">Jr. Irribarren 1148 4to Piso N 4 - Surquillo - Lima</p>
+                        </div>
                     </div>
                 </div>
                 

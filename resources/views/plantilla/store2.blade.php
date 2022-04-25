@@ -35,7 +35,7 @@ Gilberto Alexander De La Cruz Saravia
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     @yield('css')
 </head>
-<body>
+<body oncontextmenu= "return false">
   <div class="">
     @yield('content')
 </div>

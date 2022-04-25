@@ -14,6 +14,7 @@ class Empresa extends Model
         'razonsocial',
         'ruc',
         'marca',
+        'slug',
         'descripcion',
         'telefonoempresa',
         'correoempresa',
@@ -34,6 +35,10 @@ class Empresa extends Model
         'ubigeo_id'
         ];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     public function giro(){
         return $this->belongsTo(Giro::class);
     }

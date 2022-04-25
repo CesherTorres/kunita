@@ -18,7 +18,7 @@ use  PDF;
 use App\Exports\UsersExport;
 use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
-
+use Illuminate\Support\Str;
 class EmpresasController extends Controller
 {
     public function __construct()
@@ -148,6 +148,7 @@ class EmpresasController extends Controller
 
         $company = new Empresa();
         $company->razonsocial = $request->input('razonsocial');
+        $company->slug = Str::slug($request->input('razonsocial'));
         $company->ruc = $request->input('ruc');
         $company->marca = $request->input('marca');
         $company->descripcion = $request->input('descripcion');

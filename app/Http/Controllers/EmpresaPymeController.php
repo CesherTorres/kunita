@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\Propietario;
 use App\Models\Empresa;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class EmpresaPymeController extends Controller
 {
@@ -91,6 +92,7 @@ class EmpresaPymeController extends Controller
 
         $company = new Empresa();
         $company->razonsocial = $request->input('razonsocial');
+        $company->slug = Str::slug($request->input('razonsocial'));
         $company->ruc = $request->input('ruc');
         $company->marca = $request->input('marca');
         $company->descripcion = $request->input('descripcion');

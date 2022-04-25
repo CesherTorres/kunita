@@ -114,7 +114,7 @@
                         <h4 class="text-secondary fw-light">{{$producto->marca}}</h4>
 						
 
-						<a class="btn btn-primary" href="{{route('empre.producto', $producto->slug)}}">Ir a la Tienda</a>
+						<a class="btn btn-primary" href="{{route('empre.Asociadas', $producto->slug)}}">Ir a la Tienda</a>
 						
 
 						<p class="text-dark my-lg-4">{{$producto->direccion}}</p>

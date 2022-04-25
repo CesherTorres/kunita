@@ -9,7 +9,7 @@
 	<header class="">
         <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
             <div class="container">
-                <img src="images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
+                <img src="/public/images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -76,7 +76,7 @@
                                     <ul class="navbar-nav ps-3 mx-3 my-0">
                                         <li>
                                         @foreach($categoria->subcategoria as $subcategorias)
-                                            <a href="{{route('sub.show', $subcategorias)}}" class="nav-link my-2" style="cursor-pointer; hover:text-orange capitalize">
+                                            <a href="{{route('sub.show', $subcategorias->slug)}}" class="nav-link my-2" style="cursor-pointer; hover:text-orange capitalize">
                                                 <span class="text-dark fw-lighter">{{$subcategorias->namesubcategoria}}</span>
                                             </a>
                                         @endforeach
@@ -172,7 +172,7 @@
 									}
 									@endphp
 									<div class="btn-group mt-3">
-										<a class="btn btn-primary" href="{{url("/Empresas_Kunaq/$producto->slug")}}">Ir a la tienda <i class="bi bi-shop"></i></a>
+										<a class="btn btn-primary" href="{{url("/Empresas_producto/$producto->slug")}}">Ir a la tienda <i class="bi bi-shop"></i></a>
 									</div>
 									
 									
@@ -242,7 +242,7 @@
 											}
 											@endphp
 											<div class="btn-group mt-3">
-												<a class="btn btn-primary" href="{{route('empre.producto', $producto)}}">Ir a la tienda <i class="bi bi-shop"></i></a>
+												<a class="btn btn-primary" href="{{route('empre.producto', $producto->slug)}}">Ir a la tienda <i class="bi bi-shop"></i></a>
 											</div>
 										</div>
 									</div>

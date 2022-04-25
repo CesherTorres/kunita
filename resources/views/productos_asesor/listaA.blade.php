@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <!--  extension responsive  -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/cardP.css">
-    <link rel="stylesheet" type="text/css" href="/css/pagination.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/cardP.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/pagination.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" type="text/css"  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 @endsection

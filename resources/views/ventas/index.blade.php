@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <!--  extension responsive  -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="/css/icons.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/icons.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 
 @endsection
@@ -17,7 +17,7 @@
     <div class="offcanvas-body">
         <div class="logo">
             <div class="brand-link d-flex border-bottom justify-content-center align-items-center brand-logo-primary navbar-primary">
-                <img src="images/kunaq-mype.png" alt="Logo" class="me-2 my-1" style="width: 14rem;">
+                <img src="/public/images/kunaq-mype.png" alt="Logo" class="me-2 my-1" style="width: 14rem;">
             </div>
         </div>
         <div class="user border-bottom">
@@ -120,11 +120,10 @@
 </section>
 @endsection
 @section('foterRedes')
-                <li><a href="{{$redes->propietario->empresas->enlacefacebook}}" target="_blank"><i class="fab fa-facebook-f "></i></a></li>
-                <li><a href="{{$redes->propietario->empresas->enlacewhatsapp}}" target="_blank"><i class="fab fa-whatsapp "></i></a></li>
+                <li><a href="https://www.facebook.com/CuanticaGroup" target="_blank"><i class="fab fa-facebook-f "></i></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=968370868" target="_blank"><i class="fab fa-whatsapp "></i></a></li>
                 {{--<li><a href="{{Redes->propietario->empresas->enlacefacebook}}"><i class="fab fa-twitter "></i></a></li>--}}
-                <li><a href="{{$redes->propietario->empresas->enlaceinstagram}}" target="_blank"><i class="fab fa-instagram "></i></a></li>
-                {{-- <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li> --}}
+                <li><a href="https://www.instagram.com/cuanticagroup/" target="_blank"><i class="fab fa-instagram "></i></a></li>
 @endsection
 @section('js')
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>

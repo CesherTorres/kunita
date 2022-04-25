@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Exports\ProductosExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Str;
 class ProductosController extends Controller
 {
     public function __construct()
@@ -136,6 +137,7 @@ class ProductosController extends Controller
         $estimatedate = \Carbon\Carbon::parse($request->input('fecha_vencimiento'))->format('Y-m-d');
         $producto = new Producto();
         $producto->nameproducto = $request->input('nameproducto');
+        $producto->slug = Str::slug($request->input('nameproducto'));
         $producto->marca = $request->input('marca');
         $producto->modelo = $request->input('modelo');
         $producto->genero = $request->input('genero');

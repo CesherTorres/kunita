@@ -13,7 +13,7 @@
      <header class="mb-5">
         <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
             <div class="container">
-                <img src="images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
+                <img src="/images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

@@ -14,6 +14,7 @@ use  PDF;
 use App\Exports\MypeExport;
 use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Str;
 class ProductosPymeController extends Controller
 {
     public function __construct()
@@ -152,6 +153,7 @@ class ProductosPymeController extends Controller
 
         $producto = new Producto();
         $producto->nameproducto = $request->input('nameproducto');
+        $producto->slug = Str::slug($request->input('nameproducto'));
         $producto->marca = $request->input('marca');
         $producto->modelo = $request->input('modelo');
         $producto->genero = $request->input('genero');

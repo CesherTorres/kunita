@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     @yield('css')
 </head>
-<body class="">
+<body class="" oncontextmenu= "return false">
     <div class="d-flex">          
         @yield('aside')
         <div class="w-100">
