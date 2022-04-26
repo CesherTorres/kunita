@@ -260,16 +260,16 @@
 										</div>
 										<div class="carousel-inner" align="center">
 										  <div class="carousel-item active">
-											<img src="/public/images_product/{{$producto->imgprincipal}}"  height="500px" width="400px" alt="...">
+											<img src="/images_product/{{$producto->imgprincipal}}"  height="500px" width="400px" alt="...">
 										  </div>
 										  <div class="carousel-item">
-											<img src="/public/images_product/{{$producto->imguno}}" height="500px" width="400px" alt="...">
+											<img src="/images_product/{{$producto->imguno}}" height="500px" width="400px" alt="...">
 										  </div>
 										  <div class="carousel-item">
-											<img src="/public/images_product/{{$producto->imgdos}}" height="500px" width="400px" alt="...">
+											<img src="/images_product/{{$producto->imgdos}}" height="500px" width="400px" alt="...">
 										  </div>
 										  <div class="carousel-item">
-											<img src="/public/images_product/{{$producto->imgtres}}" height="500px" width="400px" alt="...">
+											<img src="/images_product/{{$producto->imgtres}}" height="500px" width="400px" alt="...">
 										  </div>
 										</div>
 										<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators{{$producto->id}}" data-bs-slide="prev">
@@ -461,7 +461,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     
@@ -543,7 +543,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     
@@ -627,7 +627,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     
@@ -710,7 +710,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     
@@ -794,7 +794,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     
@@ -878,7 +878,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     
@@ -963,7 +963,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     

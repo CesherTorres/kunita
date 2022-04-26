@@ -38,6 +38,13 @@ main{
     border-bottom: none;
 }
 
+.borde-bottom-primary{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom-color: #2C3A4C;
+}
+
 input:focus, select:focus, select, input.form-control:focus, select.form-select:focus{
 
     outline:none !important;

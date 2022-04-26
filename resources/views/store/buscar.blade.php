@@ -8,7 +8,7 @@
 <header class="pb-4">
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
         <div class="container">
-            <img src="/public//images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
+            <img src="/images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -137,7 +137,7 @@
                                                     
                                                 </div>
                                                 <div class="card-body text-center">
-                                                    <img src="/public/images_product/{{$producto->imgprincipal}}" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">		
+                                                    <img src="/images_product/{{$producto->imgprincipal}}" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">		
                                                     <h6 class="text-center text-muted fw-light pt-1">{{$producto->marca}}</h6>
                                                     
                                                     @php

@@ -53,8 +53,9 @@ class StoreController extends Controller
         $categorias = Categoria::all();
         $subcategorias = Subcategoria::all();
         $productos = DB::table('empresas as emp')
+        ->join('giros as g', 'g.id','=','emp.giro_id')
             ->join('productos as pro', 'pro.empresa_id','=','emp.id')
-            ->select('emp.logoempresa','emp.marca','emp.enlacefacebook','emp.enlaceinstagram','emp.enlacewhatsapp','emp.direccion','pro.id','emp.slug')
+            ->select('emp.logoempresa','emp.marca','emp.enlacefacebook', 'g.namegiros', 'emp.enlaceinstagram','emp.enlacewhatsapp','emp.direccion','pro.id','emp.slug')
             ->where('emp.estadoemp', 'Activo')
             ->get()->unique('marca');
         $companys= Empresa::where('estadoemp', 'Activo');

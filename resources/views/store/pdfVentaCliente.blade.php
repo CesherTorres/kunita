@@ -48,7 +48,7 @@
                 $empresa = \App\Models\Empresa::find($venta->empresa_id);
             @endphp
             <td style="width: 25%">
-                <img src="{{ asset('/public/logos/' . $empresa->logoempresa) }}" class="card-img" style="height:85px;" alt="...">
+                <img src="{{ asset('/logos/' . $empresa->logoempresa) }}" class="card-img" style="height:85px;" alt="...">
             </td>
             <td style="width: 40%">
                 <span class="text-uppercase text-center fw-bold d-block" style="font-size: 25px;">{{$venta->empresa->razonsocial}}</span>

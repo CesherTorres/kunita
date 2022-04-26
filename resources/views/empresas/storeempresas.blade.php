@@ -93,8 +93,8 @@
 	</div>
 	<!-- offcanvas end -->
 	{{--  --}}
-<img src="/images/banner-company.png" class="img-fluid banner-company py-5" alt="...">
-<main class="bg-light main-company container py-5">
+<img src="/images/portada2.png" class="img-fluid banner-company" style="margin-top: 40px" alt="...">
+<main class="container py-5">
     <div class=" text-center text-secondary">
     <i class="bi bi-star h3"></i>
     <i class="bi bi-star h2"></i>
@@ -102,29 +102,28 @@
     <i class="bi bi-star h2"></i>
     <i class="bi bi-star h3"></i>
     </div>
-    <h2 class="text-center py-2  display-6">Trabajamos con las mejores empresas de la region</h2>        
+    <h2 class="text-center py-2 text-uppercase fw-bold">Empresas que confían en nosotros</h2>        
     <!--<p class="lead text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quas consequuntur repudiandae voluptatum porro! Ex non voluptatum alias voluptates, exercitationem cupiditate beatae praesentium minus nostrum, provident culpa, corrupti minima commodi.</p>-->
 
-    <div class="row d-flex justify-content-center align-items-center">
+    <div class="row">
         @foreach($productos as $producto)
             <div class="col-12 col-md-6 col-lg-3 col-xl-3 text-center mt-3 my-lg-5">
-                <div class="card justify-content-center align-items-center border-0 bg-white rounded shadow">
-                    <img src="/public/logos/{{$producto->logoempresa}}" class="rounded-top" style="width: 100%; height: 180px;" alt="">
+                <div class="card h-100 bg-white rounded shadow-sm border-4 borde-bottom-primary">
+                    <img src="/logos/{{$producto->logoempresa}}" class="rounded-top" style="width: auto; height: 180px;" alt="">
                     <div class="card-body">
-                        <h4 class="text-secondary fw-light">{{$producto->marca}}</h4>
-						
-
-						<a class="btn btn-primary" href="{{route('empre.Asociadas', $producto->slug)}}">Ir a la Tienda</a>
-						
-
-						<p class="text-dark my-lg-4">{{$producto->direccion}}</p>
-                        <div class="text-center">
-                            <a class="btn btn-primary rounded-circle" target="_bank" href="{{$producto->enlacefacebook}}" role="button"><i class="bi bi-facebook"></i></a>
-                            <a class="btn btn-primary rounded-circle" target="_bank" href="{{$producto->enlaceinstagram}}" role="button"><i class="bi bi-instagram"></i></a>
-                            <a class="btn btn-primary rounded-circle" target="_bank" href="{{$producto->enlacewhatsapp}}" role="button"><i class="bi bi-whatsapp"></i></a>
-                        </div>
+                        <p class="text-dark text-uppercase fw-bold mb-0 fs-5">{{$producto->marca}}</p>
+						<p class="text-secondary small text-uppercase fw-bold mb-0">{{$producto->namegiros}}</p>
+						<p class="text-muted">{{$producto->direccion}}</p>
+						<a class="btn btn-primary btn-sm" href="{{route('empre.Asociadas', $producto->slug)}}">Ir a la Tienda</a>
                         
                     </div>
+					<div class="card-footer py-0 bg-transparent border-0">
+						<div class="text-center">
+							<a class="btn text-primary" target="_bank" href="{{$producto->enlacefacebook}}" role="button"><i class="bi bi-facebook"></i></a>
+							<a class="btn text-primary" target="_bank" href="{{$producto->enlaceinstagram}}" role="button"><i class="bi bi-instagram"></i></a>
+							<a class="btn text-primary" target="_bank" href="{{$producto->enlacewhatsapp}}" role="button"><i class="bi bi-whatsapp"></i></a>
+						</div>
+					</div>
                 </div>
             </div>   
         @endforeach

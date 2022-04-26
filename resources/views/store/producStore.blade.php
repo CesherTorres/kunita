@@ -11,7 +11,7 @@
 <header class="pb-4">
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
         <div class="container">
-            <img src="/public//images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
+            <img src="//images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -242,16 +242,16 @@
 										</div>
 										<div class="carousel-inner" align="center">
 										  <div class="carousel-item active">
-											<img src="/public/images_product/{{$producto->imgprincipal}}"  height="500px" width="400px" alt="...">
+											<img src="/images_product/{{$producto->imgprincipal}}"  height="500px" width="400px" alt="...">
 										  </div>
 										  <div class="carousel-item">
-											<img src="/public/images_product/{{$producto->imguno}}" height="500px" width="400px" alt="...">
+											<img src="/images_product/{{$producto->imguno}}" height="500px" width="400px" alt="...">
 										  </div>
 										  <div class="carousel-item">
-											<img src="/public/images_product/{{$producto->imgdos}}" height="500px" width="400px" alt="...">
+											<img src="/images_product/{{$producto->imgdos}}" height="500px" width="400px" alt="...">
 										  </div>
 										  <div class="carousel-item">
-											<img src="/public/images_product/{{$producto->imgtres}}" height="500px" width="400px" alt="...">
+											<img src="/images_product/{{$producto->imgtres}}" height="500px" width="400px" alt="...">
 										  </div>
 										</div>
 										<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators{{$producto->id}}" data-bs-slide="prev">
@@ -443,7 +443,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     
@@ -525,7 +525,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     
@@ -609,7 +609,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     
@@ -693,7 +693,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     
@@ -777,7 +777,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     
@@ -861,7 +861,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     
@@ -946,7 +946,7 @@ for(var x=0;x<arreglo.length;x++){
     todo+='</div>';
     todo+='</div>';
     todo+='<div class="card-body text-center">';
-        todo+='<img src="/public/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
+        todo+='<img src="/images_product/'+arreglo[x].imgprincipal+'" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">';
     todo+='<h6 class="text-center text-muted fw-light pt-1">'+arreglo[x].marca+'</h6>';
 
     

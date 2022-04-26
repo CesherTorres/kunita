@@ -9,8 +9,8 @@
 	<header class="">
         <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
             <div class="container">
-                <img src="/public/images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="/images/LOGO.png" alt="Logo" class="me-5 my-1" style="width: 10rem;">
+                <button class="navbar-toggler text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             	<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -93,33 +93,26 @@
 	</div>
 	<!-- offcanvas end -->
     <!-- carousel ofertas -->
-    <div id="carouselofertas" class="carousel slide carousel-fade pt-5 pb-2" data-bs-ride="carousel">		
-		
-        {{-- <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselofertas" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselofertas" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselofertas" data-bs-slide-to="2" aria-label="Slide 3"></button>
-			<button type="button" data-bs-target="#carouselofertas" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        </div>  --}}
-        <div class="carousel-inner pt-3">
-			@foreach($publicidad as $pub)
-				<div class="carousel-item @if($loop->index==0) active @endif ">
-			        <a href="{{$pub->enlace}}" target="_blank">
-					    <img src="/public/publicidad_img/{{$pub->imagen}}" class="d-block w-100" alt="...">
-			    	</a>
-				</div>
-			@endforeach
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselofertas" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselofertas" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    	<!-- fin carousel ofertas -->
+		<div id="carouselofertas" class="carousel slide  carousel-fade pt-5 pb-2" data-bs-ride="carousel">		
+			<div class="carousel-inner pt-3">
+				@foreach($publicidad as $pub)
+					<div class="carousel-item @if($loop->index==0) active @endif ">
+						<a href="{{$pub->enlace}}" target="_blank">
+							<img src="/publicidad_img/{{$pub->imagen}}" class="d-block w-100 slider" alt="...">
+						</a>
+					</div>
+				@endforeach
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselofertas" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselofertas" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+    <!-- fin carousel ofertas -->
 
     <!-- slider nuevos productos -->
 	<div class="bg-white">
@@ -158,7 +151,7 @@
 									
 								</div>
 								<div class="card-body text-center">
-									<img src="/public/images_product/{{$producto->imgprincipal}}" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">		
+									<img src="/images_product/{{$producto->imgprincipal}}" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">		
 									<h6 class="text-center text-muted fw-light pt-1">{{$producto->marca}}</h6>
 									
 									@php
@@ -226,7 +219,7 @@
 											
 										</div>											
 										<div class="card-body text-center">	
-											<img src="/public/images_product/{{$producto->imgprincipal}}" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">	
+											<img src="/images_product/{{$producto->imgprincipal}}" class="rounded img-fluid" style="width:180px; height: 180px;" alt="">	
 											
 											
 											<h6 class="text-center text-muted fw-light pt-1">{{$producto->marca}}</h6>

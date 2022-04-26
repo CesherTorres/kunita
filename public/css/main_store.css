@@ -25,6 +25,10 @@ input:focus, select:focus, select, select.form-select:focus, input.form-control:
     -webkit-box-shadow: none;
 
 }
+.slider{
+    height: 400px;
+}
+
 
 
 
@@ -112,4 +116,19 @@ a {
     background: #e9ecef;
 }
 
+.borde-bottom-primary{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom-color: #0069AA;
+}
+
+
+
+@media screen and (max-width: 800px){
+
+    .slider{
+        height: 170px;
+    }
+}
 

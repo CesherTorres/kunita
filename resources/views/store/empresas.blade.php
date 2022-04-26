@@ -228,7 +228,7 @@
                                         <div class="card">
                                             <div class="row" align="center">
                                                 <div class="col col-md-12 my-4">
-                                                    <img src="/images_product/{{$producto->imgprincipal}}" class="card-img-top" style="width: 140px; height: 140px;" alt="">
+                                                    <img src="/images/images_product/{{$producto->imgprincipal}}" class="card-img-top" style="width: 140px; height: 140px;" alt="">
                                                 </div>
                                             </div>
                                             <form action="{{ route('cart.store') }}" method="POST">
