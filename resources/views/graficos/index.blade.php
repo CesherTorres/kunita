@@ -117,12 +117,7 @@
     </section>
 </div>
 @endsection
-@section('foterRedes')
-                <li><a href="https://www.facebook.com/CuanticaGroup" target="_blank"><i class="fab fa-facebook-f "></i></a></li>
-                <li><a href="https://api.whatsapp.com/send?phone=968370868" target="_blank"><i class="fab fa-whatsapp "></i></a></li>
-                {{--<li><a href="{{Redes->propietario->empresas->enlacefacebook}}"><i class="fab fa-twitter "></i></a></li>--}}
-                <li><a href="https://www.instagram.com/cuanticagroup/" target="_blank"><i class="fab fa-instagram "></i></a></li>
-@endsection
+
 @section('js')
 <script src="/js/app.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>   

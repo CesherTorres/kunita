@@ -57,40 +57,41 @@
             @yield('content')
             <!-- footer -->
             <footer class="">
-        <div class="container__footer" align="center">
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <div class="box__fotter">
-                            <h4 class="text-primary fw-bold lead"><i class="fas fa-phone-volume fa-1x me-2"></i>Contacto:</h4>
-                            <p class="fw-bolder lead">968370868/945949674</p>
-                        </div>
+                <div class="row mx-2 mx-md-3 mx-lg-5 mt-5 text-center text-lg-start">
+                    <div class="col-12 col-md-4 mt-3">
+                        <h4 class="text-primary fw-bold lead text-uppercase">Contacto</h4>
+                        <p class="fw-normal "><i class="fas fa-phone-volume fa-1x me-2"></i>922 009 301</p>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="box__fotter">
-                            <h4 class="text-primary fw-bold lead"><i class="fas fa-envelope-open-text me-2"></i>Email:</h4>
-                            <p class="fw-bolder lead">marcos@cuanticagroup.com</p>
-                        </div> 
+                    <div class="col-12 col-md-4 mt-3">
+                        <h4 class="text-primary fw-bold lead text-uppercase">Email</h4>
+                        <p class="fw-normal "><i class="fas fa-envelope-open-text me-2"></i>marleniureta@kunaq.org.pe</p>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="box__fotter">
-                            <h4 class="text-primary fw-bold lead"><i class="fas fa-map-marker-alt me-2"></i>Direccion:</h4>
-                            <p class="fw-bolder lead">Jr. Irribarren 1148 4to Piso N 4 - Surquillo - Lima</p>
-                        </div>
+                    <div class="col-12 col-md-4 mt-3">
+                        <h4 class="text-primary fw-bold lead text-uppercase">Dirección</h4>
+                        <p class="fw-normal "><i class="fas fa-map-marker-alt me-2"></i>Lima / Sector 1, grupo 9, Manzana I, Lote 24 - Villa el Salvador</p>
                     </div>
                 </div>
-                
-        </div>
-        <br>
-        <div class="container text-center" id="contenedor_icons">
-            <ul class="social-icons">
-                @yield('foterRedes')
-            </ul>
-        </div>
-        <div class="container" align="center">
-            <p>Copyright <?php echo date("Y");?> | Desarrollado por Cuantica Group</p>
-        </div>
-    </footer>
-    <!-- fin footer -->
+                <div class="container text-center" id="contenedor_icons">
+                    <ul class="social-icons">
+                        <li><a href="https://www.facebook.com/KunaqYachay/" target="_blank"><i class="fab fa-facebook-f "></i></a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=+51922009301" target="_blank"><i class="fab fa-whatsapp "></i></a></li>
+                        <li><a href="https://www.instagram.com/kunaqyachay/" target="_blank"><i class="fab fa-instagram "></i></a></li>
+                        <li><a href="https://twitter.com/KunaqYachay"><i class="fab fa-twitter "></i></a></li>
+                    </ul>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-md-4 d-none d-md-block">
+                            <small class="text-muted text-uppercase">Desarrollado Por <a href="https://cuanticagroup.com/welcome" class="text-decoration-none text-cuantica" target="_bank">Cuantica <span class="text-group text-capitalize">Group</span></a></small>
+                        </div>
+                        <div class="col-12 col-md-8 text-center text-md-end">
+                            <span class="float-end">Copyright © <?php echo date("Y");?>  <a href="" class="text-decoration-none text-primary fw-bold" target="_bank">Kunaq</a> - Todos los derechos Reservados - <small class="">version 1.0 <small class="d-block d-md-none">Desarrollado por <a href="https://cuanticagroup.com/welcome" class="text-decoration-none text-cuantica">CUANTICA <span class="text-group text-capitalize">Group</span></a></small></small></span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </footer>
+            <!-- fin footer -->
         </div>
         
             

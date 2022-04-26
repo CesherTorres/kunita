@@ -91,15 +91,15 @@
                 <tbody class="border-bottom" style="font-size: 12px">
                     <tr>
                         <td style="width: 20%" class="">
-                            <img src="{{ public_path("userAsesor/".$asesor->fotouser) }}" class=" card-img" style="width:auto; height:100px" alt="...">
+                            <img src="{{ public_path("userAsesor/".$asesor->fotouser) }}" class=" card-img rounded rounded-fill border my-2 border-primary" style="width:100px; height:100px" alt="...">
                         </td>
-                        <td style="width: 30%" class="">
+                        <td style="width: 40%" class="">
                             <p class="fw-bold small mb-1">NOMBRE: <span class="fw-normal">{{$asesor->name}}</span></p>
                             <p class="fw-bold small mb-1">IDENTIFICACIÓN: <span class="fw-normal">{{$asesor->tipodocumento. ': '.$asesor->ndocumento}}</span></p>
                             <p class="fw-bold small mb-1">NRO. CONTACTO: <span class="fw-normal">{{$asesor->telefono}}</span></p>
                             <p class="fw-bold small mb-1">ESTADO: <span class="fw-normal">{{$asesor->estadouser}}</span></p>
                         </td>
-                        <td style="width: 50%" class="">
+                        <td style="width: 40%" class="">
                             <p class="fw-bold small mb-1">CORREO: <span class="fw-normal">{{$asesor->email}}</span></p>
                             <p class="fw-bold small mb-1">DIRECCIÓN: <span class="fw-normal">{{$asesor->direccion}}</span></p>
                             <p class="fw-bold small mb-1">D.P.D.: <span class="fw-normal">{{$asesor->ubigeo->distrito.'/'.$asesor->ubigeo->provincia.'/'.$asesor->ubigeo->departamento}}</span></p>
