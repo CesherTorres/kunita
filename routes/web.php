@@ -233,7 +233,13 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController');
+Route::get('/dashboardasesores', 'App\Http\Controllers\DashboardController');
+Route::get('/dashboardprueba', 'App\Http\Controllers\DashboardController');
+
 Route::get('/dashboardasesor', 'App\Http\Controllers\DashboardAsesorController');
+Route::get('/dashboardempresa', 'App\Http\Controllers\DashboardAsesorController');
+Route::get('/dashboardempresaSeleccion', 'App\Http\Controllers\DashboardAsesorController');
+
 Route::get('/dashboardpyme', 'App\Http\Controllers\DashboardPymeController');
 
 

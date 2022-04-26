@@ -117,7 +117,6 @@
             </div>
         </div>
     </section>
-
     <section>
         <div class="container" id="reportPage">
             <admin></admin>

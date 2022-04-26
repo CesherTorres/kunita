@@ -101,9 +101,9 @@
                                             <a class="btn btn-outline-warning btn-sm" href="/productos_pyme/{{$producto->id}}/edit"><i class="bi bi-pencil-square"></i></a>
                                             <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i></button>
                                             @if(Carbon\Carbon::now() < ($producto->fecha_vencimiento))
-                                                <button type="button" class="btn btn-outline-primary  btn-sm" data-bs-toggle="modal" data-bs-target="#poferta{{$producto->id}}"><i class="bi bi-percent"></i></button>
-                                            @else
                                                 <button type="button" disabled class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#poferta{{$producto->id}}"><i class="bi bi-percent"></i></button>
+                                            @else
+                                                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#poferta{{$producto->id}}"><i class="bi bi-percent"></i></button>
                                             @endif
                                         </form>
         
