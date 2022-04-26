@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kunaq-Mype | @yield('title')</title>
     <link rel="icon" href="/images/logo-kunaq.png">
-    <link rel="stylesheet" type="text/css" href="/public/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
     <link rel="stylesheet" href="/sass/custom.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -24,24 +24,26 @@
                 </button>
             <div>
             <div class="row">
-                    <div class="col">
-                        <a class="btn btn-sm btn-outline-primary mx-1 my-1" target="_blank" href="{{ url('/inicio') }}" role="button"><i class="bi bi-shop"></i></a>
-                    </div>
+                    
                     <div class="col">
                         <div class="dropdown mb-2 mb-lg-0">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{-- <img src="/logos/{{Auth::user()->propietario->empresas->logoempresa}}" alt="Logo" class="me-2" style="width: 3.5rem;"> --}}
                                     <span class="fw-normal text-dark">{{ Auth::user()->propietario->empresas->razonsocial }}</span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                {{-- <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li> --}}
-                                <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">Cerrar Sesión</a></li>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                                <ul class="dropdown-menu dropdown-menu-end border-4 borde-bottom-primary shadow" aria-labelledby="navbarDropdown" style="width: 300px">
+                                    <li class="border-bottom pb-3">
+                                        <div class=" py-2 mx-3 text-center">
+                                            <img src="/logos/{{Auth::user()->propietario->empresas->logoempresa}}" class="rounded-circle border text-center mx-auto border-2 border-white shadow-sm" style="width: 80px; height: 80px;" alt="">
+                                        </div>
+                                        <p class="text-muted text-center mb-0 px-auto">{{ Auth::user()->email }}</p>
+                                    </li>
+                                    <li class="py-2"><a class="dropdown-item" href="{{ url('/inicio') }}" target="blank"><i class="bi bi-shop me-2"></i>Ir a la tienda</a></li>
+                                    <li class="py-2"><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-right me-2"></i>Cerrar Sesión</a></li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
                                 </ul>
                             </div>
                             

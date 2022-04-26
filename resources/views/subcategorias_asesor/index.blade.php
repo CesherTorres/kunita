@@ -14,12 +14,12 @@
     <div class="offcanvas-body">
         <div class="logo">
             <div class="brand-link d-flex border-bottom justify-content-center align-items-center brand-logo-primary navbar-primary">
-                <img src="images/kunaq-white.png" alt="Logo" class="me-2 my-1" style="width: 8rem;">
+                <img src="/images/kunaq-white.png" alt="Logo" class="me-2 my-1" style="width: 8rem;">
             </div>
         </div>
         <div class="user border-bottom">
             <div class="brand-link  brand-logo-primary navbar-primary mx-2 my-3">
-                <img src="/public/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
+                <img src="/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem; height: 2rem;">
                 <span class="brand-text fw-light text-white">{{ Auth::user()->name }}</span>
             </div>
         </div>

@@ -17,7 +17,7 @@
         </div>
         <div class="user border-bottom">
             <div class="brand-link  brand-logo-primary navbar-primary mx-2 my-3">
-                <img src="/public/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
+                <img src="/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem; height: 2rem;">
                 <span class="brand-text fw-light text-white">{{ Auth::user()->name }}</span>
             </div>
         </div>
@@ -175,7 +175,7 @@
                                 <div class="col-md-4 col-sm-12">
                                     <div class="card bg-white my-2 my-md-0 text-white" style="min-height: 202px; max-height: 202px;">
                                         <label for="uploadImage1" class="font-weight-light mb-0 align-middle text-center">
-                                            <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/public/images_product/{{$producto->imguno}}">
+                                            <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/images_product/{{$producto->imguno}}">
                                         </label>
                                         <input id="uploadImage1" class="form-control-file" type="file" name="img-uno" onchange="previewImageizquierda(1);" hidden/>
                                     </div>
@@ -183,7 +183,7 @@
                                 <div class="col-md-4 col-sm-12">
                                     <div class="card bg-white text-white my-2 my-md-0" style="min-height: 202px; max-height: 202px">
                                         <label for="uploadImage2" class="font-weight-light mb-0 align-middle text-center">
-                                            <img for="uploadImage2" id="uploadPreview2" alt="Logo" width="170" height="200" src="/public/images_product/{{$producto->imgdos}}">
+                                            <img for="uploadImage2" id="uploadPreview2" alt="Logo" width="170" height="200" src="/images_product/{{$producto->imgdos}}">
                                         </label>
                                         <input id="uploadImage2" class="form-control-file" type="file" name="img-dos" onchange="previewImagefrente(2);" hidden/>
                                     </div>
@@ -191,7 +191,7 @@
                                 <div class="col-md-4 col-sm-12">
                                     <div class="card bg-white my-2 my-md-0 text-white" style="min-height: 202px; max-height: 202px">
                                         <label for="uploadImage3" class="font-weight-light mb-0 align-middle text-center">
-                                            <img for="uploadImage3" id="uploadPreview3" alt="Logo" width="170" height="200" src="/public/images_product/{{$producto->imgtres}}">
+                                            <img for="uploadImage3" id="uploadPreview3" alt="Logo" width="170" height="200" src="/images_product/{{$producto->imgtres}}">
                                         </label>
                                         <input id="uploadImage3" class="form-control-file" type="file" name="img-tres" onchange="previewImagederecha(3);" hidden/>
                                     </div>
@@ -208,7 +208,7 @@
                                     <label for="categorias" class="form-label">Imagen principal(*)</label>
                                     <div class="card bg-white text-white" style="min-height: 170px; max-height: 170px">
                                         <label for="uploadImage4" class="font-weight-light mb-0 align-middle text-center">
-                                            <img for="uploadImage4" id="uploadPreview4" alt="Logo" width="200" height="168"  src="/public/images_product/{{$producto->imgprincipal}}">
+                                            <img for="uploadImage4" id="uploadPreview4" alt="Logo" width="200" height="168"  src="/images_product/{{$producto->imgprincipal}}">
                                         </label>
                                         <input id="uploadImage4" class="form-control-file" type="file" name="img-principal" onchange="previewImageespecial(4);" hidden/>
                                     </div>

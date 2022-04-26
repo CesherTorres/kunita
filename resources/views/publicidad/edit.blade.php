@@ -16,7 +16,7 @@
         </div>
         <div class="user border-bottom">
             <div class="brand-link  brand-logo-primary navbar-primary mx-2 my-3">
-                <img src="/public/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
+                <img src="/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
                 <span class="brand-text fw-light text-white">{{ Auth::user()->name }}</span>
             </div>
         </div>
@@ -112,7 +112,7 @@
                             <label for="categorias" class="form-label">Imagen especial</label>
                             <div class="card bg-white text-white text-center" style="min-height: 202px; max-height: 202px">
                                 <label for="uploadImage1" class="font-weight-light mb-0">
-                                    <img for="uploadImage1" id="uploadPreview1" class="imgespecial" src="/public/publicidad_img/{{$publicidad->imagen}}" />
+                                    <img for="uploadImage1" id="uploadPreview1" class="imgespecial" src="/publicidad_img/{{$publicidad->imagen}}" />
                                 </label>
                                 <input id="uploadImage1" class="form-control-file" value="{{$publicidad->imagen}}" type="file" name="imagen" onchange="previewImage(1);" hidden/>
                             </div>

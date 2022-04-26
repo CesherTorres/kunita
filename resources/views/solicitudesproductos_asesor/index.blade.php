@@ -18,7 +18,7 @@
         </div>
         <div class="user border-bottom">
             <div class="brand-link  brand-logo-primary navbar-primary mx-2 my-3">
-               <img src="/public/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
+               <img src="/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem; height: 2rem;">
                 <span class="brand-text fw-light text-white">{{ Auth::user()->name }}</span>
             </div>
         </div>

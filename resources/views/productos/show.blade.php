@@ -16,7 +16,7 @@
         </div>
         <div class="user border-bottom">
             <div class="brand-link  brand-logo-primary navbar-primary mx-2 my-3">
-                <img src="/public//userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
+                <img src="//userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
                 <span class="brand-text fw-light text-white">{{ Auth::user()->name }}</span>
             </div>
         </div>
@@ -140,17 +140,17 @@
                             <div class="row">
                                 <div class="col-md-4 col-sm-12">
                                     <div class="card bg-white my-2 my-md-0 text-white" style="min-height: 202px; max-height: 202px;">
-                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/public/images_product/{{$producto->imguno}}">
+                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/images_product/{{$producto->imguno}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-12">
                                     <div class="card bg-white text-white my-2 my-md-0" style="min-height: 202px; max-height: 202px">
-                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/public/images_product/{{$producto->imgdos}}">
+                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/images_product/{{$producto->imgdos}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-12">
                                     <div class="card bg-white my-2 my-md-0 text-white" style="min-height: 202px; max-height: 202px">
-                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/public/images_product/{{$producto->imgtres}}">
+                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/images_product/{{$producto->imgtres}}">
                                     </div>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                                     <label for="categorias" class="form-label">Imagen principal(*)</label>
                                     <div class="card bg-white text-white" style="min-height: 170px; max-height: 170px">
                                         <label for="uploadImage4" class="font-weight-light mb-0 align-middle text-center">
-                                            <img for="uploadImage4" id="uploadPreview4" alt="Logo" width="200" height="168"  src="/public/images_product/{{$producto->imgprincipal}}">
+                                            <img for="uploadImage4" id="uploadPreview4" alt="Logo" width="200" height="168"  src="/images_product/{{$producto->imgprincipal}}">
                                         </label>
                                         <input id="uploadImage4" class="form-control-file" type="file" name="img-principal" onchange="previewImageespecial(4);" hidden/>
                                     </div>

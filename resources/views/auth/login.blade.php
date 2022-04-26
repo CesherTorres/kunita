@@ -18,7 +18,19 @@
         <div class="row g-0">
             <div class="col-lg-4 d-flex flex-column align-items-end min-vh-100">
                 <div class="text-center pt-lg-5 pb-lg-3 p-4 w-100  align-self-center">
-                    <img src="images/LOGO.png" class="img-fluid logo" alt="">
+                    <a 
+                    @auth
+                        @if( Auth::user()->tipousuario_id == 1 )
+                            href="{{url('administrador')}}"
+                        @elseif(Auth::user()->tipousuario_id == 2)
+                            href="{{url('asesores')}}"
+                        @elseif(Auth::user()->tipousuario_id == 3)
+                            href="{{url('pyme')}}"
+                        @endif
+                    @endauth
+                    >
+                        <img src="images/LOGO.png" class="img-fluid logo" alt="">
+                    </a>
                 </div>
                 <div class="text-center text-primary py-lg-4 p-4 w-100 align-self-center">
                     <h3 class="fw-bold mb-4">Ingresa a tu cuenta</h3>

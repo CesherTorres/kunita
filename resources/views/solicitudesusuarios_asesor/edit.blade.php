@@ -16,7 +16,7 @@
         </div>
         <div class="user border-bottom">
             <div class="brand-link  brand-logo-primary navbar-primary mx-2 my-3">
-                <img src="/public/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
+                <img src="/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem; height: 2rem;">
                 <span class="brand-text fw-light text-white">{{ Auth::user()->name }}</span>
             </div>
         </div>
@@ -50,7 +50,7 @@
             <div class="card-body">
                <div class="row">
                     <div class="col-md-3 col-sm-12 text-center">
-                        <img width="auto" height="98px" src="/public/logos/{{$user->propietario->empresas->logoempresa}}" />
+                        <img width="auto" height="98px" src="/logos/{{$user->propietario->empresas->logoempresa}}" />
                     </div>
                     <div class="col-md-9 col-sm-12">
                         <div class="text-start">

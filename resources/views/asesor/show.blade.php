@@ -17,7 +17,7 @@
         </div>
         <div class="user border-bottom">
             <div class="brand-link  brand-logo-primary navbar-primary mx-2 my-3">
-                <img src="/public/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
+                <img src="/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
                 <span class="brand-text fw-light text-white">{{ Auth::user()->name }}</span>
             </div>
         </div>
@@ -112,7 +112,7 @@
                         </div>
                         <div class="col-12 col-md-4 col-lg-4 order-1 order-md-3">
                             <div class="form-group mb-1"> 
-                                <img for="uploadImage1" id="uploadPreview1" style="min-height: 330px; max-height: 50px; min-width: 300px; max-width: 50px" src="/public/userAsesor/{{$asesor->fotouser}}" />
+                                <img for="uploadImage1" id="uploadPreview1" style="min-height: 330px; max-height: 50px; min-width: 300px; max-width: 50px" src="/userAsesor/{{$asesor->fotouser}}" />
                             </div>
 
                             <div class="text-end">

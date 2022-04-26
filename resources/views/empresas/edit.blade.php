@@ -18,7 +18,7 @@
         </div>
         <div class="user border-bottom">
             <div class="brand-link  brand-logo-primary navbar-primary mx-2 my-3">
-                <img src="/public/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
+                <img src="/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
                 <span class="brand-text fw-light text-white">{{ Auth::user()->name }}</span>
             </div>
         </div>
@@ -209,7 +209,7 @@
                                         <label for="categorias" class="form-label text-start">Logo(*)</label>
                                         <div class="card bg-white text-white text-center" style="min-height: 100px; max-height: 100px">
                                             <label for="uploadImage1" class="font-weight-light mb-0">
-                                                <img for="uploadImage1" id="uploadPreview1" width="200px" height="98px" src="/public/logos/{{$user->propietario->empresas->logoempresa}}" />
+                                                <img for="uploadImage1" id="uploadPreview1" width="200px" height="98px" src="/logos/{{$user->propietario->empresas->logoempresa}}" />
                                             </label>
                                             <input id="uploadImage1" class="form-control-file" type="file" name="logoempresa" onchange="previewImage(1);" hidden/>
                                         </div>

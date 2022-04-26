@@ -3,8 +3,8 @@
 @section('title', 'Dashboard')
 @section('css')
     <!--  extension responsive  -->
-    <link rel="stylesheet" type="text/css" href="/public/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="/public/css/icons.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/css/icons.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 @endsection
 @section('aside')
@@ -12,12 +12,12 @@
     <div class="offcanvas-body">
         <div class="logo">
             <div class="brand-link d-flex border-bottom justify-content-center align-items-center brand-logo-primary navbar-primary">
-                <img src="/public/images/kunaq-mype.png" alt="Logo" class="me-2 my-1" style="width: 14rem;">
+                <img src="/images/kunaq-mype.png" alt="Logo" class="me-2 my-1" style="width: 14rem;">
             </div>
         </div>
         <div class="user border-bottom">
             <div class="brand-link  brand-logo-primary navbar-primary mx-2 my-3">
-                <img src="/public/logos/{{Auth::user()->propietario->empresas->logoempresa}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
+                <img src="/logos/{{Auth::user()->propietario->empresas->logoempresa}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem; height: 2rem;">
                 <span class="brand-text fw-light text-white">{{ Auth::user()->name }}</span>
             </div>
         </div>

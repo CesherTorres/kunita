@@ -174,7 +174,7 @@
                                     <ul class="products-cart">
                                         <li class="pr-cart-item">
                                             <div class="product-name col-12 col-md-3">
-                                                <figure><img src="/public/images_product/{{ $item->attributes->imgprincipal }}"
+                                                <figure><img src="/images_product/{{ $item->attributes->imgprincipal }}"
                                                     style="width: 70px; height: 70px;"></figure>
                                             </div>
                                             <div class="product-name col-12 col-md-3">

@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <!--  extension responsive  -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="/public/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="/public/css/icons.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/css/icons.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 
 @endsection
@@ -17,12 +17,12 @@
     <div class="offcanvas-body">
         <div class="logo">
             <div class="brand-link d-flex border-bottom justify-content-center align-items-center brand-logo-primary navbar-primary">
-                <img src="/public/images/kunaq-mype.png" alt="Logo" class="me-2 my-1" style="width: 14rem;">
+                <img src="/images/kunaq-mype.png" alt="Logo" class="me-2 my-1" style="width: 14rem;">
             </div>
         </div>
         <div class="user border-bottom">
             <div class="brand-link  brand-logo-primary navbar-primary mx-2 my-3">
-                <img src="/public/logos/{{Auth::user()->propietario->empresas->logoempresa}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
+                <img src="/logos/{{Auth::user()->propietario->empresas->logoempresa}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem; height: 2rem;">
                 <span class="brand-text fw-light text-white">{{ Auth::user()->name }}</span>
             </div>
         </div>
@@ -135,17 +135,17 @@
                             <div class="row">
                                 <div class="col-md-4 col-sm-12">
                                     <div class="card bg-white my-2 my-md-0 text-white" style="min-height: 202px; max-height: 202px;">
-                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/public/images_product/{{$producto->imguno}}">
+                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/images_product/{{$producto->imguno}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-12">
                                     <div class="card bg-white text-white my-2 my-md-0" style="min-height: 202px; max-height: 202px">
-                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/public/images_product/{{$producto->imgdos}}">
+                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/images_product/{{$producto->imgdos}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-12">
                                     <div class="card bg-white my-2 my-md-0 text-white" style="min-height: 202px; max-height: 202px">
-                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/public/images_product/{{$producto->imgtres}}">
+                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/images_product/{{$producto->imgtres}}">
                                     </div>
                                 </div>
                             </div>
@@ -159,7 +159,7 @@
                             <div class="form-group col-md-6 col-sm-12 mb-1 order-1 order-md-2">              
                                      <p class="fw-normal">Imágen principal:</p>
                                     <div class="card bg-white text-white text-center" align="center" style="min-height: 170px; max-height: 170px">
-                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/public/images_product/{{$producto->imgprincipal}}">
+                                        <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/images_product/{{$producto->imgprincipal}}">
                                     </div>
                             </div>
                         </div> 

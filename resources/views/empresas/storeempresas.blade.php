@@ -25,15 +25,15 @@
 					<!--	</li>-->
 					<!--</ul>-->
 	
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex  justify-content-center">
-						<li class="nav-item me-3">
-							<a class="nav-link fw-bolder fs-5" href="{{ url('/inicio') }}">Inicio</a>
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex ">
+						<li class="nav-item me-3 align-self-center">
+							<a class="nav-link fw-bold  fs-5" href="{{ url('/inicio') }}">Inicio</a>
 						</li>
-						<li class="nav-item me-3">
-							<a class="nav-link fw-bolder fs-5" href="{{ url('/empresas-asociadas') }}">Tiendas</a>
+						<li class="nav-item me-3 align-self-center">
+							<a class="nav-link fw-bold  fs-5" href="{{ url('/empresas-asociadas') }}">Tiendas</a>
 						</li>
-						<li class="nav-item me-3">
-							<a class="nav-link fw-bolder fs-5" href="{{ url('/logueando') }}" target="bank"><i class="bi bi-person-fill h4"></i></a>
+						<li class="nav-item me-3 align-self-center">
+							<a class="nav-link fw-bold  fs-5" href="{{ url('/logueando') }}" target="bank"><i class="bi bi-person-fill h4"></i></a>
 						</li>
 						<!--<li class="nav-item">-->
 						<!--	<div class="">-->

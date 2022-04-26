@@ -16,7 +16,7 @@
         </div>
         <div class="user border-bottom">
             <div class="brand-link  brand-logo-primary navbar-primary mx-2 my-3">
-                <img src="/public/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
+                <img src="/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
                 <span class="brand-text fw-light text-white">{{ Auth::user()->name }}</span>
             </div>
         </div>
@@ -58,7 +58,7 @@
             </div>
         </div>
         <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
-                <img width="auto" height="300px" src="/public/publicidad_img/{{$publicidad->imagen}}" />
+                <img width="auto" height="300px" src="/publicidad_img/{{$publicidad->imagen}}" />
                 <div class="card-body">
                     <h5 class="card-title"><p class="fw-bold lead border-bottom border-primary">Datos de la publicidad</p></h5>
                     <div class="row">

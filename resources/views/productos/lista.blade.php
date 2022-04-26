@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <!--  extension responsive  -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="/public/css/cardP.css">
-    <link rel="stylesheet" type="text/css" href="/public/css/pagination.css">
+    <link rel="stylesheet" type="text/css" href="/css/cardP.css">
+    <link rel="stylesheet" type="text/css" href="/css/pagination.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" type="text/css"  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 @endsection
@@ -22,7 +22,7 @@
         </div>
         <div class="user border-bottom">
             <div class="brand-link  brand-logo-primary navbar-primary mx-2 my-3">
-                <img src="/public/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
+                <img src="/userAsesor/{{Auth::user()->fotouser}}" alt="Logo" class="rounded-circle me-2" style="width: 2rem;">
                 <span class="brand-text fw-light text-white">{{ Auth::user()->name }}</span>
             </div>
         </div>
@@ -110,7 +110,7 @@
                     <div class="col col-sm col-md-6 col-lg-4">
                         <div id="cards">
                             <div class="image">
-                            <img src="/public/images_product/{{$productos->imgprincipal}}" style="background: #FFFEC8;min-width: auto; min-height: 300px;"/>
+                            <img src="/images_product/{{$productos->imgprincipal}}" style="background: #FFFEC8;min-width: auto; min-height: 300px;"/>
                             </div>
                             <div class="details">
                                 <div class="center">
