@@ -46,7 +46,9 @@
         <div class="card border-4 borde-top-primary shadow-sm py-2 mb-5">
             <div class="card-body">
                <div class="row">
-                    <img width="auto" height="400px" src="/logos/{{$user->propietario->empresas->logoempresa}}" />
+                    <div class="text-center">
+                        <img style="width: auto; height: 300px" src="/logos/{{$user->propietario->empresas->logoempresa}}" />
+                    </div>
                         <div class="card-body">
                             <div class="col-md-12 col-sm-12">
                                 <div class="text-start">
