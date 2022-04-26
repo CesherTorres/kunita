@@ -2148,7 +2148,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     var asesores = {};
@@ -2682,9 +2681,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
+    var fecha_inicio = {};
+    var fecha_fin = {};
     return {
+      fecha_inicio: fecha_inicio,
+      fecha_fin: fecha_fin,
       varProducto: null,
       charProducto: null,
       producto: [],
@@ -2699,6 +2728,26 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    getNewData: function getNewData() {
+      var me = this;
+      var url = 'dashboardpymeSeleccion';
+      axios.get(url, {
+        params: {
+          fecha_inicio: this.fecha_inicio,
+          fecha_fin: this.fecha_fin
+        }
+      }).then(function (response) {
+        var respuesta = response.data;
+        console.log(respuesta);
+        me.producto = respuesta.producto;
+        me.loadProducto();
+        me.empresa = respuesta.empresa;
+        me.empresai = respuesta.empresai;
+        me.loadEmpresa();
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
     getProducto: function getProducto() {
       var me = this;
       var url = '/dashboardpyme';
@@ -2726,11 +2775,17 @@ __webpack_require__.r(__webpack_exports__);
     loadProducto: function loadProducto() {
       var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
       var me = this;
+      me.varMesProducto = [];
+      me.varNameProducto = [];
+      me.varTotalVenta = [];
       me.producto.map(function (x) {
         me.varMesProducto.push(meses[x.mes - 1]);
         me.varNameProducto.push(x.nameproducto);
         me.varTotalVenta.push(x.totalventas);
       });
+      $("#lienzo-productos *").remove();
+      $("#lienzo-productos").append('<canvas id="masvendidosasesor"></canvas>');
+      me.charProducto = null;
       me.varProducto = document.getElementById('masvendidosasesor').getContext('2d');
       me.charProducto = new Chart(me.varProducto, {
         type: 'bar',
@@ -2755,10 +2810,16 @@ __webpack_require__.r(__webpack_exports__);
     loadVenta: function loadVenta() {
       var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
       var me = this;
+      me.varMesProducto = [];
+      me.varNameProducto = [];
+      me.varTotalVenta = [];
       me.venta.map(function (x) {
         me.varMesVenta.push(meses[x.mes - 1]);
         me.varTotalVentaS.push(x.total);
       });
+      $("#lienzo-empresas *").remove();
+      $("#lienzo-empresas").append('<canvas id="ventas"></canvas>');
+      me.charProducto = null;
       me.varVenta = document.getElementById('ventas').getContext('2d');
       me.charVenta = new Chart(me.varVenta, {
         type: 'bar',
@@ -39180,9 +39241,9 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12 col-lg-2 py-1" }, [
+      _c("div", { staticClass: "col-12 col-md-6 col-lg-3 py-1" }, [
         _c("div", { staticClass: "form-group my-2 my-md-0" }, [
-          _c("label", { attrs: { for: "" } }, [_vm._v("Asesore")]),
+          _c("label", { attrs: { for: "" } }, [_vm._v("Asesores")]),
           _vm._v(" "),
           _c(
             "select",
@@ -39237,7 +39298,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-12 col-lg-3 py-1" }, [
+      _c("div", { staticClass: "col-6 col-md-6 col-lg-3 py-1" }, [
         _c("div", { staticClass: "form-group my-2 my-md-0" }, [
           _c("label", { attrs: { for: "" } }, [_vm._v("Fecha Inicio")]),
           _vm._v(" "),
@@ -39265,7 +39326,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-12 col-lg-3 py-1" }, [
+      _c("div", { staticClass: "col-6 col-md-6 col-lg-3 py-1" }, [
         _c("div", { staticClass: "form-group my-2 my-md-0" }, [
           _c("label", { attrs: { for: "" } }, [_vm._v("Fecha Fin")]),
           _vm._v(" "),
@@ -39293,7 +39354,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-12 col-lg-3 py-1" }, [
+      _c("div", { staticClass: "col-12 col-md-6 col-lg-3 py-1" }, [
         _c("div", { staticClass: "form-group my-2 my-md-0" }, [
           _c("label", { attrs: { for: "" } }),
           _vm._v(" "),
@@ -39377,7 +39438,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12 col-lg-2 py-1" }, [
+      _c("div", { staticClass: "col-12 col-md-6 col-lg-3 py-1" }, [
         _c("div", { staticClass: "form-group my-2 my-md-0" }, [
           _c("label", { attrs: { for: "" } }, [_vm._v("Empresas")]),
           _vm._v(" "),
@@ -39437,7 +39498,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-12 col-lg-3 py-1" }, [
+      _c("div", { staticClass: "col-6 col-md-6 col-lg-3 py-1" }, [
         _c("div", { staticClass: "form-group my-2 my-md-0" }, [
           _c("label", { attrs: { for: "" } }, [_vm._v("Fecha Inicio")]),
           _vm._v(" "),
@@ -39465,7 +39526,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-12 col-lg-3 py-1" }, [
+      _c("div", { staticClass: "col-6 col-md-6 col-lg-3 py-1" }, [
         _c("div", { staticClass: "form-group my-2 my-md-0" }, [
           _c("label", { attrs: { for: "" } }, [_vm._v("Fecha Fin")]),
           _vm._v(" "),
@@ -39493,7 +39554,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-12 col-lg-3 py-1" }, [
+      _c("div", { staticClass: "col-12 col-md-6 col-lg-3 py-1" }, [
         _c("div", { staticClass: "form-group my-2 my-md-0" }, [
           _c("label", { attrs: { for: "" } }),
           _vm._v(" "),
@@ -39575,7 +39636,83 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-6 col-md-6 col-lg-3 py-1" }, [
+        _c("div", { staticClass: "form-group my-2 my-md-0" }, [
+          _c("label", { attrs: { for: "" } }, [_vm._v("Fecha Inicio")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.fecha_inicio,
+                expression: "fecha_inicio"
+              }
+            ],
+            staticClass: "form-control form-control-sm",
+            attrs: { type: "date" },
+            domProps: { value: _vm.fecha_inicio },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.fecha_inicio = $event.target.value
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-6 col-md-6 col-lg-3 py-1" }, [
+        _c("div", { staticClass: "form-group my-2 my-md-0" }, [
+          _c("label", { attrs: { for: "" } }, [_vm._v("Fecha Fin")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.fecha_fin,
+                expression: "fecha_fin"
+              }
+            ],
+            staticClass: "form-control form-control-sm",
+            attrs: { type: "date" },
+            domProps: { value: _vm.fecha_fin },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.fecha_fin = $event.target.value
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 col-md-6 col-lg-3 py-1" }, [
+        _c("div", { staticClass: "form-group my-2 my-md-0" }, [
+          _c("label", { attrs: { for: "" } }),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass:
+                "btn btn-sm btn-primary form-control form-control-sm",
+              on: { click: _vm.getNewData }
+            },
+            [_vm._v("BUSCAR")]
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -39583,7 +39720,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row my-3" }, [
-      _c("div", { staticClass: "col-lg-6 col-md-12 colsm-12 pb-4" }, [
+      _c("div", { staticClass: "col-lg-6 col-md-12 col-12 pb-4" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header bg-white" }, [
             _c("h6", { staticClass: "fw-bold text-warning" }, [
@@ -39592,7 +39729,9 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
-            _c("canvas", { attrs: { id: "masvendidosasesor" } })
+            _c("div", { attrs: { id: "lienzo-productos" } }, [
+              _c("canvas", { attrs: { id: "masvendidosasesor" } })
+            ])
           ])
         ])
       ]),
@@ -39606,7 +39745,9 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
-            _c("canvas", { attrs: { id: "ventas" } })
+            _c("div", { attrs: { id: "lienzo-empresas" } }, [
+              _c("canvas", { attrs: { id: "ventas" } })
+            ])
           ])
         ])
       ])

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-lg-2 py-1">
+            <div class="col-12 col-md-6 col-lg-3 py-1">
                 <div class="form-group my-2 my-md-0">
                     <label for="">Empresas</label>
                     <select v-model="selectempresaAsesor" class="form-select form-select-sm" id="asesor">
@@ -14,19 +14,19 @@
                 </div>
             </div>
 
-            <div class="col-12 col-lg-3 py-1">
+            <div class="col-6 col-md-6 col-lg-3 py-1">
                 <div class="form-group my-2 my-md-0">
                     <label for="">Fecha Inicio</label>
                     <input type="date" v-model="fecha_inicio" class="form-control form-control-sm">
                 </div>
             </div>
-            <div class="col-12 col-lg-3 py-1">
+            <div class="col-6 col-md-6 col-lg-3 py-1">
                 <div class="form-group my-2 my-md-0">
                     <label for="">Fecha Fin</label>
                     <input type="date" v-model="fecha_fin" class="form-control form-control-sm">
                 </div>
             </div>
-            <div class="col-12 col-lg-3 py-1">
+            <div class="col-12 col-md-6 col-lg-3 py-1">
                 <div class="form-group my-2 my-md-0">
                     <label for=""></label>
                     <button class="btn btn-sm btn-primary form-control form-control-sm" @click="getNewData">BUSCAR</button>

@@ -144,17 +144,17 @@ $('#downloadPdf').click(function(event) {
   
   // keep track canvas position
   var pdfctx = $(pdfCanvas)[0].getContext('2d');
-  var pdfctxX = 80;
+  var pdfctxX = 55;
   var pdfctxY = 100;
   var buffer = 60;
 
     // Se puede cambiar durante la ejecución
     pdfctx.font = "30px Arial Black";
-    pdfctx.strokeText("EMPRESAS ACTIVAS", 720, 70);
+    pdfctx.strokeText("EMPRESAS ACTIVAS", 785, 70);
     pdfctx.strokeStyle = "green";
 
     pdfctx.font = "30px Arial Black";
-    pdfctx.strokeText("PRODUCTOS MAS VENDIDOS", 120, 70);
+    pdfctx.strokeText("PRODUCTOS MAS VENDIDOS", 125, 70);
     pdfctx.strokeStyle = "green";
 
   // for each chart.js chart
@@ -175,7 +175,7 @@ $('#downloadPdf').click(function(event) {
   });
   
   // create new pdf and add our new canvas as an image
-  var pdf = new jsPDF('lx', 'pt', [900,300]);
+  var pdf = new jsPDF('lx', 'pt', [1000,300]);
   pdf.addImage($(pdfCanvas)[0], 'PNG', 0, 0);
 
   // download the pdf
