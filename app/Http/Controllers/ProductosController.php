@@ -95,42 +95,37 @@ class ProductosController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'nameproducto' => ['required'],
-            'preciosugerido' => ['required'],
-            'stock' => ['required'],
-            'imguno' => ['required'],
-            'imgdos' => ['required'],
-            'imgtres' => ['required'],
-            'imgprincipal' => ['required'],
-            'empresa_id' => ['required'],
-            'subcategoria_id' => ['required']
+        $this->validate($request, [
+            'nameproducto' => 'required',
+            'preciosugerido' => 'required',
+            'stock' => 'required',
+            'imguno' => 'required',
+            'imgdos' => 'required',
+            'imgtres' => 'required',
+            'imgprincipal' => 'required',
+            'empresa_id' => 'required',
+            'subcategoria_id' => 'required'
             // 'ncuentabanco' => ['unique:empresas,ncuentabanco'],
             // 'ncuentabancocci' => ['unique:empresas,ncuentabancocci'],
             // 'numerobilletera' => ['unique:empresas,numerobilletera']
-   
-        ],
-        [
-            'max' => 'El campo no puede tener mas de :max caracteres',
-            'unique' => 'El campo :attribute ya está registrado.'
         ]);
-        if($request->hasFile('img-uno')){
-            $file = $request->file('img-uno');
+        if($request->hasFile('imguno')){
+            $file = $request->file('imguno');
             $imguno = time().$file->getClientOriginalName();
             $file->move(public_path().'/images_product/', $imguno);
         }
-        if($request->hasFile('img-dos')){
-            $file = $request->file('img-dos');
+        if($request->hasFile('imgdos')){
+            $file = $request->file('imgdos');
             $imgdos = time().$file->getClientOriginalName();
             $file->move(public_path().'/images_product/', $imgdos);
         }
-        if($request->hasFile('img-tres')){
-            $file = $request->file('img-tres');
+        if($request->hasFile('imgtres')){
+            $file = $request->file('imgtres');
             $imgtres = time().$file->getClientOriginalName();
             $file->move(public_path().'/images_product/', $imgtres);
         }
-        if($request->hasFile('img-principal')){
-            $file = $request->file('img-principal');
+        if($request->hasFile('imgprincipal')){
+            $file = $request->file('imgprincipal');
             $imgprincipal = time().$file->getClientOriginalName();
             $file->move(public_path().'/images_product/', $imgprincipal);
         }

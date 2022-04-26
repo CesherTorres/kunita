@@ -100,7 +100,11 @@
                                             <a class="btn btn-outline-info btn-sm" href="/productos_pyme/{{$producto->id}}"><i class="bi bi-eye"></i></a>
                                             <a class="btn btn-outline-warning btn-sm" href="/productos_pyme/{{$producto->id}}/edit"><i class="bi bi-pencil-square"></i></a>
                                             <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i></button>
-                                            <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#poferta{{$producto->id}}"><i class="bi bi-percent"></i></button>
+                                            @if(Carbon\Carbon::now() < ($producto->fecha_vencimiento))
+                                                <button type="button" class="btn btn-outline-primary  btn-sm" data-bs-toggle="modal" data-bs-target="#poferta{{$producto->id}}"><i class="bi bi-percent"></i></button>
+                                            @else
+                                                <button type="button" disabled class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#poferta{{$producto->id}}"><i class="bi bi-percent"></i></button>
+                                            @endif
                                         </form>
         
                                         </div>      
@@ -126,7 +130,7 @@
                                                             <div class="form-group mb-1">               
                                                                 <label for="" class="form-label">Oferta de</label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input id="oferta" name="oferta" type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
+                                                                    <input id="oferta" name="oferta" type="number" max="100" min="0" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
                                                                     <span class="input-group-text" id="basic-addon1">%</span>
                                                                 </div>           
                                                             </div>

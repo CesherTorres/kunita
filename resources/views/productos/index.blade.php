@@ -140,7 +140,7 @@
                                                             <div class="form-group mb-1">               
                                                                 <label for="" class="form-label">Oferta de</label>
                                                                 <div class="input-group input-group-sm mb-3">
-                                                                    <input id="oferta" name="oferta" type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
+                                                                    <input id="oferta" name="oferta" type="number" max="100" min="0" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
                                                                     <span class="input-group-text" id="basic-addon1">%</span>
                                                                 </div>           
                                                             </div>

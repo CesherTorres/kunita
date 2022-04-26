@@ -88,7 +88,7 @@
                                 <label for="precioenvio" class="form-label">Costo de Envío(*)</label>
                                 <div class="input-group input-group-sm mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">S/.</span>
-                                    <input type="text" class="form-control" name="precioenvio" required onkeypress="return solonumeros(event)" onpaste="return false" maxLength="2">
+                                    <input type="text" class="form-control" name="precioenvio" required onpaste="return false" maxLength="5">
                                 </div>
                             </div>
                             <div class="form-group mb-3">

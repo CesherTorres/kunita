@@ -170,7 +170,7 @@
                                     <label for="uploadImage1" class="font-weight-light mb-0 align-middle text-center">
                                         <img for="uploadImage1" id="uploadPreview1" alt="Logo" width="170" height="200" src="/images/image_update.png">
                                     </label>
-                                    <input id="uploadImage1" class="form-control-file" type="file" name="img-uno" onchange="previewImageizquierda(1);" hidden />
+                                    <input id="uploadImage1" class="form-control-file" type="file" name="imguno" onchange="previewImageizquierda(1);" hidden />
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-12">
@@ -178,7 +178,7 @@
                                     <label for="uploadImage2" class="font-weight-light mb-0 align-middle text-center">
                                         <img for="uploadImage2" id="uploadPreview2" alt="Logo" width="170" height="200" src="/images/image_update.png">
                                     </label>
-                                    <input id="uploadImage2" class="form-control-file" type="file" name="img-dos" onchange="previewImagefrente(2);" hidden />
+                                    <input id="uploadImage2" class="form-control-file" type="file" name="imgdos" onchange="previewImagefrente(2);" hidden />
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-12">
@@ -186,7 +186,7 @@
                                     <label for="uploadImage3" class="font-weight-light mb-0 align-middle text-center">
                                         <img for="uploadImage3" id="uploadPreview3" alt="Logo" width="170" height="200" src="/images/image_update.png">
                                     </label>
-                                    <input id="uploadImage3" class="form-control-file" type="file" name="img-tres" onchange="previewImagederecha(3);" hidden />
+                                    <input id="uploadImage3" class="form-control-file" type="file" name="imgtres" onchange="previewImagederecha(3);" hidden />
                                 </div>
                             </div>
                         </div>
@@ -203,7 +203,7 @@
                                     <label for="uploadImage4" class="font-weight-light mb-0 align-middle text-center">
                                         <img for="uploadImage4" id="uploadPreview4" alt="Logo" width="200" height="168"  src="/images/image_update.png">
                                     </label>
-                                    <input id="uploadImage4" class="form-control-file" type="file" name="img-principal" onchange="previewImageespecial(4);" hidden />
+                                    <input id="uploadImage4" class="form-control-file" type="file" name="imgprincipal" onchange="previewImageespecial(4);" hidden />
                                 </div>
                         </div>
                     </div> 
