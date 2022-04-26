@@ -205,20 +205,24 @@
                         </div>
                     </div> 
                     <div class="row">
-                    <div class="col-md-6 col-sm-12 mb-1 rounded" style="background: #FFFEC8;">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" {{$producto->estado_oferta==1?'checked':''}} value="1" name="estado_oferta" id="oferta-label">
-                            <label class="form-check-label" for="ofertalabel">Oferta</label>
-                        </div>
-                        <div class="form-group col-md-12 col-sm-12 mb-1">               
-                            <label for="oferta" class="form-label">Oferta</label>
-                            <input type="text" name="oferta" value="{{$producto->oferta}}" id="oferta" class="form-control form-control-sm" onkeypress="return solonumeros(event)" onpaste="return false" maxLength="2"> 
-                        </div>
-                        <div class="form-group col-md-12 col-sm-12 mb-1">               
-                            <label for="fecha_vencimiento" class="form-label">Fecha de Vencimiento</label>
-                            <input type="date" name="fecha_vencimiento" value="{{\Carbon\Carbon::parse($producto->fecha_vencimiento)->format('Y-m-d')}}" id="fecha_vencimiento" class="form-control form-control-sm"> 
-                        </div><br>
-                    </div> 
+                        @if(Carbon\Carbon::now() < ($producto->fecha_vencimiento))
+
+                        @else
+                            <div class="col-md-6 col-sm-12 mb-1 rounded" style="background: #FFFEC8;">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" {{$producto->estado_oferta==1?'checked':''}} value="1" name="estado_oferta" id="oferta-label">
+                                    <label class="form-check-label" for="ofertalabel">Oferta</label>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 mb-1">               
+                                    <label for="oferta" class="form-label">Oferta</label>
+                                    <input type="text" name="oferta" value="{{$producto->oferta}}" id="oferta" class="form-control form-control-sm" onkeypress="return solonumeros(event)" onpaste="return false" maxLength="2"> 
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 mb-1">               
+                                    <label for="fecha_vencimiento" class="form-label">Fecha de Vencimiento</label>
+                                    <input type="date" name="fecha_vencimiento" value="{{\Carbon\Carbon::parse($producto->fecha_vencimiento)->format('Y-m-d')}}" id="fecha_vencimiento" class="form-control form-control-sm"> 
+                                </div><br>
+                            </div> 
+                        @endif
                     <div class="col col-md-6 col-sm-12">   
                         <label for="estado" class="form-label">Estado</label>            
                         <select class="form-select form-select-sm" name="estado" id="estado" required>
@@ -240,7 +244,7 @@
         <br>
         
     </div>
-    <br>
+    <br> 
 </section>
 @endsection
 
