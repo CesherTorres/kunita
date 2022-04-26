@@ -241,5 +241,6 @@ Route::get('/dashboardempresa', 'App\Http\Controllers\DashboardAsesorController'
 Route::get('/dashboardempresaSeleccion', 'App\Http\Controllers\DashboardAsesorController');
 
 Route::get('/dashboardpyme', 'App\Http\Controllers\DashboardPymeController');
+Route::get('/dashboardpymeSeleccion', 'App\Http\Controllers\DashboardPymeController');
 
 
