@@ -32,6 +32,7 @@ class Empresa extends Model
         'giro_id',
         'usuario_id',
         'propietario_id',
+        'fecha_activate',
         'ubigeo_id'
         ];
 

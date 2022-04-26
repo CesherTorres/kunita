@@ -32,6 +32,7 @@ class CreateEmpresasTable extends Migration
             $table->string('enlaceinstagram');
             $table->string('enlacewhatsapp');
             $table->string('estadoemp');
+            $table->string('fecha_activate');
             
             $table->bigInteger('giro_id')->unsigned();
             $table->bigInteger('usuario_id')->unsigned();

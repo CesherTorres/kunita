@@ -105,6 +105,8 @@ class EmpresasController extends Controller
      */
     public function store(Request $request)
     {
+        $now = Carbon::now();
+        $date = $now->format('Y-m-d');
         $validatedData = $request->validate([
             'ndocumento' => ['unique:users,ndocumento'],
             'email' => ['unique:users,email'],
@@ -162,6 +164,7 @@ class EmpresasController extends Controller
         $company->billeteradigital = $request->input('billeteradigital');
         $company->numerobilletera = $request->input('numerobilletera');
         $company->enlacefacebook = $request->input('enlacefacebook');
+        $company->fecha_activate = $date;
         $company->enlaceinstagram = $request->input('enlaceinstagram');
         $company->enlacewhatsapp = $request->input('enlacewhatsapp');
         $company->estadoemp = 'Activo';

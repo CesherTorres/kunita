@@ -13,7 +13,7 @@ use App\Models\Propietario;
 use App\Models\Empresa;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-
+use Carbon\Carbon;
 class EmpresaPymeController extends Controller
 {
    
@@ -52,6 +52,8 @@ class EmpresaPymeController extends Controller
      */
     public function store(Request $request)
     {
+        $now = Carbon::now();
+        $date = $now->format('Y-m-d');
         $validatedData = $request->validate([
             'ndocumento' => ['unique:users,ndocumento'],
             'email' => ['unique:users,email'],
@@ -107,6 +109,7 @@ class EmpresaPymeController extends Controller
         $company->numerobilletera = $request->input('numerobilletera');
         $company->enlacefacebook = $request->input('enlacefacebook');
         $company->enlaceinstagram = $request->input('enlaceinstagram');
+        $company->fecha_activate = $date;
         $company->enlacewhatsapp = $request->input('enlacewhatsapp');
         $company->estadoemp = 'Pendiente';
         
